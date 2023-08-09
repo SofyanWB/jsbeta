@@ -1,7 +1,7 @@
 {
   "name": "jakartasatubeta",
   "version": "0.1.0",
-  "homepage": "https://SofyanWB.github.io/jakartasatubeta",
+  "homepage": "https://SofyanWB.github.io/jsbeta",
   "private": true,
   "dependencies": {
     "@arcgis/core": "^4.27.6",
