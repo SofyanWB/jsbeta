@@ -27,6 +27,7 @@ export const BoxContainer = styled(Box)(() => ({
 }));
 
 export const BoxContent = styled(Box)(() => ({
+  backgroundImage: "linear-gradient(192deg, rgba(187, 221, 255, 0.14) 0%, rgba(187, 221, 255, 0.30) 20%, rgba(187, 221, 255, 0.00) 60%, rgba(187, 221, 255, 0.5))",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
