@@ -100,7 +100,7 @@ function DrawerComponent() {
                 open={openDrawer}
                 onClose={() => setOpenDrawer(false)}>
                 <a href="/" style={{ textAlign: 'center' }}>
-                    <img style={{ width: '80%' }} src="/images/navbar/navbar-orange.png" alt="" />
+                    <img style={{ width: '80%' }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/8b934e82c23c443c8e54c46fad3cee2d/data" alt="" />
                 </a>
                 <Divider
                     sx={{
