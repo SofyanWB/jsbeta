@@ -30,7 +30,7 @@ const App = () => {
   return (
     <BoxContainer>
       <BoxContent>
-        <BoxImage2 src="/images/simpulJaringan/bentuk.png" />
+        <BoxImage2 src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/979388b0f1944b23aed602beab869092/data" />
         <BoxTitle>Simpul Jaringan Spasial</BoxTitle>
 
         <Divider
