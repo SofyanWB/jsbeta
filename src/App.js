@@ -12,7 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 import ScrollTop from "./components/ScrollTop";
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 // import Interaktif from '../src/routes/Interaktif';
 import PetaInteraktif from '../src/routes/Interaktif/PetaInteraktif';
 import Tematik from '../src/routes/Tematik';
@@ -146,7 +146,7 @@ function App() {
           background: "#ffff",
         }}>
 
-        <BrowserRouter>
+        <HashRouter basename="/jsbeta">
           <Routes>
             <Route path="/" element={<Beranda />} />
             <Route path="/peta-3d-basemaps" element={<Peta3DBasemaps />} />
@@ -176,7 +176,7 @@ function App() {
           </Routes>
           {/* <Footer /> */}
           <ScrollTop />
-        </BrowserRouter>
+        </HashRouter>
       </Container>
     </ThemeProvider >
   );
