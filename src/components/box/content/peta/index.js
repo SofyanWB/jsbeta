@@ -16,7 +16,7 @@ function Peta() {
   return (
     <BoxContainer >
       <BoxContent>
-        <BoxImageLatar src="/images/menuPeta/bentuk.png" />
+        <BoxImageLatar src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/979388b0f1944b23aed602beab869092/data" />
         <BoxTitle
           variant="h3">
           Peta Jakarta Satu
