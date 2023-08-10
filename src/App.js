@@ -146,7 +146,7 @@ function App() {
           background: "#ffff",
         }}>
 
-        <HashRouter basename="/jsbeta">
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Beranda />} />
             <Route path="/peta-3d-basemaps" element={<Peta3DBasemaps />} />
