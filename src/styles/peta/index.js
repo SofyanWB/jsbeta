@@ -22,7 +22,6 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
 export const BoxImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   width: "80%",
-  zIndex: "10",
   position: "relative",
   zIndex: "20",
 
