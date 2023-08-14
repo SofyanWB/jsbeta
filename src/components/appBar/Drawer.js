@@ -7,6 +7,7 @@ import {
     List,
     ListItemText,
     makeStyles,
+    Box
 } from "@material-ui/core";
 import '../../App.css';
 
@@ -40,11 +41,14 @@ const useStyles = makeStyles(() => ({
         height: 40,
         color: "white",
         // background: "#1455A3",
-        background: "rgba(20, 85, 163, 0.85)",
+        // background: "rgba(20, 85, 163, 0.85)",
+        background: "#ED783E",
+        opacity: "90%",
         backdropFilter: "blur(10px)",
         position: "absolute",
     },
     drawerPaper: {
+        textAlign: "center",
         marginLeft: "-15px",
         // borderRadius: "10px",
         // backdropFilter: "blur(20px)",
@@ -99,9 +103,13 @@ function DrawerComponent() {
                 anchor={"left"}
                 open={openDrawer}
                 onClose={() => setOpenDrawer(false)}>
-                <a href="/" style={{ textAlign: 'center' }}>
-                    <img style={{ width: '80%' }} src="/images/navbar/navbar-orange.png" alt="" />
-                </a>
+                <Box component={RouterLink} to="/"
+                    sx={{
+                        margin: "0 auto",
+                        textAlign: "center"
+                    }}>
+                    <img style={{ width: '80%', textAlign: "center" }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/8b934e82c23c443c8e54c46fad3cee2d/data" alt="" />
+                </Box>
                 <Divider
                     sx={{
                         bgcolor: "rgb(229, 234, 242)",

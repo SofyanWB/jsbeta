@@ -6,27 +6,21 @@ import SimpulJaringan from "./content/simpul-jaringan";
 import Dashboard from "./content/dashboard";
 import Handphone from "./content/handphone";
 import {
-  BoxContent,
-  BoxImage,
+  BoxContent
 } from "../../styles/box";
 
 function Box() {
   return (
     <BoxContainer>
       <BoxContent>
-        <BoxImage src="/images/menuPeta/Rectangle_1.png"/>
         <Peta />
         <AnalisisSpasial />
-      </BoxContent>
-      <BoxContent>
-        <BoxImage src="/images/menuPeta/Rectangle_2.png"/>
         <SimpulJaringan />
         <Dashboard />
-        <Handphone />
       </BoxContent>
+      <Handphone />
     </BoxContainer>
   );
 }
- 
+
 export default Box;
- 

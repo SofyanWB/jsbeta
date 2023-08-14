@@ -44,8 +44,8 @@ const DetailBerita = () => {
     };
     useEffect(() => {
         getNewsList();
-        getLatestList();
-    });
+        getLatestList(); // eslint-disable-next-line
+    }, []);
 
     return (
         <>

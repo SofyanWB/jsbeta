@@ -50,7 +50,7 @@ const Berita = () => {
     };
     useEffect(() => {
         getNewsList();
-    });
+    }, []);
 
     const firstIndex = 0;
 
@@ -206,6 +206,8 @@ const Berita = () => {
                             navButtonsAlwaysVisible={true}
                             swipe={true}
                             animation={"slide"}
+                            height={380}
+                            fullHeightHover={true}
                             IndicatorIcon={false}
                             indicatorProps={{
                                 style: {

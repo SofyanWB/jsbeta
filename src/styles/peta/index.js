@@ -23,6 +23,8 @@ export const BoxImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   width: "80%",
   position: "relative",
+  zIndex: "20",
+
   [theme.breakpoints.down(1440)]: {
     width: "29vw",
   },
@@ -38,6 +40,7 @@ export const BoxImageLatar = styled("img")(({ src, theme }) => ({
   top: "2%",
   left: "-2%",
   position: "absolute",
+
   [theme.breakpoints.down("xl")]: {
     width: "43vw",
 
@@ -73,6 +76,8 @@ export const BoxContent2 = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   maxWidth: "600px",
   paddingBottom: "0px",
+  zIndex: "20",
+
   [theme.breakpoints.down(1440)]: {
     width: "25vw",
   },
@@ -158,7 +163,6 @@ export const iconButtonStyles = {
 }
 
 export const iconButtonStyles2 = {
-
   width: "100%",
   borderRadius: 10,
   display: "flex",

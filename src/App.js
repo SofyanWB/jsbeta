@@ -12,7 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 import ScrollTop from "./components/ScrollTop";
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 // import Interaktif from '../src/routes/Interaktif';
 import PetaInteraktif from '../src/routes/Interaktif/PetaInteraktif';
 import Tematik from '../src/routes/Tematik';
@@ -58,87 +58,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        style={{ backdropFilter: 'blur(10px)' }}
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
-        }}>
-        <Fade in={open}>
-          <Grid container
-            direction="column"
-            sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '85%',
-              maxWidth: '700px',
-              height: 'auto',
-              borderRadius: 10,
-              background: 'rgba(255, 255, 255, 0.9)',
-              outline: "none",
-              p: 2,
-            }}>
-            <Grid item>
-              <Box sx={{ display: "flex", justifyContent: "end" }}>
-                <Fab size="small"
-                  onClick={handleClose}
-                  sx={{
-                    backgroundColor: 'transparent',
-                    boxShadow: '0px 4px 20px rgba(170, 180, 190, 0.0)',
-                  }}>
-                  <CloseRoundedIcon sx={{ color: "#1455A3" }} />
-                </Fab>
-              </Box>
-            </Grid>
-            <Grid item>
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <img style={{ margin: '-10%', width: '75%', maxWidth: '700px', }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/2105e1180548434784efed3529799e6c/data" alt="" />
-              </Box>
-            </Grid>
-            <Grid item>
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography
-                  sx={{
-                    fontSize: isMobile ? "1em" : "1.5em",
-                    textAlign: "center",
-                    color: "#003577",
-                    margin: "5%"
-                  }}>
-                  Sehubungan dengan adanya proses pengembangan tampilan terbaru, dengan ini diberitahukan bahwa website Jakarta Satu <b>tidak dapat diakses</b> untuk <b>sementara</b>. Anda dapat menyampaikan kritik dan saran dengan klik tombol di bawah ini.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item>
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  title="Kritik dan Saran"
-                  href="https://forms.gle/QJ672f62tXt4Neyu9" target="_blank"
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    height: "65px",
-                    width: "200px",
-                    fontSize: "18px",
-                    backgroundColor: "#ED783E",
-                    borderRadius: 8,
-                    textTransform: "none",
-                    boxShadow: "0px 4px 20px rgba(170, 180, 190, 0.3)",
-                  }}>
-                  Kritik dan Saran
-                </Button>
-              </Box>
-            </Grid>
-          </Grid>
-        </Fade>
-      </Modal>
-
       <Container
         maxWidth="xl"
         disableGutters
@@ -146,7 +65,88 @@ function App() {
           background: "#ffff",
         }}>
 
-        <BrowserRouter>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          sx={{ backdropFilter: 'blur(10px)' }}
+          slots={{ backdrop: Backdrop }}
+          slotProps={{
+            backdrop: {
+              timeout: 500,
+            },
+          }}>
+          <Fade in={open}>
+            <Grid container
+              direction="column"
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '85%',
+                maxWidth: '700px',
+                height: 'auto',
+                borderRadius: 10,
+                background: 'rgba(255, 255, 255, 0.9)',
+                outline: "none",
+                p: 2,
+              }}>
+              <Grid item>
+                <Box sx={{ display: "flex", justifyContent: "end" }}>
+                  <Fab size="small"
+                    onClick={handleClose}
+                    sx={{
+                      backgroundColor: 'transparent',
+                      boxShadow: '0px 4px 20px rgba(170, 180, 190, 0.0)',
+                    }}>
+                    <CloseRoundedIcon sx={{ color: "#1455A3" }} />
+                  </Fab>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  <img style={{ margin: '-10%', width: '75%', maxWidth: '700px', }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/2105e1180548434784efed3529799e6c/data" alt="" />
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  <Typography
+                    sx={{
+                      fontSize: isMobile ? "1em" : "1.5em",
+                      textAlign: "center",
+                      color: "#003577",
+                      margin: "5%"
+                    }}>
+                    Sehubungan dengan adanya proses pengembangan tampilan terbaru, dengan ini diberitahukan bahwa website Jakarta Satu <b>tidak dapat diakses</b> untuk <b>sementara</b>. Anda dapat menyampaikan kritik dan saran dengan klik tombol di bawah ini.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  <Button
+                    title="Kritik dan Saran"
+                    href="https://forms.gle/QJ672f62tXt4Neyu9" target="_blank"
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      height: "65px",
+                      width: "200px",
+                      fontSize: "18px",
+                      backgroundColor: "#ED783E",
+                      borderRadius: 8,
+                      textTransform: "none",
+                      boxShadow: "0px 4px 20px rgba(170, 180, 190, 0.3)",
+                    }}>
+                    Kritik dan Saran
+                  </Button>
+                </Box>
+              </Grid>
+            </Grid>
+          </Fade>
+        </Modal>
+
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Beranda />} />
             <Route path="/peta-3d-basemaps" element={<Peta3DBasemaps />} />
@@ -176,7 +176,7 @@ function App() {
           </Routes>
           {/* <Footer /> */}
           <ScrollTop />
-        </BrowserRouter>
+        </HashRouter>
       </Container>
     </ThemeProvider >
   );

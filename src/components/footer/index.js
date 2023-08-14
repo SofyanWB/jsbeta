@@ -41,8 +41,8 @@ function Footer() {
               direction="row"
               alignItems="center">
               <Grid item xs={12}>
-                <Box sx={{ display: "flex", alignItems: "center", marginLeft: "-5px" }}>
-                  <img src="/images/logo/YouTube.svg" style={{ height: "25px" }} alt="" />
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <img src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d150f441e939441a9c229bb7e95765f3/data" style={{ height: "18px" }} alt="" />
                   <Link href="https://www.youtube.com/@JakartaSatuDKI/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       Jakarta Satu DKI
@@ -51,8 +51,8 @@ function Footer() {
                 </Box>
               </Grid>
               <Grid item xs={12}>
-                <Box sx={{ display: "flex", alignItems: "center", marginLeft: "-5px" }}>
-                  <img src="/images/logo/Twitter.svg" style={{ height: "25px" }} alt="" />
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <img src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d35cbf7f9b0e4931aaa62bc0ff14719a/data" style={{ height: "18px" }} alt="" />
                   <Link href="https://www.twitter.com/jakartasatudki/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       Jakarta Satu
@@ -61,8 +61,8 @@ function Footer() {
                 </Box>
               </Grid>
               <Grid item xs={12}>
-                <Box sx={{ display: "flex", alignItems: "center", marginLeft: "-5px" }}>
-                  <img src="/images/logo/Instagram.svg" style={{ height: "25px" }} alt="" />
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <img src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/510e8e1269dd4658ac3a518217356553/data" style={{ height: "18px" }} alt="" />
                   <Link href="https://www.instagram.com/jakartasatudki/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       jakartasatudki

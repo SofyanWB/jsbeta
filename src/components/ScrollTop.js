@@ -30,6 +30,7 @@ function ScrollTop(props) {
                     position: 'fixed',
                     bottom: 24,
                     right: 24,
+                    zIndex: "999",
                 }}>
                 {children}
             </Box>

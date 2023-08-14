@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
    background: transparent;
-   width: 80%;
+   width: 95%;
    max-width: 1300px;
    margin-left: auto;
    height: 65px;
@@ -23,7 +23,7 @@ export const NavContainer = styled.div`
    justify-content: space-between;
    z-index: 1;
    width: 100%;
-   padding: 24px;
+   padding: 15px;
    // max-width: 1000px;
 `;
 
@@ -47,10 +47,9 @@ export const NavItem = styled.li`
 
 export const NavLinks = styled.div`
    font-size: 1em;
-   padding-left: 7px;
-   padding-right: 7px;
-   height: 100%; 
-   cursor: pointer; 
+   height: 100%;
+   cursor: pointer;
+   
    &.active { 
    color: #000000; 
    }

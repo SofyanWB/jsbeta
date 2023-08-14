@@ -36,7 +36,7 @@ const Tematik = () => {
 
     useEffect(() => {
         getTematikList();
-    });
+    }, []);
 
     const firstIndex = 0;
 

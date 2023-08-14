@@ -75,7 +75,7 @@ function Handphone() {
           sx={dividerStyle} />
 
         <a href="https://play.google.com/store/apps/details?id=id.go.jakarta.jakartasatu&hl=id" target="_blank" rel="noreferrer">
-          <GetInGoogle src="/images/handphone/googleplay.png" />
+          <GetInGoogle src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/1d018fe3f862436ca4b283c46f0b63ac/data" />
         </a>
       </HandphoneContent>
     </HandphoneContainer>

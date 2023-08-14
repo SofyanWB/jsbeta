@@ -12,6 +12,7 @@ import {
   textButton,
   items2,
   StyleButton2,
+  CarouselStyle,
 } from "../../../../styles/simpulJaringan";
 
 
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <BoxContainer>
       <BoxContent>
-        <BoxImage2 src="/images/simpulJaringan/bentuk.png" />
+        <BoxImage2 src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/979388b0f1944b23aed602beab869092/data" />
         <BoxTitle>Simpul Jaringan Spasial</BoxTitle>
 
         <Divider
@@ -51,16 +52,11 @@ const App = () => {
           stopAutoPlayOnHover={true}
           navButtonsAlwaysVisible={true}
           swipe={true}
+          height={500}
+          fullHeightHover={true}
           animation={"slide"}
           IndicatorIcon={false}
-          sx={{ 
-            marginBottom: "3%",
-
-            "@media (max-width: 500px)": {
-              marginLeft: "-20%",
-              marginRight: "-20%",
-            }
-          }}
+          sx={CarouselStyle}
 
           //untuk style indikator
           indicatorProps={{

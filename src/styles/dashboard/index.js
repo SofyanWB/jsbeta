@@ -177,7 +177,7 @@ export const listStyle = {
   marginTop:"30px",
   marginBottom:"50px",
   "::-webkit-scrollbar": {
-    width: "10px",
+    width: "8px",
   },
   "::-webkit-scrollbar-track": {
     background: "white",
@@ -187,7 +187,7 @@ export const listStyle = {
     borderRadius: "5px",
   },
   "::-moz-scrollbar": {
-    width: "10px",
+    width: "8px",
   },
   "::-moz-scrollbar-track": {
     background: "white",

@@ -12,13 +12,13 @@ import {
   NavContainer,
   NavItem,
 } from '../../styles/appbar/index';
-import { menuItems } from '../../menuItems';
+import '../../styles/appbar/NavbarCSS.css';
+import { ItemList } from "./ItemList";
 import MenuItems from './MenuItems';
-import '../../App.css';
 
 function Navbar() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("1285"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("1070"));
 
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
@@ -42,11 +42,11 @@ function Navbar() {
               marginLeft: isMobile ? "auto" : "0" ,
               marginRight: "0"
             }}>
-            <img style={{ width: '180px' }} src="/images/navbar/navbar-orange.png" alt="" />
+            <img style={{ width: '180px' }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/8b934e82c23c443c8e54c46fad3cee2d/data" alt="" />
           </Box>
           {isMobile ? (<DrawerComponent />) : (
             <NavItem className="menus">
-              {menuItems.map((menu, index) => {
+              {ItemList.map((menu, index) => {
                 const depthLevel = 0;
                 return (
                   <MenuItems

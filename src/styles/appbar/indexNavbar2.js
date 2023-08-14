@@ -5,8 +5,9 @@ export const Nav = styled.nav`
    color: black;
    background: rgba(255, 255, 255, 0.5);
    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
-   width: 80%;
-   max-width: 1600px;
+   width: 95%;
+   margin-top: 20px;
+   max-width: 1300px;
    margin-left: auto;
    height: 65px;
    margin-right: auto;
@@ -26,7 +27,7 @@ export const NavContainer = styled.div`
    justify-content: space-between;
    z-index: 1;
    width: 100%;
-   padding: 24px;
+   padding: 15px;
    max-width: 1500px;
 `;
 
