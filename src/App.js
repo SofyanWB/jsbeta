@@ -146,7 +146,14 @@ function App() {
           </Fade>
         </Modal>
 
-        <HashRouter>
+      <Container
+        maxWidth="xl"
+        disableGutters
+        sx={{
+          background: "#ffff",
+        }}>
+
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Beranda />} />
             <Route path="/peta-3d-basemaps" element={<Peta3DBasemaps />} />
