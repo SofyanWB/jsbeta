@@ -4,34 +4,26 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import VolunteerActivismRoundedIcon from '@mui/icons-material/VolunteerActivismRounded';
 import Fade from '@mui/material/Fade';
 import Tooltip from '@mui/material/Tooltip';
 
 import { withTranslation } from 'react-i18next';
 
-function ScrollTop(props) {
+function ButtonKritikSaran(props) {
     const { children } = props;
     const trigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: 400,
     });
 
-    const handleClick = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
-
     return (
         <Fade in={trigger}>
             <Box
-                onClick={handleClick}
                 role="presentation"
                 sx={{
                     position: 'fixed',
-                    bottom: 24,
+                    bottom: 75,
                     right: 24,
                     zIndex: "999",
                 }}>
@@ -41,32 +33,33 @@ function ScrollTop(props) {
     );
 }
 
-ScrollTop.propTypes = {
+ButtonKritikSaran.propTypes = {
     children: PropTypes.element.isRequired
 };
 
-function BackToTop(props) {
+function KritikSaran(props) {
     const { t } = props;
 
     return (
         <React.Fragment>
             <CssBaseline />
-            <ScrollTop>
-                <Tooltip placement="left" title={t('scrollTop.text')}>
+            <ButtonKritikSaran>
+                <Tooltip placement="left" title={t('beranda.kritikSaranButton')}>
                     <Fab
                         disableRipple
                         size="small"
-                        color="info"
+                        color="warning"
+                        href='https://forms.gle/QJ672f62tXt4Neyu9' target='_blank'
                         sx={{
-                            backgroundColor: '#1455A3',
+                            backgroundColor: "#ED783E",
                             boxShadow: '0px 4px 20px rgba(170, 180, 190, 0.3)',
                         }}>
-                        <KeyboardArrowUpIcon style={{ color: "white" }} />
+                        <VolunteerActivismRoundedIcon style={{ color: "white" }} />
                     </Fab>
                 </Tooltip>
-            </ScrollTop>
+            </ButtonKritikSaran>
         </React.Fragment>
     );
 }
 
-export const ExtrasScrollTop = withTranslation()(BackToTop);
+export const ExtrasKritikSaran = withTranslation()(KritikSaran);

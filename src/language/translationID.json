@@ -1,0 +1,164 @@
+{
+  "drawer": {
+    "beranda": "Beranda",
+    "peta": "Peta",
+    "interaktif": "Interaktif",
+    "tematik": "Tematik",
+    "3d": "3D",
+    "3dBasemaps": "3D Basemaps",
+    "3dTransitOriented": "3D Transit Oriented",
+    "petaKerja": "Peta Kerja",
+    "digitasiAsetKIBA": "Digitasi Aset KIB A",
+    "dataTenagaKesehatan": "Data Tenaga Kesehatan",
+    "perda1Tahun2014": "Perda 1 Tahun 2014",
+    "petaHasilUkurAset": "Peta Hasil Ukur Aset",
+    "lainnya": "Lainnya",
+    "layanan": "Layanan",
+    "irk": "IRK",
+    "smartRDTR": "SMART RDTR",
+    "unduh": "Unduh",
+    "informasi": "Informasi",
+    "berita": "Berita",
+    "panduanJakartaSatu": "Panduan Jakarta Satu",
+    "galeri": "Galeri",
+    "penghargaan": "Penghargaan",
+    "integrasiSistem": "Integrasi Sistem",
+    "dataAPI": "Data API",
+    "publikasi": "Publikasi"
+  },
+  "beranda": {
+    "kritikSaran": "Sehubungan dengan adanya proses pengembangan tampilan terbaru, dengan ini diberitahukan bahwa website Jakarta Satu <b>tidak dapat diakses</b> untuk <b>sementara</b>. Anda dapat menyampaikan kritik dan saran dengan klik tombol di bawah ini.",
+    "kritikSaranButton": "Kritik dan Saran",
+    "peta": {
+      "judul": "Peta Jakarta Satu",
+      "keterangan": "Eksplorasi Data Spasial DKI Jakarta dalam berbagai tampilan serta menyajikan Peta Dasar DKI Jakarta dalam beragam Visualisasi",
+      "dialog": {
+        "interaktif": "Interaktif",
+        "interaktifDetail": "Jelajahi Seluruh Informasi Spasial DKI Jakarta dengan Berbagai Fitur",
+        "peta3d": "Peta 3D",
+        "peta3dDetail": "Visualisasi peta dalam bentuk 3 dimensi (3D)",
+        "tematik": "Tematik",
+        "tematikDetail": "Ekplorasi Data Spasial Berdasarkan Tema"
+      }
+    },
+    "analisis": {
+      "judul": "Unduh Data Spasial Jakarta, Dimanapun Kamu Berada",
+      "keterangan": "Dapatkan sumber informasi data spasial di Jakarta secara realtime, tersedia dalam format pdf dan shp",
+      "lihatSemua": "Lihat Semua",
+      "kotak": {
+        "apotek": "Apotek",
+        "batasAdministrasi": "Batas Administrasi",
+        "transjakarta": "Transjakarta",
+        "halte": "Halte"
+      }
+    },
+    "simpulJaringan": {
+      "judul": "Simpul Jaringan Spasial",
+      "keterangan": "Integrasi data spasial dari seluruh kumpulan perangkat daerah atau unit kerja, kelembagaan, atau institusi lainnya di lingkungan Pemerintah Provinsi DKI Jakarta",
+      "lihatSemua": "Lihat Semua"
+    },
+    "dashboard": {
+      "keterangan": "Ekplorasi Data Spasial Jakarta Dengan Tampilan Visualisasi Dashboard",
+      "lihatSemua": "Lihat Semua"
+    },
+    "handphone": {
+      "judul1": "Satu Platform untuk beragam kebutuhan Data Spasial di Jakarta",
+      "keterangan1": "Memudahkan kita dalam mencari informasi terkait geospasial di DKI Jakarta dimanapun anda berada",
+      "judul2": "Fitur Tematik",
+      "keterangan2": "Dengan fitur tematik lengkap, memastikan penggunaannya mudah mengakses lebih cepat, efektif dan efisien",
+      "judul3": "Unduh",
+      "keterangan3": "Dapatkan beragam informasi dengan mudah terkait data spasial, seperti peta seluruh Jakarta meupun per-Kelurahan. Data tersebut dapat diunduh sesuai kebutuhan dalam format ZIP dan PDF"
+    }
+  },
+  "unduh": {
+    "unduhTab": "Unduh Data | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "berita": {
+    "beritaTab": "Berita | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "detailBeritaTab" : "Detail Berita | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "galeri": {
+    "galeriTab": "Galeri | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "simpulJaringan": {
+    "simpulJaringanTab": "Simpul Jaringan | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Simpul Jaringan Spasial",
+    "keterangan": "Data spasial yang terintegrasi, nikmati solusi mudah dalam pengintegrasian data",
+    "cariData": "cari simpul jaringan berdasarkan nama"
+  },
+  "interaktif": {
+    "interaktifTab": "Peta Interaktif | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "tematik": {
+    "tematikTab": "Peta Tematik | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Peta Tematik",
+    "keterangan": "Temukan Seluruh Informasi Spasial Sesuai Kata Kunci",
+    "cariData": "cari tematik berdasarkan nama"
+  },
+  "dashboard": {
+    "judul": "Galeri Dashboard Publik",
+    "keterangan": "Jelajahi Informasi Peta Anda Lebih Interaktif Melalui Dashboard Informasi",
+    "cariData": "cari dashboard berdasarkan nama"
+  },
+  "panduanJakartaSatu": {
+    "panduanTab": "Panduan | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul1": "Buku Panduan Jakarta Satu",
+    "keterangan1": "Informasi tentang penggunaan website dan beserta aplikasi Jakarta Satu. Tekan gambar disamping untuk membaca secara online",
+    "judul2": "Tutorial dan Panduan GIS",
+    "keterangan2": "Informasi tentang penggunaan aplikasi GIS",
+    "judul3": "Tutorial dan Panduan Informasi Rencana Kota"
+  },
+  "penghargaan": {
+    "penghargaanTab": "Penghargaan | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Penghargaan Jakarta Satu",
+    "judul1": "Inovasi Pemanfaatan Geospasial Bhumandala Award (2021)",
+    "keterangan1": "Pemerintah Provinsi DKI Jakarta melalui aplikasi Informasi Rencana Kota (IRK) meraih Inovasi Terbaik (Piala Emas) terbaik dalam inovasi pemanfaatan informasi geospasial pada ajang Bhumandala Award 2021. Aplikasi Informasi Rencana Kota (IRK) merupakan salah satu inovasi pemanfaatan informasi geospasial yang dikembangkan pada portal Jakarta Satu sebagai salah satu upaya peningkatan pelayanan publik berbasis geospasial yang memuat peta dan informasi rencana kota.",
+    "judul2": "1st Place - 3D Map Category (2021)",
+    "keterangan2": "Jakarta 3D Urban Regeneration - Kemayoran meraih posisi pertama dalam kategori Peta 3D dari Esri User Conference Map Gallery Tahun 2021 berdasarkan penilaian tim Esri UC. <br><br>Jakarta 3D Urban Regeneration - Kemayoran<br><br>Peta 3D Urban Kemayoran Jakarta menunjukkan Urban Design Guideline (UDGL) Kemayoran yang berlokasi di DKI Jakarta. Peta ini memvisualisasikan: Bangunan 3D Eksisting, Perencanaan Bangunan 3D, Peta Dasar 3D, Keteduhan Pohon, Walkability dan Populasi Penduduk.",
+    "judul3": "Bhumandala Kanaka Award (2020)",
+    "keterangan3": "Merupakan penghargaan terhadap upaya membangun simpul jaringan informasi geospasial kepada Kementerian/ Lembaga dan Pemerintah Daerah yang dinilai terbaik dalam upayanya mempersiapkan diri dan membangun simpul jaringan. <br>Pemerintah Provinsi DKI Jakarta berhasil meraih 2 (dua) penghargaan yaitu Bhumandala Kanaka Simpul Terbaik dan Bhumandala Kencana Geoportal terbaik kategori Provinsi.",
+    "judul4": "Geo Innovation Award (2019)",
+    "keterangan4": "Merupakan penghargaan untuk mendukung industri 4.0 Geospasial atas inovasi dalam implementasi GIS (Geographic Information System) untuk mendukung kebijakan Satu Peta Indonesia, yang diselenggarakan oleh Esri Indonesia.",
+    "judul5": "Bhumandala Kanaka Award (2018)",
+    "keterangan5": "Merupakan penghargaan tingkat Provinsi se-Indonesia dari Badan Informasi Geospasial. Penghargaan dianugerahkan kepada DKI Jakarta karena telah berhasil membangun simpul jaringan dengan baik dan aktif, serta mengikuti sistem referensi geospasial nasional."
+  },
+  "integrasiSistem": {
+    "integrasiSistemTab": "Integrasi Sistem | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Integrasi Sistem",
+    "keterangan": "Petunjuk pelaksanaan pemutakhiran dan pengintegrasikan sistem peta dan data dalam sistem informasi geospasial Jakarta Satu ini disusun dalam rangka memfasilitasi integrasi spasial dari semua perangkat daerah di lingkungan Pemerintah Provinsi DKI Jakarta ataupun instansi lainnya agar dapat mewujudkan integrasi informasi gespasial di wilayah DKI Jakarta dalam wadah Jakarta Satu untuk meningkatkan kinerja penataan dan pembangunan kota.",
+    "button1": "Petunjuk Pelaksanaan Integrasi Sistem",
+    "button2": "Dokumen Pengukuran dan Pemetaan",
+    "judul1": "Dokumen Petunjuk Pelaksanaan Integrasi Sistem",
+    "judul2": "Dokumen Pengukuran dan Pemetaan",
+    "lihatTampilanPenuh": "Lihat Tampilan Penuh, ",
+    "klikDisini": "Klik Disini"
+  },
+  "dataAPI": {
+    "dataAPITab": "Data API | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Data API",
+    "keterangan": "Memberikan informasi list service data berupa web map service dan web feature service yang terdapat pada Webgis Jakarta Satu.",
+    "table1": "Tabel Data API Web Feature Service (WFS)",
+    "table2" : "Tabel Data API Web Map Service (WMS)"
+  },
+  "publikasi": {
+    "publikasiTab": "Publikasi | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Publikasi",
+    "keterangan": "Informasi Riset Jakarta Satu",
+    "judul1": "Pemetaan Pohon",
+    "keterangan1": "Metode Deep Learning",
+    "judul2": "Perhitungan Lahan Terbangun",
+    "keterangan2": "Metode DDLB"
+  },
+  "footer": {
+    "informasiKontak": "Informasi Kontak",
+    "informasiKontakDetail": "Kirimkan Surat Elektronik ke alamat berikut: <br /><b><i>  jakartasatu@jakarta.go.id</i></b>",
+    "tentangSitus": "Tentang Situs",
+    "tentangSitusDetail": "Situs ini merupakan sarana komunikasi dan visualisasi peta dan data dari program Jakarta Satu baik untuk Pemerintah Provinsi DKI Jakarta ataupun untuk masyarakat.",
+    "mediaSosial": "Media Sosial",
+    "hakCipta1": "© Hak Cipta ",
+    "hakCipta2": ". Pemerintah Provinsi Daerah Khusus Ibu Kota Jakarta."
+  },
+  "scrollTop" : {
+    "text": "Gulir ke atas"
+  }
+}

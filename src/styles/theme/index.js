@@ -57,9 +57,8 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-        'Public Sans',
+      'Public Sans',
     ].join(','),
-},
-
+  },
 });
 export default theme;

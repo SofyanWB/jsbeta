@@ -1,6 +1,14 @@
 import React from 'react';
-import Navbar2 from "../../src/components/appBar/Navbar2";
-import Footer from "../../src/components/footer/index";
+import { HalamanNavbar } from "../../src/components/appBar/Navbar";
+import {
+    AppBar,
+} from "@material-ui/core";
+import {
+    Nav,
+    NavContainer
+} from '../styles/appbar/indexNavbar2';
+import { HalamanFooter } from "../../src/components/footer/index";
+import { withTranslation } from 'react-i18next';
 import {
     Divider,
     Button,
@@ -21,7 +29,11 @@ import pdfFile from './pdf/19_2022_SK_Kadis_Petunjukan_Pelaksanaan_Integrasi.pdf
 import pdfFile2 from './pdf/2021_PERKADIS_2_TAHUN_Tentang_Pedoman_Pengukuran_dan_Pemetaan_di_DKI_Jakarta.pdf';
 import theme from '../styles/theme';
 
-const IntegrasiSistem = () => {
+function IntegrasiSistem(props) {
+    const { t } = props;
+
+    document.title = t('integrasiSistem.integrasiSistemTab');
+
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         element.scrollIntoView({ behavior: 'smooth' });
@@ -88,12 +100,18 @@ const IntegrasiSistem = () => {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <Navbar2 />
+                <AppBar elevation={0} color='transparent'>
+                    <Nav>
+                        <NavContainer>
+                            <HalamanNavbar />
+                        </NavContainer>
+                    </Nav>
+                </AppBar>
                 <BoxImage1 src="/images/menuPeta/Rectangle_1.png" />
                 <BoxImage2 src="/images/menuPeta/bentuk.png" />
                 <BoxContainer>
                     <BoxAtas>
-                        <BoxTitle>Integrasi Sistem</BoxTitle>
+                        <BoxTitle>{t('integrasiSistem.judul')}</BoxTitle>
                         <Divider
                             sx={{
                                 margin: "0 auto",
@@ -104,10 +122,7 @@ const IntegrasiSistem = () => {
                                 marginBottom: "20px"
                             }} />
                         <BoxLittleTitle>
-                            Petunjuk pelaksanaan pemutakhiran dan pengintegrasikan sistem peta dan data dalam sistem informasi geospasial Jakarta Satu ini disusun
-                            dalam rangka memfasilitasi integrasi spasial dari semua perangkat daerah di lingkungan Pemerintah Provinsi DKI Jakarta ataupun instansi
-                            lainnya agar dapat mewujudkan integrasi informasi gespasial di wilayah DKI Jakarta dalam wadah Jakarta Satu untuk meningkatkan kinerja
-                            penataan dan pembangunan kota.
+                            {t('integrasiSistem.keterangan')}
                         </BoxLittleTitle>
                     </BoxAtas>
                     <BoxContent>
@@ -121,7 +136,7 @@ const IntegrasiSistem = () => {
                                 width: "25%",
                                 backgroundColor: "#1455A3",
                             }}>
-                            Petunjuk Pelaksanaan Integrasi Sistem
+                            {t('integrasiSistem.button1')}
                         </Button>
                         <Button
                             onClick={() => scrollToSection('section2')}
@@ -132,28 +147,28 @@ const IntegrasiSistem = () => {
                                 width: "25%",
                                 backgroundColor: "#1455A3",
                             }}>
-                            Dokumen Pengukuran dan Pemetaan
+                            {t('integrasiSistem.button2')}
                         </Button>
 
-                        <BoxTitle id="section1">Dokumen Petunjuk Pelaksanaan Integrasi Sistem</BoxTitle>
+                        <BoxTitle id="section1">{t('integrasiSistem.judul1')}</BoxTitle>
                         <BoxLittleTitle>
-                            Lihat Tampilan Penuh, <a href="https://drive.google.com/file/d/1AU04yFobQdspwEL7Ordx62cxxr173GLj/preview" target="_blank" rel="noreferrer">Klik Disini</a>
+                            {t('integrasiSistem.lihatTampilanPenuh')} <a href="https://drive.google.com/file/d/1AU04yFobQdspwEL7Ordx62cxxr173GLj/preview" target="_blank" rel="noreferrer">{t('integrasiSistem.klikDisini')}</a>
                         </BoxLittleTitle>
 
                         <MyPDFViewer />
 
-                        <BoxTitle id="section2">Dokumen Pengukuran dan Pemetaan</BoxTitle>
+                        <BoxTitle id="section2">{t('integrasiSistem.judul2')}</BoxTitle>
                         <BoxLittleTitle>
-                            Lihat Tampilan Penuh, <a href="https://drive.google.com/file/d/1mlzkmFjZj6we0L8hX2HOxc1-f-EglcmX/view" target="_blank" rel="noreferrer">Klik Disini</a>
+                            {t('integrasiSistem.lihatTampilanPenuh')} <a href="https://drive.google.com/file/d/1mlzkmFjZj6we0L8hX2HOxc1-f-EglcmX/view" target="_blank" rel="noreferrer">{t('integrasiSistem.klikDisini')}</a>
                         </BoxLittleTitle>
 
                         <MyPDFViewer2 />
                     </BoxContent>
                 </BoxContainer>
-                <Footer />
+                <HalamanFooter />
             </ThemeProvider>
         </>
     );
 };
 
-export default IntegrasiSistem;
+export const RouteIntegrasiSistem = withTranslation()(IntegrasiSistem);

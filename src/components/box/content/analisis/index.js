@@ -10,48 +10,40 @@ import {
   iconButtonStyles3,
 } from "../../../../styles/dataAnalisis/index.js";
 import { Box } from '@mui/system';
-import { Kotak } from './buttonV2.jsx';
+import { HalamanKotak } from './buttonV2.js';
+import { Link as RouterLink } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 
+function DataAnalisis(props) {
+  const { t } = props;
 
-function dataAnalisis() {
   return (
     <BoxContainer>
-
-      <BoxContent> 
-
+      <BoxContent>
         <BoxImage src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/cbbf39437984447091f5e1608fc56d70/data" />
-
       </BoxContent>
-
       <BoxContent2>
         <BoxTitle variant="h2">
-          Unduh Data Spasial Jakarta, dimanapun kamu berada
+          {t('beranda.analisis.judul')}
         </BoxTitle>
-
         <BoxDescription>
-          Dapatkan sumber informasi data spasial di Jakarta secara realtime, tersedia dalam format pdf dan shp
+          {t('beranda.analisis.keterangan')}
         </BoxDescription>
-        
-        <Kotak></Kotak>
-
+        <HalamanKotak></HalamanKotak>
         <Box
           justifyContent="center"
           alignItems="center">
-
           <Button
-            //disabled
+            component={RouterLink} to="/unduh"
             sx={iconButtonStyles3}
             variant="contained"
             size="large">
-            Lihat Semua
+            {t('beranda.analisis.lihatSemua')}
           </Button>
-
         </Box>
-
       </BoxContent2>
-
     </BoxContainer>
   )
 }
 
-export default dataAnalisis
+export const HalamanAnalisis = withTranslation()(DataAnalisis);

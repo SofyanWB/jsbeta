@@ -52,14 +52,18 @@ export const HandphoneContent = styled(Box)(() => ({
 }));
 
 export const HandphoneTitle = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.5,
-  fontSize: "46px",
+  fontSize: "44px",
+  fontStyle: "normal",
+  fontWeight: 500,
+  lineHeight: "normal",
+  letterSpacing: "0.066px",
+  color: "#003577",
+
   marginBottom: "20px",
   marginLeft: "-20px",
   marginRight: "-20px",
   textAlign: "center",
   paddingBottom: "45px",
-  color: "#004581",
   zIndex: "1",
   [theme.breakpoints.down(1440)]: {
     fontSize: "3.2vw",
@@ -70,10 +74,37 @@ export const HandphoneTitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
+export const HandphoneSubtitle = styled(Typography)(({ theme }) => ({
+  fontSize: "22px",
+  fontStyle: "normal",
+  fontWeight: 600,
+  lineHeight: "normal",
+  color: "rgba(0, 0, 0, 0.80)",
+
+  paddingBottom: "20px",
+
+  "@media (max-width: 1440px)": {
+    fontSize: "1.3vw"
+  },
+  "@media (max-width: 1042px)": {
+    fontSize: "2.2vw"
+  },
+  "@media (max-width: 500px)": {
+    fontSize: "4vw"
+  },
+}));
+
 export const HandphoneDescription = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.25,
+  fontSize: "14px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "165%",
+  letterSpacing: "0.021px",
+  color: "rgba(0, 0, 0, 0.60)",
+
   marginBottom: "25px",
   maxWidth: 640,
+
   [theme.breakpoints.down(1440)]: {
     fontSize: "0.9vw",
     marginBottom: "1.5em",
@@ -115,18 +146,5 @@ export const dividerStyle = {
   marginBottom: "40px",
   "@media (max-width: 1440px)": {
     marginBottom: "5%"
-  },
-}
-
-// subtitle Style
-export const subtitleStyle = {
-  "@media (max-width: 1440px)": {
-    fontSize: "1.3vw"
-  },
-  "@media (max-width: 1042px)": {
-    fontSize: "2.2vw"
-  },
-  "@media (max-width: 500px)": {
-    fontSize: "4vw"
   },
 }

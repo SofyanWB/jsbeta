@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Navbar2 from "../../src/components/appBar/Navbar2";
-import Footer from "../../src/components/footer/index";
+import { HalamanNavbar } from "../../src/components/appBar/Navbar";
 import {
-    // BoxImage1,
-    // BoxImage2,
+    AppBar,
+} from "@material-ui/core";
+import {
+    Nav,
+    NavContainer
+} from '../styles/appbar/indexNavbar2';
+import { HalamanFooter } from "../../src/components/footer/index";
+import { withTranslation } from 'react-i18next';
+import {
     BoxTitle,
     BoxDescription,
     BoxContainer,
@@ -21,14 +27,20 @@ import {
     // Button,
     Card,
     CardMedia,
-    Box,
-    CardContent,
-    useMediaQuery
+    // Box,
+    // CardContent,
+    // useMediaQuery,
+    Skeleton,
+    Pagination,
+    Stack,
+    ImageList,
+    ImageListItem,
+    ImageListItemBar
 } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Carousel from "react-material-ui-carousel";
+// import Carousel from "react-material-ui-carousel";
 
 const useStyles = makeStyles({
     root: {
@@ -36,8 +48,8 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
-        marginTop: "-15vh",
+        height: '900px',
+        // marginTop: "-15vh",
     },
     slideContainer: {
         display: 'flex',
@@ -59,8 +71,25 @@ const useStyles = makeStyles({
     },
 });
 
-const Galeri = () => {
-    const isMobile = useMediaQuery("(max-width: 1042px)");
+function srcset(image, size, rows = 1, cols = 1) {
+    return {
+        src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+        srcSet: `${image}?w=${size * cols}&h=${size * rows
+            }&fit=crop&auto=format&dpr=2 2x`,
+    };
+}
+
+
+function Galeri(props) {
+    const { t } = props;
+
+    document.title = t('galeri.galeriTab');
+
+    const [loading, setLoading] = useState(false);
+    const handleSetLoading = () => {
+        setLoading(true);
+    };
+
     const classes = useStyles();
     const [highlightedIndex, setHighlightedIndex] = useState(0);
     const [clicked, setClicked] = useState(false);
@@ -68,6 +97,8 @@ const Galeri = () => {
     const galeryList = [
         {
             id: 1,
+            rows: 2,
+            cols: 2,
             imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d5c0791226374e12adec4740fa72d7ea/data',
             title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
         },
@@ -93,6 +124,8 @@ const Galeri = () => {
         },
         {
             id: 6,
+            rows: 2,
+            cols: 2,
             imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/12074130d0464454bc0545c059f2c0e0/data',
             title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
         },
@@ -118,7 +151,20 @@ const Galeri = () => {
         },
     ];
 
+    const firstIndex = 0;
+
+    const [pageSizePagination] = useState(5);
+    const [pagePagination, setPagePagination] = useState(1);
+    const [data, setData] = useState([galeryList.slice(firstIndex, pageSizePagination)]);
+
+    const handleChange = (event, value) => {
+        setPagePagination(value);
+        setData(galeryList.slice(firstIndex + pageSizePagination * (value - 1), pageSizePagination * value))
+    }
+
     useEffect(() => {
+        setData(galeryList.slice(0, pageSizePagination));
+
         const interval = setInterval(() => {
             if (!clicked) {
                 setHighlightedIndex((prevIndex) => (prevIndex + 1) % galeryList.length);
@@ -127,7 +173,7 @@ const Galeri = () => {
             }
         }, 3000);
         return () => clearInterval(interval);
-    }, [clicked]);
+    }, [clicked]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleDragEnd = (event, info) => {
         const swipeThreshold = 100; // Adjust this threshold as needed
@@ -168,7 +214,13 @@ const Galeri = () => {
 
     return (
         <>
-            <Navbar2 />
+            <AppBar elevation={0} color='transparent'>
+                <Nav>
+                    <NavContainer>
+                        <HalamanNavbar />
+                    </NavContainer>
+                </Nav>
+            </AppBar>
             <BoxContainer>
                 <BoxAtas>
                     <BoxTitle>Galeri</BoxTitle>
@@ -193,7 +245,8 @@ const Galeri = () => {
                         justifyContent="center"
                         alignItems="stretch">
                         <Grid item xs={12} sm={12} md={3} lg={6} xl={6}>
-                            <img
+                            <Skeleton variant='rounded' animation="wave" sx={{ height: 400, display: loading ? "none" : "block" }} />
+                            <img onLoad={handleSetLoading}
                                 src='https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d5c0791226374e12adec4740fa72d7ea/data'
                                 alt=''
                                 style={{
@@ -201,6 +254,7 @@ const Galeri = () => {
                                     height: "100%",
                                     objectFit: 'cover',
                                     boxShadow: "0 1px 5px rgb(0 0 0 / 0.2)",
+                                    display: loading ? "block" : "none"
                                 }} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={3} lg={6} xl={6}>
@@ -219,81 +273,6 @@ const Galeri = () => {
                     </Grid>
                 </BoxContent>
                 <BoxCarouselAtas>
-                    <Carousel
-                        stopAutoPlayOnHover={true}
-                        navButtonsAlwaysVisible={true}
-                        swipe={true}
-                        height={350}
-                        fullHeightHover={true}
-                        animation={"slide"}
-                        IndicatorIcon={false}
-                        indicatorProps={{
-                            style: {
-                                display: "none"
-                            }
-                        }}
-                        navButtonsProps={{
-                            style: {
-                                position: "absolute",
-                                left: "0",
-                                backgroundColor: isMobile ? "transparent" : "#1455A3",
-                                transform: isMobile ? "translateY(-50%)" : "translateY(-50%)"
-                            }
-                        }}
-                        sx={{
-                            marginLeft: "20%",
-                            marginRight: "-50%",
-
-                        }}>
-                        {galleryCarousel.map((buttonPage, pageIndex) => (
-                            <Grid
-                                container
-                                key={pageIndex}
-                                sx={{
-                                    paddingLeft: "5%",
-                                }}>
-                                {buttonPage.map((button, index) => (
-                                    <Grid item key={index} xs={3} sm={6} md={isMobile ? 6 : 3}
-                                        sx={{
-                                            display: "flex",
-                                            justifyContent: "center",
-                                        }}>
-                                        <Card square={true}
-                                            sx={{
-                                                width: "90%",
-                                                borderRadius: "none",
-                                                boxShadow: "none",
-                                                textAlign: "center",
-                                            }}>
-                                            <CardMedia>
-                                                <Box
-                                                    component="img"
-                                                    sx={{
-                                                        width: "100%",
-                                                        objectFit: "cover",
-                                                        filter: "brightness(0.6)",
-                                                        boxShadow: "2px 2px 20px 0px rgba(0, 0, 0, 0.15)",
-                                                    }} src={button.imageSrc} alt='' />
-                                            </CardMedia>
-                                            <CardContent
-                                                sx={{
-                                                    top: "60%",
-                                                    width: "21%",
-                                                    textAlign: "center",
-                                                    position: "absolute",
-                                                    zIndex: "10",
-                                                    color: "white"
-                                                }}>
-                                                <Typography>{button.title}</Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        ))}
-                    </Carousel>
-                </BoxCarouselAtas>
-                <BoxCarouselBawah>
                     <div className={classes.root}>
                         <div className={classes.slideContainer}>
                             <AnimatePresence>
@@ -329,8 +308,12 @@ const Galeri = () => {
                                                 animate={{ scale: isHighlighted ? 1.2 : 0.8 }}
                                                 transition={{ duration: 0.3 }}>
                                                 <Card elevation={isHighlighted ? 10 : 1}>
-                                                    <CardMedia
-                                                        sx={{ width: '100%' }}
+                                                    <Skeleton variant='rounded' animation="wave" sx={{ height: 400, display: loading ? "none" : "block" }} />
+                                                    <CardMedia onLoad={handleSetLoading}
+                                                        sx={{
+                                                            width: '100%',
+                                                            display: loading ? "block" : "none"
+                                                        }}
                                                         component="img"
                                                         image={galeryList[index].imageSrc}
                                                         alt={`image ${galeryList[index].id}`}
@@ -353,11 +336,132 @@ const Galeri = () => {
                             </AnimatePresence>
                         </div>
                     </div>
+                </BoxCarouselAtas>
+                <BoxCarouselBawah>
+                    <ImageList
+                        sx={{ mb: 10, width: "100%", overflow: "hidden" }}
+                        variant="quilted"
+                        cols={4}
+                        gap={10}
+                        rowHeight={300}>
+                        {data.map((item, i) => (
+                            <ImageListItem onLoad={handleSetLoading} key={i} cols={item.cols || 1} rows={item.rows || 1}>
+                                <Skeleton variant='rounded' animation="wave" sx={{ height: "100%", display: loading ? "none" : "block" }} />
+                                <img
+                                    {...srcset(item.imageSrc, 500, item.rows, item.cols)}
+                                    alt={item.title}
+                                    style={{ display: loading ? "block" : "none" }}
+                                />
+                                <Skeleton variant='text' animation="wave" sx={{ height: 50, display: loading ? "none" : "block" }} />
+                                <ImageListItemBar title={item.title}
+                                    sx={{
+                                        display: loading ? "block" : "none",
+                                        height: "100px",
+
+                                        "& .MuiImageListItemBar-title": {
+                                            // textAlign: "center",
+                                            whiteSpace: "pre-wrap"
+                                        }
+                                    }} />
+                            </ImageListItem>
+                        ))}
+                    </ImageList>
+                    <Stack alignItems="center" spacing={2}>
+                        <Pagination
+                            shape="rounded"
+                            count={Math.ceil(galeryList.length / pageSizePagination)}
+                            page={pagePagination}
+                            onChange={handleChange}
+                            sx={{
+                                marginBottom: "80px"
+                            }} />
+                    </Stack>
                 </BoxCarouselBawah>
+
+                {/* 
+                <BoxCarouselAtas>
+                    <Carousel
+                        stopAutoPlayOnHover={true}
+                        navButtonsAlwaysVisible={true}
+                        swipe={true}
+                        height={350}
+                        fullHeightHover={true}
+                        animation={"slide"}
+                        IndicatorIcon={false}
+                        indicatorProps={{
+                            style: {
+                                display: "none"
+                            }
+                        }}
+                        navButtonsProps={{
+                            style: {
+                                position: "absolute",
+                                left: "0",
+                                backgroundColor: isMobile ? "transparent" : "#1455A3",
+                                transform: isMobile ? "translateY(-50%)" : "translateY(-50%)"
+                            }
+                        }}
+                        sx={{
+                            marginLeft: "20%",
+                            marginRight: "-50%",
+                        }}>
+                        {galleryCarousel.map((buttonPage, pageIndex) => (
+                            <Grid
+                                container
+                                key={pageIndex}
+                                sx={{
+                                    paddingLeft: "5%",
+                                }}>
+                                {buttonPage.map((button, index) => (
+                                    <Grid item key={index} xs={3} sm={6} md={isMobile ? 6 : 3}
+                                        sx={{
+                                            display: "flex",
+                                            justifyContent: "center",
+                                        }}>
+                                        <Card square={true}
+                                            sx={{
+                                                width: "90%",
+                                                borderRadius: "none",
+                                                boxShadow: "none",
+                                                textAlign: "center",
+                                            }}>
+                                            <Skeleton variant='rounded' animation="wave" sx={{ height: 400, display: loading ? "none" : "block" }} />
+                                            <CardMedia onLoad={handleSetLoading} sx={{ display: loading ? "block" : "none" }}>
+                                                <Box
+                                                    component="img"
+                                                    sx={{
+                                                        width: "100%",
+                                                        objectFit: "cover",
+                                                        filter: "brightness(0.6)",
+                                                        boxShadow: "2px 2px 20px 0px rgba(0, 0, 0, 0.15)",
+                                                    }} src={button.imageSrc} alt='' />
+                                            </CardMedia>
+                                            <Skeleton variant='rounded' animation="wave" sx={{ width: 200, height: 50, display: loading ? "none" : "block" }} />
+                                            <CardContent onLoad={handleSetLoading}
+                                                sx={{
+                                                    top: "60%",
+                                                    width: "21%",
+                                                    textAlign: "center",
+                                                    position: "absolute",
+                                                    zIndex: "10",
+                                                    color: "white",
+                                                    display: loading ? "block" : "none"
+                                                }}>
+                                                <Typography>{button.title}</Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        ))}
+                    </Carousel>
+                </BoxCarouselAtas> 
+                */}
+
             </BoxContainer >
-            <Footer />
+            <HalamanFooter />
         </>
     );
 };
 
-export default Galeri;
+export const RouteGaleri = withTranslation()(Galeri);

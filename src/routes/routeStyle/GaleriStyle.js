@@ -12,8 +12,8 @@ export const BoxAtas = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxContent = styled(Box)(({ theme }) => ({
-    marginLeft: "7%",
-    marginRight: "7%",
+    marginLeft: "6%",
+    marginRight: "6%",
     justifyContent: "center",
     textAlign: "center",
 }));
@@ -38,6 +38,8 @@ export const BoxCarouselBawah = styled(Box)(({ theme }) => ({
     position: "sticky",
     overflow: "hidden",
     marginTop: "6%",
+    marginLeft: "6%",
+    marginRight: "6%",
     // marginBottom: "3%",
 
     [theme.breakpoints.down(1440)]: {

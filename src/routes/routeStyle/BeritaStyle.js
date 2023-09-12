@@ -4,6 +4,7 @@ import {
     Typography
 } from "@mui/material";
 import { Box } from "@mui/system";
+import theme from "../../styles/theme";
 
 export const BoxContainer = styled(Box)(({ theme }) => ({
     backgroundImage: "linear-gradient(rgba(186, 223, 255, 0.2), rgba(0, 0, 0, 0))",
@@ -119,4 +120,70 @@ export const DividerSemuaBeritaKanan = () => {
                 }} />
         </div>
     )
+}
+
+export const CardContentSectionAtas = {
+    top: "35%",
+    width: "50%",
+    marginLeft: "8%",
+    textAlign: "left",
+    position: "absolute",
+    zIndex: "10",
+    color: "white",
+
+    [theme.breakpoints.down(1440)]: {
+        marginLeft: "8%",
+        width: "60%",
+        top: "40%",
+    },
+    [theme.breakpoints.down(1043)]: {
+        marginLeft: "8%",
+        width: "60%",
+        top: "35%",
+    },
+    [theme.breakpoints.down(900)]: {
+        marginLeft: "8%",
+        width: "80%",
+        top: "35%",
+    },
+    [theme.breakpoints.down(800)]: {
+        marginLeft: "8%",
+        width: "80%",
+        top: "35%",
+    },
+    [theme.breakpoints.down(700)]: {
+        marginLeft: "8%",
+        width: "80%",
+        top: "30%",
+    },
+    [theme.breakpoints.down(600)]: {
+        marginLeft: "8%",
+        width: "80%",
+        top: "30%",
+    },
+    [theme.breakpoints.down(500)]: {
+        marginLeft: "8%",
+        width: "90%",
+        top: "30%",
+    },
+    [theme.breakpoints.down(401)]: {
+        marginLeft: "8%",
+        width: "90%",
+        top: "25%",
+    },
+    [theme.breakpoints.down(400)]: {
+        marginLeft: "0",
+        width: "98%",
+        top: "25%",
+    },
+    [theme.breakpoints.down(350)]: {
+        marginLeft: "0",
+        width: "90%",
+        top: "20%",
+    },
+    [theme.breakpoints.down(260)]: {
+        marginLeft: "0",
+        width: "98%",
+        top: "10%",
+    },
 }

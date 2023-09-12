@@ -9,9 +9,16 @@ import {
   BoxImageLatar,
   BoxTitle,
 } from "../../../../styles/peta";
-import { Dialog1, Dialog2, Dialog3 } from "./dialogButton";
+import {
+  HalamanDialog1,
+  HalamanDialog2,
+  HalamanDialog3
+} from "./dialogButton";
 
-function Peta() {
+import { withTranslation } from "react-i18next";
+
+function Peta(props) {
+  const { t } = props;
 
   return (
     <BoxContainer >
@@ -19,10 +26,10 @@ function Peta() {
         <BoxImageLatar src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/979388b0f1944b23aed602beab869092/data" />
         <BoxTitle
           variant="h3">
-          Peta Jakarta Satu
+          {t('beranda.peta.judul')}
         </BoxTitle>
         <BoxDescription variant="subtitle">
-          Eksplorasi Data Spasial DKI Jakarta dalam berbagai tampilan serta menyajikan Peta Dasar DKI Jakarta dalam beragam Visualisasi
+          {t('beranda.peta.keterangan')}
         </BoxDescription>
         <BoxImage src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d3fc334e61d049809c6316b8185f79ef/data" />
       </BoxContent>
@@ -31,12 +38,12 @@ function Peta() {
           sx={{
             width: "400px"
           }} />
-        <Dialog1 />
-        <Dialog3 />
-        <Dialog2 />
+        <HalamanDialog1 />
+        <HalamanDialog3 />
+        <HalamanDialog2 />
       </BoxContent2>
     </BoxContainer>
   );
 }
 
-export default Peta;
+export const HalamanPeta = withTranslation()(Peta);

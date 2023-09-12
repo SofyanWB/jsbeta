@@ -1,6 +1,7 @@
 import { Box, Button, Dialog, Popover, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link as RouterLink } from 'react-router-dom';
+import { withTranslation } from "react-i18next";
 import {
   BoxContainerHover1,
   BoxContainerHover2,
@@ -17,7 +18,9 @@ import {
 
 } from "../../../../styles/peta/index";
 
-export const Dialog1 = () => {
+function Dialog1(props) {
+  const { t } = props;
+
   const [open, setOpen] = useState(null);
   const [lastClickedButton, setLastClickedButton] = useState(null);
   const [scrolling, setScrolling] = useState(false);
@@ -57,18 +60,15 @@ export const Dialog1 = () => {
     <div>
       <ButtonDialog
         onMouseEnter={handleMouseEnter}
-        sx={iconButtonStyles}
-      >
+        sx={iconButtonStyles}>
         <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/0ad00b7b1e0f4e2a8b8a69b02ab26985/data" />
-        Interaktif
+        {t('beranda.peta.dialog.interaktif')}
       </ButtonDialog>
-
       <Dialog
         open={Boolean(open)}
         sx={{
           backdropFilter: "blur(5px) sepia(5%)"
-        }}
-      >
+        }}>
         <Popover
           open={Boolean(open)}
           anchorEl={open}
@@ -83,23 +83,20 @@ export const Dialog1 = () => {
           disablePortal
           onMouseLeave={handleClosePopover}
           onClose={handleClosePopover}
-          PaperProps={{ sx: { borderRadius: '20px' } }}
-        >
-          <BoxContainerHover1
-            onMouseLeave={handleClosePopover}
-          >
-            <Button 
-            component={RouterLink} to="/interaktif"
-            target="_blank"
-            sx={iconButtonStyles2} 
-            ref={lastClickedButton}>
+          PaperProps={{ sx: { borderRadius: '20px' } }}>
+          <BoxContainerHover1 onMouseLeave={handleClosePopover}>
+            <Button
+              component={RouterLink} to="/interaktif"
+              target="_blank"
+              sx={iconButtonStyles2}
+              ref={lastClickedButton}>
               <Typography sx={TypoHoverTitle}>
-                Interaktif
+              {t('drawer.interaktif')}
               </Typography>
               <ContentButtonHover>
                 <ImageButtonHover src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/0ad00b7b1e0f4e2a8b8a69b02ab26985/data" />
                 <Typography sx={hoverItem}>
-                  Jelajahi Seluruh Informasi Spasial DKI Jakarta dengan Berbagai Fitur
+                  {t('beranda.peta.dialog.interaktifDetail')}
                 </Typography>
               </ContentButtonHover>
             </Button>
@@ -110,8 +107,10 @@ export const Dialog1 = () => {
   );
 };
 
+export const HalamanDialog1 = withTranslation()(Dialog1);
 
-export const Dialog2 = () => {
+function Dialog2(props) {
+  const { t } = props;
 
   const [open, setOpen] = useState(null);
   const [lastClickedButton, setLastClickedButton] = useState(null);
@@ -149,28 +148,18 @@ export const Dialog2 = () => {
   }, [open, lastClickedButton]);
 
   return (
-
     <div>
-
       <ButtonDialog
         onMouseEnter={handleMouseEnter}
-        sx={iconButtonStyles}
-      >
+        sx={iconButtonStyles}>
         <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/096d59b754b64b27953d8668e6474e43/data" />
-
-        Tematik
-
+        {t('beranda.peta.dialog.tematik')}
       </ButtonDialog>
-
       <Dialog
         open={Boolean(open)}
         sx={{
           backdropFilter: "blur(5px) sepia(5%)"
-        }}
-
-      //onMouseOutCapture={()=> setOpen(false)}
-      >
-
+        }}>
         <Popover
           open={Boolean(open)}
           anchorEl={open}
@@ -185,52 +174,35 @@ export const Dialog2 = () => {
           disablePortal // menonaktifkan portal agar event onMouseLeave berfungsi
           onMouseLeave={handleClosePopover} // menutup popover ketika pointer mouse meninggalkan area popover
           onClose={handleClosePopover}
-          PaperProps={{ sx: { borderRadius: '20px' } }}
-        >
-
-          <BoxContainerHover1
-            onMouseLeave={handleClosePopover}
-          >
-
+          PaperProps={{ sx: { borderRadius: '20px' } }}>
+          <BoxContainerHover1 onMouseLeave={handleClosePopover}>
             <Button
-            component={RouterLink} to="/tematik"
-              sx={iconButtonStyles2}
-            >
+              component={RouterLink} to="/tematik"
+              sx={iconButtonStyles2}>
               <Typography
                 sx={TypoHoverTitle}>
-                Tematik
+                {t('drawer.tematik')}
               </Typography>
-
               <ContentButtonHover
                 paddingLeft="25px"
-                paddingRight="25px"
-              >
-
+                paddingRight="25px">
                 <ImageButtonHover src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/096d59b754b64b27953d8668e6474e43/data" />
-                <Typography
-                  sx={hoverItem}
-                >
-                  Ekplorasi Data Spasial Berdasarkan Tema
-
+                <Typography sx={hoverItem}>
+                  {t('beranda.peta.dialog.tematikDetail')}
                 </Typography>
-
               </ContentButtonHover>
-
             </Button>
-
           </BoxContainerHover1>
-
-
         </Popover>
-
       </Dialog>
-
     </div>
-
   )
 }
 
-export const Dialog3 = () => {
+export const HalamanDialog2 = withTranslation()(Dialog2);
+
+function Dialog3(props) {
+  const { t } = props;
 
   const [open, setOpen] = useState(null);
   const [lastClickedButton, setLastClickedButton] = useState(null);
@@ -268,28 +240,18 @@ export const Dialog3 = () => {
   }, [open, lastClickedButton]);
 
   return (
-
     <div>
-
       <ButtonDialog
         onMouseEnter={handleMouseEnter}
-        sx={iconButtonStyles}
-      >
-
+        sx={iconButtonStyles}>
         <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/9b24667a76444110a813e8f813fcba74/data" />
-        Peta 3D
-
+        {t('beranda.peta.dialog.peta3d')}
       </ButtonDialog>
-
       <Dialog
         open={Boolean(open)}
         sx={{
           backdropFilter: "blur(5px) sepia(5%)"
-        }}
-
-      //onMouseOutCapture={()=> setOpen(false)}
-      >
-
+        }}>
         <Popover
           open={Boolean(open)}
           anchorEl={open}
@@ -308,45 +270,29 @@ export const Dialog3 = () => {
             sx: {
               borderRadius: '20px',
             }
-          }}
-        >
+          }}>
 
-          <BoxContainerHover2
-            onMouseLeave={handleClosePopover}
-          >
-            <Typography
-              sx={TypoHoverTitle2}
-            >
-
+          <BoxContainerHover2 onMouseLeave={handleClosePopover}>
+            <Typography sx={TypoHoverTitle2}>
               Peta 3D
-
             </Typography>
 
             <Box>
-
               <ContentButtonHover
                 paddingLeft="25px"
                 paddingRight="50px">
-
                 <ImageButtonHover
                   src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/9b24667a76444110a813e8f813fcba74/data" />
-
-                <Typography
-                  sx={hoverItem}
-                >
-
-                  Visualisasi peta dalam bentuk 3 dimensi (3D)
-
+                <Typography sx={hoverItem}>
+                  {t('beranda.peta.dialog.peta3dDetail')}
                 </Typography>
-
               </ContentButtonHover>
-
             </Box>
 
             <ButtonHoverAction>
               <Button
-              component={RouterLink} to="/peta-3d-basemaps"
-              target="_blank"
+                component={RouterLink} to="/peta-3d-basemaps"
+                target="_blank"
                 sx={{
                   bgcolor: "#DFE6E9",
                   borderRadius: "15px",
@@ -371,8 +317,8 @@ export const Dialog3 = () => {
               </Button>
 
               <Button
-              component={RouterLink} to="/peta-3d-transit-orientied"
-              target="_blank"
+                component={RouterLink} to="/peta-3d-transit-oriented"
+                target="_blank"
                 sx={{
                   bgcolor: "rgba(242, 170, 134, 0.61)",
                   borderRadius: "15px",
@@ -394,14 +340,11 @@ export const Dialog3 = () => {
                 3D Transit Oriented
               </Button>
             </ButtonHoverAction>
-
           </BoxContainerHover2>
-
         </Popover>
-
       </Dialog>
-
     </div>
-
   )
-} 
+}
+
+export const HalamanDialog3 = withTranslation()(Dialog3);

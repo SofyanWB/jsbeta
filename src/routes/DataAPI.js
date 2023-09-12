@@ -1,6 +1,14 @@
 import React from 'react';
-import Navbar2 from "../../src/components/appBar/Navbar2";
-import Footer from "../../src/components/footer/index";
+import { HalamanNavbar } from "../../src/components/appBar/Navbar";
+import {
+    AppBar,
+} from "@material-ui/core";
+import {
+    Nav,
+    NavContainer
+} from '../styles/appbar/indexNavbar2';
+import { HalamanFooter } from "../../src/components/footer/index";
+import { withTranslation } from 'react-i18next';
 import { Divider } from '@mui/material';
 import {
     CustomizedTables,
@@ -11,16 +19,25 @@ import {
     BoxLittleTitle,
 } from './routeStyle/DataAPIStyle';
 
-const DataAPI = () => {
+function DataAPI(props) {
+    const { t } = props;
+
+    document.title = t('dataAPI.dataAPITab');
 
     return (
         <>
-            <Navbar2 />
+            <AppBar elevation={0} color='transparent'>
+                <Nav>
+                    <NavContainer>
+                        <HalamanNavbar />
+                    </NavContainer>
+                </Nav>
+            </AppBar>
             {/* <BoxImage1 src="/images/menuPeta/Rectangle_1.png" /> */}
             {/* <BoxImage2 src="/images/menuPeta/bentuk.png" /> */}
             <BoxContainer>
                 <BoxAtas>
-                    <BoxTitle>Data API</BoxTitle>
+                    <BoxTitle>{t('dataAPI.judul')}</BoxTitle>
                     <Divider
                         sx={{
                             margin: "0 auto",
@@ -31,21 +48,21 @@ const DataAPI = () => {
                             marginBottom: "20px"
                         }} />
                     <BoxLittleTitle>
-                        Memberikan informasi list service data berupa web map service dan web feature service yang terdapat pada Webgis Jakarta Satu.
+                        {t('dataAPI.keterangan')}
                     </BoxLittleTitle>
                     <BoxTitle>
-                        Tabel Data API Web Feature Service (WFS)
+                        {t('dataAPI.table1')}
                     </BoxTitle>
                     <CustomizedTables />
                     <BoxTitle>
-                        Tabel Data API Web Map Service (WMS)
+                        {t('dataAPI.table2')}
                     </BoxTitle>
                     <CustomizedTables2 />
                 </BoxAtas>
             </BoxContainer>
-            <Footer />
+            <HalamanFooter />
         </>
     );
 };
 
-export default DataAPI;
+export const RouteDataAPI = withTranslation()(DataAPI);

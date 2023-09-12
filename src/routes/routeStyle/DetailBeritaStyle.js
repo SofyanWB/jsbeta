@@ -10,4 +10,9 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
     marginBottom: "20vh",
     zIndex: "1",
     textAlign: "center",
+
+    [theme.breakpoints.down(415)]: {
+        marginLeft: "3%",
+        marginRight: "3%",
+    },
 }));

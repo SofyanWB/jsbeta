@@ -7,7 +7,7 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   padding: "0px 0px",
   paddingBottom: "100px",
-  marginTop: "150px",
+  marginTop: "120px",
 
   [theme.breakpoints.down(1043)]: {
     display: "flex",
@@ -16,6 +16,46 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down(762)]: {
     marginTop: "10vw"
+  },
+}));
+
+export const BoxContent = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  maxWidth: "750px",
+  paddingRight: "60px",
+  paddingLeft: "0px",
+  paddingBottom: "0px",
+
+  [theme.breakpoints.down(2160)]: {
+    maxWidth: "50vw",
+  },
+  // [theme.breakpoints.down(1440)]: {
+  //   maxWidth: "60vw",
+  // },
+  [theme.breakpoints.down(1043)]: {
+    width: "60vw",
+    paddingRight: "0px"
+  },
+  [theme.breakpoints.down(413)]: {
+    maxWidth: "80vw",
+  },
+}));
+
+export const BoxContent2 = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  maxWidth: "600px",
+  paddingBottom: "0px",
+  zIndex: "20",
+
+  [theme.breakpoints.down(1440)]: {
+    width: "25vw",
+  },
+  [theme.breakpoints.down(1043)]: {
+    width: "55vw",
   },
 }));
 
@@ -52,45 +92,16 @@ export const BoxImageLatar = styled("img")(({ src, theme }) => ({
 
 }));
 
-
-export const BoxContent = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  maxWidth: "600px",
-  paddingRight: "60px",
-  paddingLeft: "0px",
-  paddingBottom: "0px",
-  [theme.breakpoints.down(1440)]: {
-    width: "40vw",
-  },
-  [theme.breakpoints.down(1043)]: {
-    width: "60vw",
-    paddingRight: "0px"
-  },
-}));
-
-export const BoxContent2 = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  maxWidth: "600px",
-  paddingBottom: "0px",
-  zIndex: "20",
-
-  [theme.breakpoints.down(1440)]: {
-    width: "25vw",
-  },
-  [theme.breakpoints.down(1043)]: {
-    width: "55vw",
-  },
-}));
-
 export const BoxTitle = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.5,
+  fontSize: "44px",
+  fontStyle: "normal",
+  fontWeight: 500,
+  lineHeight: "normal",
+  letterSpacing: "0.066px",
   marginBottom: "20px",
   color: Colors.title,
   position: "relative",
+
   [theme.breakpoints.down(1440)]: {
     fontSize: "3.3vw",
   },
@@ -104,8 +115,11 @@ export const BoxTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxDescription = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.8,
-  fontSize:"19px",
+  fontSize: "18px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "180.5%",
+  letterSpacing: "0.027px",
   marginBottom: "3em",
   maxWidth: "100%",
   position: "relative",
@@ -133,9 +147,13 @@ export const BoxImageButton = styled("img")(({ src, theme }) => ({
 }));
 
 export const ButtonDialog = styled(Button)(({ theme }) => ({
+  fontSize: "28px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "normal",
+
   width: "89%",
   height: "65%",
-  fontSize: "27px",
   marginBottom: "50px",
   backgroundColor: "white",
   color: Colors.title,
@@ -197,7 +215,7 @@ export const TypoHoverTitle = {
   textTransform: "none",
   fontSize: "20px",
   width: "80px",
-  marginRight:"75%",
+  marginRight: "75%",
   "@media (max-width: 1440px)": {
     fontSize: "1.4vw",
   },
@@ -215,7 +233,7 @@ export const TypoHoverTitle2 = {
   textTransform: "none",
   fontSize: "20px",
   marginLeft: "10px",
-  marginBottom:"10px",
+  marginBottom: "10px",
   "@media (max-width: 1440px)": {
     fontSize: "1.4vw",
   },
@@ -289,15 +307,15 @@ export const ContentButtonHover = styled(Box)(({ theme }) => ({
   padding: "15px",
 
   "@media (max-width: 1440px)": {
-    padding:"3%"
+    padding: "3%"
   },
   "@media (max-width: 1043px)": {
     paddingLeft: "3%",
     paddingRight: "3%",
-    marginLeft:"3%"
+    marginLeft: "3%"
   },
   "@media (max-width: 600px)": {
-    paddingTop:"1%"
+    paddingTop: "1%"
   },
 }));
 

@@ -6,8 +6,13 @@ export const Nav = styled.nav`
    background: rgba(255, 255, 255, 0.5);
    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
    width: 95%;
+   max-width: 1910px;
    margin-top: 20px;
-   max-width: 1300px;
+
+   @media screen and (max-width: 500px) {
+      margin-top: 10px;
+   }
+
    margin-left: auto;
    height: 65px;
    margin-right: auto;
@@ -28,7 +33,23 @@ export const NavContainer = styled.div`
    z-index: 1;
    width: 100%;
    padding: 15px;
-   max-width: 1500px;
+   // max-width: 1500px;
+
+   .MuiToggleButtonGroup-grouped {
+      border-radius: 20px;
+      color: black;
+      width: 40px;
+      height: 40px;
+   }
+  
+   .MuiToggleButtonGroup-root {
+      .Mui-selected,
+      .Mui-selected:hover {
+         background-color: #ED783E;
+         color: white;
+         font-weight: bold;
+      }
+   }
 `;
 
 export const NavLogo = styled.div`

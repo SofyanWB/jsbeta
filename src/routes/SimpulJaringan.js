@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import Navbar2 from "../../src/components/appBar/Navbar2";
-import Footer from "../../src/components/footer/index";
+import { HalamanNavbar } from "../../src/components/appBar/Navbar";
+import {
+    AppBar,
+} from "@material-ui/core";
+import {
+    Nav,
+    NavContainer
+} from '../styles/appbar/indexNavbar2';
+import { HalamanFooter } from "../../src/components/footer/index";
+import { withTranslation } from 'react-i18next';
 import {
     BoxTitle,
     BoxAtas,
     BoxContainer,
     BoxPagination,
     BoxLittleTitle,
-    BoxTitlePagination,
+    BoxTitlePagination
 } from "../routes/routeStyle/SimpulJaringanStyle";
 import {
     OutlinedInput,
@@ -20,9 +28,10 @@ import {
     CardActionArea,
     Divider,
     useMediaQuery,
+    Skeleton
 } from '@mui/material';
 
-const SimpulJaringan = () => {
+function SimpulJaringan(props) {
     const datas = [
         {
             imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/a0d98d40f3ef40a5b4e8433fadb62dd1/data',
@@ -162,6 +171,15 @@ const SimpulJaringan = () => {
 
     ];
 
+    const { t } = props;
+
+    document.title = t('simpulJaringan.simpulJaringanTab');
+
+    const [loading, setLoading] = useState(false);
+    const handleSetLoading = () => {
+        setLoading(true);
+    };
+
     const firstIndex = 0;
 
     const isMobile = useMediaQuery("(max-width: 800px)");
@@ -193,10 +211,16 @@ const SimpulJaringan = () => {
 
     return (
         <>
-            <Navbar2 />
+            <AppBar elevation={0} color='transparent'>
+                <Nav>
+                    <NavContainer>
+                        <HalamanNavbar />
+                    </NavContainer>
+                </Nav>
+            </AppBar>
             <BoxContainer>
                 <BoxAtas>
-                    <BoxTitle>Simpul Jaringan Spasial</BoxTitle>
+                    <BoxTitle>{t('simpulJaringan.judul')}</BoxTitle>
                     <Divider
                         sx={{
                             margin: "0 auto",
@@ -207,10 +231,10 @@ const SimpulJaringan = () => {
                             marginBottom: "20px"
                         }} />
                     <BoxLittleTitle>
-                        Data spasial yang terintegrasi, nikmati solusi mudah dalam pengintegrasian data
+                        {t('simpulJaringan.keterangan')}
                     </BoxLittleTitle>
                     <OutlinedInput
-                        placeholder="cari simpul jaringan berdasarkan nama"
+                        placeholder={t('simpulJaringan.cariData')}
                         value={searchTerm}
                         onChange={handleSearchChange}
                         sx={{
@@ -231,55 +255,71 @@ const SimpulJaringan = () => {
                         {data.map((simpulJaringan, i) => (
                             <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
                                 <Card key={simpulJaringan.id} elevation={0} square={true} sx={{ background: "none", height: "100%" }}>
+                                    <Skeleton variant='rounded' animation="wave"
+                                        sx={{
+                                            margin: "20px 20px 0 20px",
+                                            height: isMobile ? 100 : 180,
+                                            display: loading ? "none" : "block"
+                                        }} />
+                                    <Skeleton variant='text' animation="wave"
+                                        sx={{
+                                            margin: "0 20px 0 20px",
+                                            height: isMobile ? 30 : 50,
+                                            display: loading ? "none" : "block"
+                                        }} />
                                     <CardActionArea href={simpulJaringan.link} target='_blank' disableRipple
                                         sx={{
-                                            p: 3,
+                                            padding: loading ? 3 : 0,
                                             borderRadius: "30px",
                                             height: "100%"
                                         }}>
-                                        <CardMedia
+                                        <CardMedia onLoad={handleSetLoading}
                                             component='div'
                                             sx={{
-                                                display: "flex",
                                                 justifyContent: "center",
+                                                display: loading ? "flex" : "none"
                                             }}>
                                             {simpulJaringan.imageSrc && (
-                                                <Box style={{ height: "100px", alignItems: 'center' }}>
+                                                <Box style={{ height: "100px", alignItems: 'center', }}>
                                                     <img
                                                         style={{
                                                             // width: "100%",
                                                             height: isMobile ? "70%" : "100px",
-                                                            objectFit: 'cover',
+                                                            objectFit: 'cover'
                                                         }}
                                                         alt="" src={simpulJaringan.imageSrc} />
                                                 </Box>
                                             )}
                                         </CardMedia>
-                                        <BoxTitlePagination 
-                                        sx={{
-                                            paddingTop: isMobile ? "0" : "10%",
-                                            fontSize: "1.1em"
-                                        }}>{simpulJaringan.title}</BoxTitlePagination>
+                                        <BoxTitlePagination onLoad={handleSetLoading}
+                                            sx={{
+                                                paddingTop: isMobile ? "0" : "10%",
+                                                display: loading ? "block" : "none"
+                                            }}>{simpulJaringan.title}</BoxTitlePagination>
                                     </CardActionArea>
                                 </Card>
                             </Grid>
                         ))}
                     </Grid>
-                    <Stack alignItems="center" spacing={2}>
-                        <Pagination
-                            shape="rounded"
-                            count={Math.ceil(datas.length / pageSize)}
-                            page={page}
-                            onChange={handleChange}
-                            sx={{
-                                marginBottom: "80px"
-                            }} />
-                    </Stack>
+                    {loading ?
+                        (
+                            <Stack alignItems="center" spacing={2}>
+                                <Pagination
+                                    shape="rounded"
+                                    count={Math.ceil(datas.length / pageSize)}
+                                    page={page}
+                                    onChange={handleChange}
+                                    sx={{
+                                        margin: "80px 0 80px 0"
+                                    }} />
+                            </Stack>
+                        ) : null
+                }
                 </BoxPagination>
             </BoxContainer>
-            <Footer />
+            <HalamanFooter />
         </>
     );
 };
 
-export default SimpulJaringan;
+export const RouteSimpulJaringan = withTranslation()(SimpulJaringan);

@@ -89,7 +89,12 @@ export const BoxTutorialdanPanduanIRK = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxTitle = styled(Typography)(({ theme }) => ({
-    lineHeight: 1.5,
+    fontSize: "44px",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "normal",
+    letterSpacing: "0.066px",
+
     marginBottom: "20px",
     color: Colors.title,
     position: "relative",
@@ -109,7 +114,12 @@ export const BoxTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxTitle2 = styled(Typography)(({ theme }) => ({
-    lineHeight: 1.1,
+    fontSize: "44px",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "normal",
+    letterSpacing: "0.066px",
+
     marginBottom: "20px",
     color: Colors.title,
     position: "relative",

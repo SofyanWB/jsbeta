@@ -57,12 +57,17 @@ export const BoxContent2 = styled(Box)(({ theme }) => ({
 
 
 export const BoxTitle = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.1,
-  fontSize: "46px",
+  fontSize: "44px",
+  fontStyle: "normal",
+  fontWeight: 500,
+  lineHeight: "normal",
+  letterSpacing: "0.066px",
+  color: "#003577",
+
   textAlign: "center",
   marginBottom: "30px",
   maxWidth: 800,
-  color: "#004581",
+
   [theme.breakpoints.down(1440)]: {
     fontSize: "3.2vw",
     marginBottom: "2vw",
@@ -83,12 +88,16 @@ export const BoxTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxDescription = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.8,
-  fontSize: "19px",
+  fontSize: "18px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "180.5%",
+  letterSpacing: "0.027px",
+
   marginBottom: "1.5em",
   textAlign: "center",
   maxWidth: "70%",
-  
+
   [theme.breakpoints.down(1043)]: {
     fontSize: "2vw",
   },
@@ -230,7 +239,7 @@ export const button600px = {
 export const kotakGambar = {
   height: "30%",
   width: "70%",
-  backgroundColor: "rgb(101, 158, 188, 0.1)",
+  // backgroundColor: "rgb(101, 158, 188, 0.1)",
   borderRadius: 4,
   margin: "20px",
   display: "flex",

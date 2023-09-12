@@ -41,12 +41,15 @@ export const BoxImage2 = styled("img")(({ src }) => ({
 }));
 
 export const BoxTitle = styled(Typography)(({ theme }) => ({
-    lineHeight: 1.5,
+    fontSize: "32px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "normal",
+    color: "#004581",
+
     zIndex: "10",
-    fontSize: "2em",
     textAlign: "center",
     marginBottom: "15px",
-    color: "#004581",
 
     [theme.breakpoints.down(1440)]: {
         fontSize: "2.2vw",
@@ -91,11 +94,15 @@ export const BoxTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxLittleTitle = styled(Typography)(({ theme }) => ({
-    fontSize: "1em",
+    fontSize: "18px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "180.5%",
+    letterSpacing: "0.027px",
+    color: "rgba(0, 0, 0, 0.6)",
+
     textAlign: "center",
     marginBottom: "45px",
-
-    color: "rgba(0, 0, 0, 0.6)",
 
     [theme.breakpoints.down(1440)]: {
         fontSize: "1.5vw",
@@ -124,7 +131,12 @@ export const BoxLittleTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxTitlePagination = styled(Typography)(({ theme }) => ({
-    fontSize: "1em",
+    fontSize: "16px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "165%",
+    letterSpacing: "0.024px",
+    color: "rgba(0, 0, 0, 0.80)",
     textAlign: "center",
 
     [theme.breakpoints.down(1440)]: {

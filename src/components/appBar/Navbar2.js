@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   useTheme,
   useMediaQuery,
   Box
 } from "@material-ui/core";
-import DrawerComponent from "./Drawer";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Skeleton from '@mui/material/Skeleton';
+import { HalamanDrawer } from "./Drawer";
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Nav,
@@ -19,6 +22,16 @@ function Navbar2() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("1070"));
 
+  const [languageSelected, setLanguageSelected] = useState('id');
+  const handleChange = (event, newLanguageSelected) => {
+    setLanguageSelected(newLanguageSelected);
+  };
+
+  const [loading, setLoading] = useState(false);
+  const handleSetLoading = () => {
+    setLoading(true);
+  };
+
   return (
     <AppBar className="navbar" elevation={0}>
       <Nav>
@@ -30,9 +43,10 @@ function Navbar2() {
               marginLeft: isMobile ? "auto" : "0",
               marginRight: "0"
             }}>
-            <img style={{ width: '180px' }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/8b934e82c23c443c8e54c46fad3cee2d/data" alt="" />
+            <Skeleton variant='rounded' animation="wave" sx={{ width: 180, height: 50, display: loading ? "none" : "block" }} />
+            <img onLoad={handleSetLoading} style={{ width: '180px', display: loading ? "block" : "none" }} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/8b934e82c23c443c8e54c46fad3cee2d/data" alt="" />
           </Box>
-          {isMobile ? (<DrawerComponent />) : (
+          {isMobile ? (<HalamanDrawer />) : (
             <NavItem className="menus">
               {ItemList.map((menu, index) => {
                 const depthLevel = 0;
@@ -43,6 +57,27 @@ function Navbar2() {
                     depthLevel={depthLevel} />
                 );
               })}
+              <ToggleButtonGroup
+                color="primary"
+                size="small"
+                value={languageSelected}
+                exclusive
+                onChange={handleChange}
+                aria-label="Platform"
+                sx={{
+                  marginLeft: "10px",
+                  marginRight: "3px",
+
+
+                  "& .MuiToggleButtonGroup-grouped": {
+                    borderRadius: "20px",
+                    color: "black",
+                  }
+                }}
+              >
+                <ToggleButton value="id">ID</ToggleButton>
+                <ToggleButton value="en">EN</ToggleButton>
+              </ToggleButtonGroup>
             </NavItem>
           )}
         </NavContainer>

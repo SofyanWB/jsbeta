@@ -20,7 +20,11 @@ import {
   DashboardImage,
 } from "../../../../styles/dashboard";
 
-function Dashboard() {
+import { withTranslation } from "react-i18next";
+
+function Dashboard(props) {
+  const { t } = props;
+
   const [setSelectedItem] = useState(null);
 
   const handleImageClick = (item) => {
@@ -94,7 +98,7 @@ function Dashboard() {
             }}
           >
             <DashboardTitle variant="h6">
-              Ekplorasi Data Spasial Jakarta dengan tampilan visualisasi dashboard
+              {t('beranda.dashboard.keterangan')}
             </DashboardTitle>
 
             <List sx={listStyle}>
@@ -130,7 +134,7 @@ function Dashboard() {
               component={RouterLink}
               to="/dashboard"
             >
-              Lihat Semua
+              {t('beranda.dashboard.lihatSemua')}
             </Button>
           </Box>
 
@@ -145,4 +149,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export const HalamanDashboard = withTranslation()(Dashboard);

@@ -1,0 +1,164 @@
+{
+  "drawer": {
+    "beranda": "Home",
+    "peta": "Maps",
+    "interaktif": "Interactive",
+    "tematik": "Thematic",
+    "3d": "3D",
+    "3dBasemaps": "3D Basemaps",
+    "3dTransitOriented": "3D Transit Oriented",
+    "petaKerja": "Route Maps",
+    "digitasiAsetKIBA": "Asset Digitization KIB A",
+    "dataTenagaKesehatan": "Health Personnel Data",
+    "perda1Tahun2014": "Perda 1 Tahun 2014",
+    "petaHasilUkurAset": "Asset Measurement Results Map",
+    "lainnya": "Others",
+    "layanan": "Service",
+    "irk": "IRK",
+    "smartRDTR": "SMART RDTR",
+    "unduh": "Download",
+    "informasi": "Information",
+    "berita": "News",
+    "panduanJakartaSatu": "Jakarta Satu Guide",
+    "galeri": "Gallery",
+    "penghargaan": "Award",
+    "integrasiSistem": "System Integration",
+    "dataAPI": "API Data",
+    "publikasi": "Publication"
+  },
+  "beranda": {
+    "kritikSaran": "Due to the process of developing a new look, we hereby notify you that the Jakarta Satu website is <b>not accessible</b> for <b>temporary</b>. You can submit criticisms and suggestions by clicking the button below.",
+    "kritikSaranButton": "Criticism and Suggestions",
+    "peta": {
+      "judul": "Map of Jakarta Satu",
+      "keterangan": "DKI Jakarta Spatial Data Exploration in various views as well as presenting the DKI Jakarta Base Map in various Visualizations",
+      "dialog": {
+        "interaktif": "Interactive",
+        "interaktifDetail": "Explore All DKI Jakarta Spatial Information with Various Features",
+        "peta3d": "3D Maps",
+        "peta3dDetail": "Map visualization in 3 dimensions (3D)",
+        "tematik": "Thematic",
+        "tematikDetail": "Spatial Data Exploration Based on Themes"
+      }
+    },
+    "analisis": {
+      "judul": "Download Jakarta Spacial Data, Wherever You Need",
+      "keterangan": "Get information on spatial data sources in Jakarta in real time, available in pdf and shp formats",
+      "lihatSemua": "See More",
+      "kotak": {
+        "apotek": "Pharmacy",
+        "batasAdministrasi": "Administrative Limits",
+        "transjakarta": "Transjakarta",
+        "halte": "Bus Stop"
+      }
+    },
+    "simpulJaringan": {
+      "judul": "Spatial Network Node",
+      "keterangan": "Integration of spatial data from all sets of regional apparatus or work units, institutions or other institutions within the Provincial Government of DKI Jakarta",
+      "lihatSemua": "See More"
+    },
+    "dashboard": {
+      "keterangan": "Jakarta Spatial Data Exploration With Dashboard Visualization Display",
+      "lihatSemua": "See More"
+    },
+    "handphone": {
+      "judul1": "One Platform for various Spatial Data needs in Jakarta",
+      "keterangan1": "Make it easy for us to find geospatial related information in DKI Jakarta wherever you are",
+      "judul2": "Thematic Features",
+      "keterangan2": "With complete thematic features, ensuring its use is easy to access more quickly, effectively and efficiently",
+      "judul3": "Get Data",
+      "keterangan3": "Easily get a variety of information related to spatial data, such as maps of all of Jakarta and per village. The data can be downloaded as needed in ZIP and PDF formats"
+    }
+  },
+  "unduh": {
+    "unduhTab": "Get Data | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "berita": {
+    "beritaTab": "News | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "detailBeritaTab" : "News Detail | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "galeri": {
+    "galeriTab": "Gallery | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "simpulJaringan": {
+    "simpulJaringanTab": "Network Node | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Spatial Network Node",
+    "keterangan": "Integrated spatial data, enjoy easy solutions in data integration",
+    "cariData": "search for network nodes by name"
+  },
+  "interaktif": {
+    "interaktifTab": "Interactive Map | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+  },
+  "tematik": {
+    "tematikTab": "Thematic Map | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Thematic Map",
+    "keterangan": "Find All Spatial Information According to Keywords",
+    "cariData": "search thematic by name"
+  },
+  "dashboard": {
+    "judul": "Public Dashboard Gallery",
+    "keterangan": "Explore your map information more interactively through the information dashboard",
+    "cariData": "search dashboard by name"
+  },
+  "panduanJakartaSatu": {
+    "panduanTab": "Guidebook | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul1": "Jakarta Satu Guidebook",
+    "keterangan1": "Information about the use of the website and the Jakarta Satu application. Click on the image beside to read online",
+    "judul2": "GIS Tutorials and Guides",
+    "keterangan2": "Information about the use of GIS applications",
+    "judul3": "Tutorial and City Plan Information Guide"
+  },
+  "penghargaan": {
+    "penghargaanTab": "Awards | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Jakarta Satu Awards",
+    "judul1": "Geospatial Utilization Innovation Bhumandala Award (2021)",
+    "keterangan1": "The Provincial Government of DKI Jakarta through the City Planning Information application (IRK) won the Best Innovation (Gold Trophy) in the innovation of utilizing geospatial information at the 2021 Bhumandala Award event. The City Planning Information Application (IRK) is one of the innovations for utilizing geospatial information developed on the Jakarta portal One as one of the efforts to improve geospatial-based public services that contain maps and urban planning information.",
+    "judul2": "1st Place - 3D Map Category (2021)",
+    "keterangan2": "Jakarta 3D Urban Regeneration - Kemayoran won first place in the 3D Map category from the Esri User Conference Map Gallery in 2021 based on an assessment by the Esri UC team. <br><br>Jakarta 3D Urban Regeneration - Kemayoran<br><br>3D Urban Kemayoran Jakarta map showing the Kemayoran Urban Design Guideline (UDGL) located in DKI Jakarta. This map visualizes: Existing 3D Buildings, 3D Building Plans, 3D Base Map, Tree Shade, Walkability and Population.",
+    "judul3": "Bhumandala Kanaka Award (2020)",
+    "keterangan3": "It is an award for efforts to build geospatial information network nodes for Ministries/Institutions and Regional Governments that are considered the best in their efforts to prepare and build network nodes. <br>The Provincial Government of DKI Jakarta won 2 (two) awards, namely the Best Bhumandala Kanaka Node and the Best Bhumandala Kencana Geoportal in the Province category.",
+    "judul4": "Geo Innovation Award (2019)",
+    "keterangan4": "It is an award to support the Geospatial 4.0 industry for innovation in implementing GIS (Geographic Information System) to support Indonesia's One Map policy, organized by Esri Indonesia.",
+    "judul5": "Bhumandala Kanaka Award (2018)",
+    "keterangan5": "It is an award at the provincial level throughout Indonesia from the Geospatial Information Agency. The award was given to DKI Jakarta for having succeeded in building a good and active network node, and following the national geospatial reference system."
+  },
+  "integrasiSistem": {
+    "integrasiSistemTab": "System Integration | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "System Integration",
+    "keterangan": "The guidelines for updating and integrating map and data systems in the Jakarta One geospatial information system were prepared in order to facilitate the spatial integration of all regional apparatuses within the Provincial Government of DKI Jakarta or other agencies in order to realize the integration of geospatial information in the DKI Jakarta area within the Jakarta One container for improve the performance of urban planning and development.",
+    "button1": "Instructions for Implementing System Integration",
+    "button2": "Measurement and Mapping Documents",
+    "judul1": "System Integration Implementation Guidance Document",
+    "judul2": "Measurement and Mapping Documents",
+    "lihatTampilanPenuh": "Full View, ",
+    "klikDisini": "Click Here"
+  },
+  "dataAPI": {
+    "dataAPITab": "API Data | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "API Data",
+    "keterangan": "Provide information on list service data in the form of web map services and web feature services contained in Webgis Jakarta Satu.",
+    "table1": "Table Data API Web Feature Service (WFS)",
+    "table2" : "Table Data API Web Map Service (WMS)"
+  },
+  "publikasi": {
+    "publikasiTab": "Publication | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Publication",
+    "keterangan": "Jakarta Satu Research Information",
+    "judul1": "Tree Mapping",
+    "keterangan1": "Deep Learning Method",
+    "judul2": "Calculation of Built-up Land",
+    "keterangan2": "DDLB Method"
+  },
+  "footer": {
+    "informasiKontak": "Contact Information",
+    "informasiKontakDetail": "Send an e-mail to the following address: <br /><b><i>  jakartasatu@jakarta.go.id</i></b>",
+    "tentangSitus": "About the Site",
+    "tentangSitusDetail": "This site is a means of communication and visualization of maps and data from the Jakarta One program both for the Provincial Government of DKI Jakarta and for the community.",
+    "mediaSosial": "Social Media",
+    "hakCipta1": "© Copyright ",
+    "hakCipta2": ". Provincial Government of the Special Capital Region of Jakarta."
+  },
+  "scrollTop" : {
+    "text": "Scroll to top"
+  }
+}

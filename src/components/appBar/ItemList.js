@@ -24,8 +24,8 @@ export const ItemList = [
                         url: '/peta-3d-basemaps',
                     },
                     {
-                        title: '3D Transit Orientied',
-                        url: '/peta-3d-transit-orientied',
+                        title: '3D Transit Oriented',
+                        url: '/peta-3d-transit-oriented',
                     },
                 ],
             },

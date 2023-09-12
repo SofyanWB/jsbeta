@@ -57,6 +57,9 @@ const MenuItems = ({ items, depthLevel }) => {
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown((prev) => !prev)}
+            style={{
+              fontFamily: "inherit",
+            }}
           >
             {window.innerWidth < 960 && depthLevel === 0 ? (
               items.title
@@ -89,6 +92,9 @@ const MenuItems = ({ items, depthLevel }) => {
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown((prev) => !prev)}
+            style={{
+              fontFamily: "inherit",
+            }}
           >
             {items.title}{' '}
             {depthLevel > 0 ? (

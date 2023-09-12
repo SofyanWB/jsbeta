@@ -1,4 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { HalamanNavbar } from "../../src/components/appBar/Navbar";
+import {
+    AppBar,
+} from "@material-ui/core";
+import {
+    Nav,
+    NavContainer
+} from '../styles/appbar/indexNavbar2';
 import {
     Divider,
     Stack,
@@ -9,10 +17,11 @@ import {
     Card,
     CardActionArea,
     CardMedia,
-    CardContent
+    CardContent,
+    Skeleton
 } from '@mui/material';
-import Navbar2 from '../../src/components/appBar/Navbar2';
-import Footer from '../../src/components/footer/index';
+import { HalamanFooter } from "../../src/components/footer/index";
+import { withTranslation } from 'react-i18next';
 import {
     BoxTitle,
     BoxContainer,
@@ -22,8 +31,19 @@ import {
     BoxTitlePagination,
 } from '../routes/routeStyle/DashboardStyle';
 
-const Dashboard = () => {
+function Dashboard(props) {
+    const { t } = props;
+
+    useEffect(() => {
+        document.title = "Dashboard | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)";
+    }, []);
+
     const isMobile = useMediaQuery("(max-width: 1042px)");
+
+    const [loading, setLoading] = useState(false);
+    const handleSetLoading = () => {
+        setLoading(true);
+    };
 
     const datas = [
         {
@@ -104,10 +124,16 @@ const Dashboard = () => {
 
     return (
         <>
-            <Navbar2 />
+            <AppBar elevation={0} color='transparent'>
+                <Nav>
+                    <NavContainer>
+                        <HalamanNavbar />
+                    </NavContainer>
+                </Nav>
+            </AppBar>
             <BoxContainer>
                 <BoxAtas>
-                    <BoxTitle>Galeri Dashboard Publik</BoxTitle>
+                    <BoxTitle>{t('dashboard.judul')}</BoxTitle>
                     <Divider
                         sx={{
                             margin: "0 auto",
@@ -118,10 +144,10 @@ const Dashboard = () => {
                             marginBottom: "20px"
                         }} />
                     <BoxLittleTitle>
-                        Jelajahi Informasi Peta Anda Lebih Interaktif Melalui Dashboard Informasi
+                        {t('dashboard.keterangan')}
                     </BoxLittleTitle>
                     <OutlinedInput
-                        placeholder="Cari..."
+                        placeholder={t('dashboard.cariData')}
                         value={searchValue}
                         onChange={handleSearchChange}
                         sx={{
@@ -146,20 +172,23 @@ const Dashboard = () => {
                                     <CardActionArea href={d.link} target='_blank' disableRipple>
                                         <CardMedia
                                             sx={{
-                                                display: 'flex',
+                                                // display: 'flex',
                                                 flexDirection: 'column',
                                                 alignItems: 'center'
                                             }}>
-                                            <img
+                                            <Skeleton variant='rounded' animation="wave" sx={{ height: 200, display: loading ? "none" : "flex" }} />
+                                            <img onLoad={handleSetLoading}
                                                 src={d.image}
                                                 alt={d.title}
                                                 style={{
                                                     width: '100%',
                                                     height: '200px',
-                                                    objectFit: 'cover'
+                                                    objectFit: 'cover',
+                                                    display: loading ? "flex" : "none"
                                                 }}
                                             />
-                                            <CardContent>
+                                            <Skeleton variant='text' animation="wave" sx={{ width: 200, height: 50, display: loading ? "none" : "block" }} />
+                                            <CardContent onLoad={handleSetLoading} sx={{ display: loading ? "block" : "none" }}>
                                                 <BoxTitlePagination>{d.title}</BoxTitlePagination>
                                             </CardContent>
                                         </CardMedia>
@@ -176,15 +205,15 @@ const Dashboard = () => {
                             page={page}
                             onChange={handleChange}
                             sx={{
-                                marginBottom: "80px"
+                                margin: "80px 0 80px 0"
                             }}
                         />
                     </Stack>
                 </BoxPagination>
             </BoxContainer>
-            <Footer />
+            <HalamanFooter />
         </>
     );
 };
 
-export default Dashboard;
+export const RouteDashboard = withTranslation()(Dashboard);

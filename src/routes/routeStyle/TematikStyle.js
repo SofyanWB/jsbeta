@@ -19,8 +19,8 @@ export const BoxAtas = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxPagination = styled(Box)(({ theme }) => ({
-    marginLeft: "5%",
-    marginRight: "5%",
+    marginLeft: "10%",
+    marginRight: "10%",
     justifyContent: "center",
     textAlign: "center",
 }));
@@ -43,7 +43,7 @@ export const BoxImage2 = styled("img")(({ src }) => ({
 export const BoxTitle = styled(Typography)(({ theme }) => ({
     lineHeight: 1.5,
     zIndex: "10",
-    fontSize: "2em",
+    fontSize: "32px",
     textAlign: "center",
     marginBottom: "15px",
     color: "#004581",
@@ -91,7 +91,7 @@ export const BoxTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxLittleTitle = styled(Typography)(({ theme }) => ({
-    fontSize: "1em",
+    fontSize: "18px",
     textAlign: "center",
     marginBottom: "45px",
 
@@ -126,7 +126,9 @@ export const BoxLittleTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const BoxTitlePagination = styled(Typography)(({ theme }) => ({
-    fontSize: "1.3em",
+    fontSize: "17px",
+    color: "#003577",
+    fontWeight: 500,
     textAlign: "center",
 
     [theme.breakpoints.down(1440)]: {

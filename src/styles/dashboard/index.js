@@ -7,7 +7,7 @@ export const DashboardContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "100%",
   paddingBottom: "200px",
-  
+
   //background: Colors.light_gray,
   [theme.breakpoints.down(1043)]: {
     flexDirection: "column",
@@ -62,12 +62,17 @@ export const DashboardButtonLihat = styled(Box)(() => ({
 }));
 
 export const DashboardTitle = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.5,
-  fontSize: "33px",
+  fontSize: "30px",
+  fontStyle: "normal",
+  fontWeight: 500,
+  lineHeight: "170%",
+  letterSpacing: "0.045px",
+  color: "#003577",
+
   marginBottom: "30px",
   textAlign: "center",
-  color: "#004581",
   maxWidth: 630,
+
   [theme.breakpoints.down(1440)]: {
     fontSize: "2.5vw",
   },
@@ -114,19 +119,19 @@ export const StyleButton2 = {
     border: "2px solid #F7941D",
   },
   "@media (max-width: 1440px)": {
-   
+
     height: "4.5vw",
     width: "14vw",
     fontSize: "1.3vw"
   },
   "@media (max-width: 1042px)": {
-   
+
     height: "7vw",
     width: "21vw",
     fontSize: "2vw"
   },
   "@media (max-width: 600px)": {
-  
+
     height: "9vw",
     width: "35vw",
     fontSize: "2.5vw"
@@ -174,8 +179,8 @@ export const listStyle = {
   overflow: "auto",
   height: "400px",
   direction: "rtl",
-  marginTop:"30px",
-  marginBottom:"50px",
+  marginTop: "30px",
+  marginBottom: "50px",
   "::-webkit-scrollbar": {
     width: "8px",
   },

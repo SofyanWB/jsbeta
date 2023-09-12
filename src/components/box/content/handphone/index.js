@@ -3,6 +3,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import {
   HandphoneContainer,
   HandphoneContent,
+  HandphoneSubtitle,
   HandphoneDescription,
   HandphoneImage,
   HandphoneTitle,
@@ -11,8 +12,10 @@ import {
   subtitleStyle,
 } from "../../../../styles/handphone";
 
-function Handphone() {
-  //const matches = useMediaQuery(theme.breakpoints.down("md"));
+import { withTranslation } from 'react-i18next';
+
+function Handphone(props) {
+  const { t } = props;
 
   return (
     <HandphoneContainer>
@@ -25,56 +28,47 @@ function Handphone() {
         height="250px">
       </Box>
 
-
       <HandphoneImage src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/006f81226fa34e9e8baca114787846e6/data" />
 
       <HandphoneContent>
-        <HandphoneTitle variant="h6">Jakarta Satu Mobile Apps</HandphoneTitle>
-        <Typography
-          variant="h6"
-          paddingBottom="20px"
-          fontWeight="bold"
-          sx={subtitleStyle}>
-          Satu Platform untuk beragam kebutuhan Data Spasial di Jakarta
-        </Typography>
+        <HandphoneTitle>Jakarta Satu Mobile Apps</HandphoneTitle>
+        <HandphoneSubtitle>
+          {t('beranda.handphone.judul1')}
+        </HandphoneSubtitle>
         <HandphoneDescription variant="subtitle2">
-          Memudahkan kita dalam mencari informasi terkait geospasial di DKI Jakarta dimanapun anda berada
+          {t('beranda.handphone.keterangan1')}
         </HandphoneDescription>
         <Divider
           sx={dividerStyle}
         />
 
-        <Typography
-          variant="h6"
-          paddingBottom="20px"
-          fontWeight="bold"
-          sx={subtitleStyle}>
-          Fitur Tematik
-        </Typography>
+        <HandphoneSubtitle>
+          {t('beranda.handphone.judul2')}
+        </HandphoneSubtitle>
         <HandphoneDescription variant="subtitle2">
-          Dengan fitur tematik lengkap, memastikan penggunaannya mudah mengakses lebih cepat, efektif dan efisien
+          {t('beranda.handphone.keterangan2')}
         </HandphoneDescription>
 
 
         <Divider
           sx={dividerStyle} />
 
-        <Typography
-          variant="h6"
-          paddingBottom="20px"
-          fontWeight="bold"
-          sx={subtitleStyle}>
-          Unduh
-        </Typography>
+        <HandphoneSubtitle>
+          {t('beranda.handphone.judul3')}
+        </HandphoneSubtitle>
         <HandphoneDescription variant="subtitle2">
-          Dapatkan beragam informasi dengan mudah terkait data spasial, seperti peta seluruh Jakarta meupun per-Kelurahan. Data tersebut dapat diunduh sesuai kebutuhan dalam format ZIP dan PDF
+          {t('beranda.handphone.keterangan3')}
         </HandphoneDescription>
 
 
         <Divider
           sx={dividerStyle} />
 
-        <a href="https://play.google.com/store/apps/details?id=id.go.jakarta.jakartasatu&hl=id" target="_blank" rel="noreferrer">
+        <a href="https://play.google.com/store/apps/details?id=id.go.jakarta.jakartasatu&hl=id" target="_blank" rel="noreferrer"
+          style={{
+            width: "100px",
+            marginLeft: "-9px"
+          }}>
           <GetInGoogle src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/1d018fe3f862436ca4b283c46f0b63ac/data" />
         </a>
       </HandphoneContent>
@@ -82,4 +76,4 @@ function Handphone() {
   );
 }
 
-export default Handphone;
+export const HalamanHandphone = withTranslation()(Handphone);
