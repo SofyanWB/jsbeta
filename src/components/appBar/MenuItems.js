@@ -40,7 +40,7 @@ const MenuItems = ({ items, depthLevel }) => {
   };
 
   const closeDropdown = () => {
-    dropdown && setDropdown(false);
+    setDropdown(true);
   };
 
   return (
@@ -98,8 +98,13 @@ const MenuItems = ({ items, depthLevel }) => {
           >
             {items.title}{' '}
             {depthLevel > 0 ? (
-              <span>
-                <KeyboardArrowRightRoundedIcon style={{ width: '80%', marginTop: '2px', }} />
+              <span
+                style={{
+                  display: "grid",
+                  position: "absolute",
+                  right: "2%"
+                }}>
+                <KeyboardArrowRightRoundedIcon style={{ width: "90%" }} />
               </span>
             ) : (
               <span>

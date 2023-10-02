@@ -17,7 +17,7 @@ import {
     BoxContent,
     BoxCarouselAtas,
     BoxCarouselBawah,
-    BoxLittleTitle,
+    // BoxLittleTitle,
     // Dividers,
 } from "../routes/routeStyle/GaleriStyle";
 import {
@@ -99,55 +99,62 @@ function Galeri(props) {
             id: 1,
             rows: 2,
             cols: 2,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d5c0791226374e12adec4740fa72d7ea/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/21bd4657490b455db3fd64d3675ed155/data',
+            title: t('galeri.item1'),
         },
         {
             id: 2,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/26c8737fc78e4778a20d71e70c9bf8f1/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/fc7b8264a8a84bf2bb9296040faececd/data',
+            title: t('galeri.item2'),
         },
         {
             id: 3,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d77f17c634fd4d05a90a2749359f2d61/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/624bf3fd74d645d299400a1e5cc03ff8/data',
+            title: t('galeri.item3'),
         },
         {
             id: 4,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/12074130d0464454bc0545c059f2c0e0/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/94af60b427694ad98c4983826db360a8/data',
+            title: t('galeri.item4'),
         },
         {
             id: 5,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d77f17c634fd4d05a90a2749359f2d61/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/78652efb73454bc580caee22a0556d91/data',
+            title: t('galeri.item5'),
         },
         {
             id: 6,
             rows: 2,
             cols: 2,
             imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/12074130d0464454bc0545c059f2c0e0/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            title: t('galeri.item6'),
         },
         {
             id: 7,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d77f17c634fd4d05a90a2749359f2d61/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/8ebc73ec1ac1484da5cd9cd6ce292c6d/data',
+            title: t('galeri.item7'),
         },
         {
             id: 8,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/12074130d0464454bc0545c059f2c0e0/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/16e0a16bcf6843469749c02052a564d0/data',
+            title: t('galeri.item8'),
         },
         {
             id: 9,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d77f17c634fd4d05a90a2749359f2d61/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/006686e2b32745fea9db49f45a1b86af/data',
+            title: t('galeri.item9'),
         },
         {
             id: 10,
-            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/12074130d0464454bc0545c059f2c0e0/data',
-            title: 'Lorem ipsum dolor sit amet consectetur. Cras sit posuere vitae mi. Euismod integer eu nisi enim ut.',
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/ed3d3a6a17354cf9ac93d0dff98154ed/data',
+            title: t('galeri.item10'),
+        },
+        {
+            id: 11,
+            rows: 2,
+            cols: 2,
+            imageSrc: 'https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/e3bafc3491164b70b469973b7aeb7577/data',
+            title: t('galeri.item11'),
         },
     ];
 
@@ -231,11 +238,11 @@ function Galeri(props) {
                             height: 4,
                             width: "75px",
                             borderRadius: "10px",
-                            marginBottom: "20px"
+                            marginBottom: "8%"
                         }} />
-                    <BoxLittleTitle>
+                    {/* <BoxLittleTitle>
                         Lorem ipsum dolor sit amet consectetur. Fermentum ut a urna nibh ac.
-                    </BoxLittleTitle>
+                    </BoxLittleTitle> */}
                 </BoxAtas>
                 <BoxContent>
                     <Grid
@@ -247,7 +254,7 @@ function Galeri(props) {
                         <Grid item xs={12} sm={12} md={3} lg={6} xl={6}>
                             <Skeleton variant='rounded' animation="wave" sx={{ height: 400, display: loading ? "none" : "block" }} />
                             <img onLoad={handleSetLoading}
-                                src='https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d5c0791226374e12adec4740fa72d7ea/data'
+                                src='https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/21bd4657490b455db3fd64d3675ed155/data'
                                 alt=''
                                 style={{
                                     width: "100%",
@@ -262,12 +269,12 @@ function Galeri(props) {
                                 sx={{
                                     color: "#004581",
                                     fontSize: "31px",
-                                    fontWeight: "550",
+                                    fontWeight: "500",
                                     lineHeight: "160%",
                                     letterSpacing: "0.047px",
                                     textAlign: "left",
                                 }}>
-                                Lorem ipsum dolor sit amet consectetur. Ligula proin elit sit id. Porta vulputate pretium suspendisse rhoncus ipsum arcu tortor.
+                                {t('galeri.itemAtas')}
                             </BoxDescription>
                         </Grid>
                     </Grid>
@@ -356,10 +363,10 @@ function Galeri(props) {
                                 <ImageListItemBar title={item.title}
                                     sx={{
                                         display: loading ? "block" : "none",
-                                        height: "100px",
+                                        height: "auto",
 
                                         "& .MuiImageListItemBar-title": {
-                                            // textAlign: "center",
+                                            textAlign: "center",
                                             whiteSpace: "pre-wrap"
                                         }
                                     }} />

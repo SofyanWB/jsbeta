@@ -18,6 +18,8 @@ import {
 import MenuItems from './MenuItems';
 import { Box } from "@mui/material";
 
+import { Link } from "react-scroll";
+
 function Navbar(props) {
   const { t } = props;
 
@@ -31,7 +33,8 @@ function Navbar(props) {
     },
     {
       title: t('drawer.peta'),
-      url: '/',
+      scrollTarget: 'HalamanPeta',
+      url: '',
       submenu: [
         {
           title: t('drawer.interaktif'),
@@ -43,7 +46,7 @@ function Navbar(props) {
         },
         {
           title: t('drawer.3d'),
-          url: '/',
+          url: '',
           submenu: [
             {
               title: t('drawer.3dBasemaps'),
@@ -59,7 +62,7 @@ function Navbar(props) {
     },
     {
       title: t('drawer.petaKerja'),
-      url: '/',
+      url: '',
       submenu: [
         {
           title: t('drawer.digitasiAsetKIBA'),
@@ -85,7 +88,7 @@ function Navbar(props) {
     },
     {
       title: t('drawer.layanan'),
-      url: '/',
+      url: '',
       submenu: [
         {
           title: t('drawer.irk'),
@@ -103,7 +106,7 @@ function Navbar(props) {
     },
     {
       title: t('drawer.informasi'),
-      url: '/',
+      url: '',
       submenu: [
         {
           title: t('drawer.berita'),
@@ -128,6 +131,10 @@ function Navbar(props) {
         {
           title: t('drawer.dataAPI'),
           url: '/data-api',
+        },
+        {
+          title: t('drawer.landasanHukum'),
+          url: '/landasan-hukum',
         },
       ],
     },
@@ -212,12 +219,30 @@ function Navbar(props) {
           <NavItem className="menus">
             {ItemList.map((menu, index) => {
               const depthLevel = 0;
-              return (
-                <MenuItems
-                  items={menu}
-                  key={index}
-                  depthLevel={depthLevel} />
-              );
+              if (menu.scrollTarget) {
+                return (
+                  <Link
+                    to={menu.scrollTarget}
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    key={index}>
+                    <MenuItems
+                      items={menu}
+                      key={index}
+                      depthLevel={depthLevel}
+                    />
+                  </Link>
+                );
+              } else {
+                return (
+                  <MenuItems
+                    items={menu}
+                    key={index}
+                    depthLevel={depthLevel}
+                  />
+                );
+              }
             })}
           </NavItem>
         )}
@@ -235,7 +260,7 @@ function Navbar(props) {
             <ToggleButton value="en" onClick={() => changeLanguage('en')}>EN</ToggleButton>
           </ToggleButtonGroup>
         </LanguageProvider>
-      </div>
+      </div >
     </>
   );
 }

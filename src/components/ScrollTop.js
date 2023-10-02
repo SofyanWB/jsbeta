@@ -52,7 +52,7 @@ function BackToTop(props) {
         <React.Fragment>
             <CssBaseline />
             <ScrollTop>
-                <Tooltip placement="left" title={t('scrollTop.text')}>
+                <Tooltip placement="top" title={t('scrollTop.text')}>
                     <Fab
                         disableRipple
                         size="small"

@@ -237,6 +237,9 @@ function DrawerComponent(props) {
                             <ListItemButton component={RouterLink} to="/data-api" sx={{ pl: 4 }}>
                                 <ListItemText primary={t('drawer.dataAPI')} className={classes.listChildItem} disableTypography />
                             </ListItemButton>
+                            <ListItemButton component={RouterLink} to="/landasan-hukum" sx={{ pl: 4 }}>
+                                <ListItemText primary={t('drawer.landasanHukum')} className={classes.listChildItem} disableTypography />
+                            </ListItemButton>
                         </List>
                     </Collapse>
                     <ListItemButton component={RouterLink} to="/publikasi">

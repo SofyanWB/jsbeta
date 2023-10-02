@@ -66,7 +66,7 @@ function Banner() {
     <>
       <Skeleton variant='rectangular' animation="wave"
         sx={{
-          height: 800,
+          height: carouselHeight,
           display: loading ? "none" : "block"
         }} />
       <Box onLoad={handleSetLoading}
@@ -123,7 +123,7 @@ function Banner() {
                   width: "100%",
                   maxWidth: 2000,
                   overflow: 'hidden',
-                  background: "black"
+                  background: "#004581",
                 }}
                 src={banner.source_image}>
               </Box>

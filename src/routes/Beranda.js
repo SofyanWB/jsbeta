@@ -15,7 +15,7 @@ import Box from "../../src/components/box/index";
 const Beranda = () => {
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 400) {
+    if (window.scrollY >= 100) {
       setColorchange(true);
     }
     else {

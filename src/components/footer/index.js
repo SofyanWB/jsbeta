@@ -81,8 +81,8 @@ function Footer(props) {
                     alignItems: "center",
                     display: loading ? "flex" : "none"
                   }}>
-                  <img onLoad={handleSetLoading} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d35cbf7f9b0e4931aaa62bc0ff14719a/data"
-                    style={{ height: "18px" }} alt="" />
+                  <img onLoad={handleSetLoading} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/b24f7dd6b91c4be18df88a6616d368b3/data"
+                    style={{ height: "16px" }} alt="" />
                   <Link href="https://www.twitter.com/jakartasatudki/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       Jakarta Satu

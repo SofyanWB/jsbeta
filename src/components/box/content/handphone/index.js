@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import {
   HandphoneContainer,
   HandphoneContent,
@@ -9,7 +9,6 @@ import {
   HandphoneTitle,
   GetInGoogle,
   dividerStyle,
-  subtitleStyle,
 } from "../../../../styles/handphone";
 
 import { withTranslation } from 'react-i18next';

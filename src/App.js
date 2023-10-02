@@ -4,16 +4,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
-import Fade from '@mui/material/Fade';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Skeleton from '@mui/material/Skeleton';
+import Slide from '@mui/material/Slide';
 
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 import { ExtrasScrollTop } from "./components/ScrollTop";
-import { ExtrasKritikSaran } from "./components/KritikSaran";
+// import { ExtrasKritikSaran } from "./components/KritikSaran";
 import { Route, Routes, HashRouter } from 'react-router-dom';
 // import Interaktif from '../src/routes/Interaktif';
 import { RoutePetaInteraktif } from '../src/routes/Interaktif/PetaInteraktif';
@@ -33,6 +33,7 @@ import { RouteDashboard } from "./routes/Dashboard";
 import { RouteDataAPI } from "./routes/DataAPI";
 import { RouteIntegrasiSistem } from "./routes/IntegrasiSistem";
 import { RoutePublikasi } from "./routes/Publikasi";
+import LandasanHukum from "./routes/LandasanHukum";
 // import Footer from './components/footer/index';
 
 import SmartRDTR from "./routes/SmartRDTR";
@@ -55,7 +56,6 @@ function App() {
     document.title = "Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)";
   }, []);
 
-  // const isMobile = useMediaQuery("(max-width: 800px)");
   const isMobileLandscape = useMediaQuery("(max-height: 540px)");
 
   const [loading, setLoading] = useState(false);
@@ -64,6 +64,9 @@ function App() {
   };
 
   const [open, setOpen] = useState(true);
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
   const handleClose = () => {
     setOpen(false);
   };
@@ -76,7 +79,24 @@ function App() {
         sx={{
           background: "#ffff",
         }}>
-
+        <Button href='https://forms.gle/QJ672f62tXt4Neyu9' target='_blank'
+          variant="contained" disableElevation
+          sx={{
+            // backgroundColor: "#ED783E",
+            backgroundColor: "#F7941D",
+            boxShadow: "0 5px 20px 0 rgba(0, 0, 0, 0.1)",
+            borderRadius: "20px",
+            position: "fixed",
+            alignItems: "flex-start",
+            height: "50px",
+            width: "250px",
+            zIndex: "999",
+            transform: 'translateY(-50%) rotate(90deg) ',
+            top: '50%',
+            left: '-115px',
+          }}>
+          {t('beranda.kritikSaranButton')}
+        </Button>
         <Modal
           open={open}
           onClose={handleClose}
@@ -87,22 +107,23 @@ function App() {
             backdrop: {
               timeout: 500,
             },
+          }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}>
-          <Fade in={open}>
+          <Slide direction='right' in={open}>
             <Grid container
               direction="column"
               sx={{
                 position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: isMobileLandscape ? '50%' : '85%',
-                maxWidth: isMobileLandscape ? '400px' : '500px',
-                height: isMobileLandscape ? '350px' : 'auto',
+                width: isMobileLandscape ? '60%' : '85%',
+                maxWidth: isMobileLandscape ? '800px' : '500px',
                 borderRadius: 10,
                 background: 'rgba(255, 255, 255, 0.9)',
                 outline: "none",
-                p: 2
+                padding: isMobileLandscape ? "10px" : "20px"
               }}>
               <Grid item>
                 <Box sx={{ display: "flex", justifyContent: "end" }}>
@@ -111,13 +132,14 @@ function App() {
                     sx={{
                       backgroundColor: 'transparent',
                       boxShadow: '0px 4px 20px rgba(170, 180, 190, 0.0)',
+                      marginBottom: isMobileLandscape ? '-80%' : '-80%',
                     }}>
                     <CloseRoundedIcon sx={{ color: "#1455A3" }} />
                   </Fab>
                 </Box>
               </Grid>
               <Grid item>
-                <Skeleton variant='rounded' animation="wave" sx={{ height: isMobileLandscape ? 120 : 300, display: loading ? "none" : "flex" }} />
+                <Skeleton variant='rounded' animation="wave" sx={{ height: isMobileLandscape ? 120 : 250, display: loading ? "none" : "flex" }} />
                 <Box onLoad={handleSetLoading} sx={{ display: loading ? "flex" : "none", justifyContent: "center" }}>
                   <img
                     style={{
@@ -134,7 +156,7 @@ function App() {
                       fontSize: isMobileLandscape ? "0.7em" : "1.1em",
                       textAlign: "center",
                       color: "#003577",
-                      margin: "5%"
+                      margin: isMobileLandscape ? "5%" : "5%"
                     }} dangerouslySetInnerHTML={{ __html: t('beranda.kritikSaran') }}>
                   </Typography>
                 </Box>
@@ -145,7 +167,6 @@ function App() {
                     title="Kritik dan Saran"
                     href="https://forms.gle/QJ672f62tXt4Neyu9" target="_blank"
                     variant="contained"
-                    size="large"
                     sx={{
                       height: isMobileLandscape ? "40px" : "65px",
                       width: "auto",
@@ -160,7 +181,7 @@ function App() {
                 </Box>
               </Grid>
             </Grid>
-          </Fade>
+          </Slide>
         </Modal>
 
         <HashRouter>
@@ -182,6 +203,7 @@ function App() {
             <Route path="/data-api" element={<RouteDataAPI />} />
             <Route path="/integrasi-sistem" element={<RouteIntegrasiSistem />} />
             <Route path="/publikasi" element={<RoutePublikasi />} />
+            <Route path="/landasan-hukum" element={<LandasanHukum />} />
 
             <Route path="/smart-rdtr" element={<SmartRDTR />} />
 
@@ -192,7 +214,7 @@ function App() {
             <Route path="/peta-kerja-lainnya" element={<PetaKerjaLainnya />} />
           </Routes>
           {/* <Footer /> */}
-          <ExtrasKritikSaran />
+          {/* <ExtrasKritikSaran /> */}
           <ExtrasScrollTop />
         </HashRouter>
       </Container>

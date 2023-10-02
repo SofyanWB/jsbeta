@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     list-style: none;
     padding: 14px;
+    mix-blend-mode: screen;
 }
 
 .menu-items {
@@ -57,7 +58,6 @@
     position: absolute;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
     font-size: 1rem;
-    width: 120%;
     z-index: 9999;
     min-width: 14rem;
     padding: 0.5rem 0.4rem;
@@ -92,7 +92,7 @@
     
     .Mui-selected,
     .Mui-selected:hover {
-        background-color: #ED783E;
+        background-color: #F7941D;
         color: white;
         font-weight: bold;
     }
@@ -114,7 +114,7 @@
 
         .Mui-selected,
         .Mui-selected:hover {
-            background-color: "#ED783E";
+            background-color: "#F7941D";
             color: white;
             font-weight: bold;
         }

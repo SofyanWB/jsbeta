@@ -24,7 +24,8 @@
     "penghargaan": "Award",
     "integrasiSistem": "System Integration",
     "dataAPI": "API Data",
-    "publikasi": "Publication"
+    "publikasi": "Publication",
+    "landasanHukum": "Legal"
   },
   "beranda": {
     "kritikSaran": "Due to the process of developing a new look, we hereby notify you that the Jakarta Satu website is <b>not accessible</b> for <b>temporary</b>. You can submit criticisms and suggestions by clicking the button below.",
@@ -78,7 +79,19 @@
     "detailBeritaTab" : "News Detail | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
   },
   "galeri": {
-    "galeriTab": "Gallery | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)"
+    "galeriTab": "Gallery | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "itemAtas": "Jakarta Satu Receives 2023 GeoInnovation Awards",
+    "item1": "Jakarta Satu Receives Award",
+    "item2": "Jakarta Satu announces Jakarta Satu Festival 2023",
+    "item3": "Jakarta Satu Receives Visit from Al Jabr Islamic School Students",
+    "item4": "City Plan 2.0 Information Dissemination Activities on the Jakarta Satu Portal",
+    "item5": "Housing Database Data Collection Workshop",
+    "item6": "Socialization of the Preparation of the UPK PPUKMP Pulogadung Map",
+    "item7": "Jakarta Satu Receives Visit from Pasco Corporation",
+    "item8": "Visit of the Tangerang City Government Communication and Information Department",
+    "item9": "Land Acquisition Data Update Technical Meeting",
+    "item10": "Working Visit of the Balikpapan City Government Land and Spatial Planning Service",
+    "item11": "Jakarta Satu won two awards at the 2022 Bhumandala Award"
   },
   "simpulJaringan": {
     "simpulJaringanTab": "Network Node | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
@@ -139,6 +152,10 @@
     "keterangan": "Provide information on list service data in the form of web map services and web feature services contained in Webgis Jakarta Satu.",
     "table1": "Table Data API Web Feature Service (WFS)",
     "table2" : "Table Data API Web Map Service (WMS)"
+  },
+  "landasanHukum": {
+    "landasanHukumTab": "Legal | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
+    "judul": "Legal"
   },
   "publikasi": {
     "publikasiTab": "Publication | Jakarta Satu (Satu Peta, Satu Data, Satu Kebijakan)",
