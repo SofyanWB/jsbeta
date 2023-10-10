@@ -56,7 +56,8 @@
     "simpulJaringan": {
       "judul": "Spatial Network Node",
       "keterangan": "Integration of spatial data from all sets of regional apparatus or work units, institutions or other institutions within the Provincial Government of DKI Jakarta",
-      "lihatSemua": "See More"
+      "lihatSemua": "See More",
+      "dataTidakDitemukan": "Data not found"
     },
     "dashboard": {
       "keterangan": "Jakarta Spatial Data Exploration With Dashboard Visualization Display",

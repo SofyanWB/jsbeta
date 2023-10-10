@@ -18,7 +18,7 @@ import { Route, Routes, HashRouter } from 'react-router-dom';
 // import Interaktif from '../src/routes/Interaktif';
 import { RoutePetaInteraktif } from '../src/routes/Interaktif/PetaInteraktif';
 import { RouteTematik } from '../src/routes/Tematik';
-import { RouteSimpulJaringan } from '../src/routes/SimpulJaringan';
+import { RouteSimpulJaringanAPI } from '../src/routes/SimpulJaringanAPI';
 import IRK from '../src/routes/IRK';
 import { RouteUnduh } from '../src/routes/Unduh';
 import Beranda from '../src/routes/Beranda';
@@ -93,7 +93,7 @@ function App() {
             zIndex: "999",
             transform: 'translateY(-50%) rotate(90deg) ',
             top: '50%',
-            left: '-115px',
+            left: '-116px',
           }}>
           {t('beranda.kritikSaranButton')}
         </Button>
@@ -193,7 +193,7 @@ function App() {
             <Route path="/tematik" element={<RouteTematik />} />
             <Route path="/irk" element={<IRK />} />
             <Route path="/unduh" element={<RouteUnduh />} />
-            <Route path="/simpul-jaringan" element={<RouteSimpulJaringan />} />
+            <Route path="/simpul-jaringan" element={<RouteSimpulJaringanAPI />} />
             <Route path="/berita" element={<RouteBerita />} />
             <Route path="/detail-berita/:id" element={<RouteDetailBerita />} />
             <Route path="/panduan-jakarta-satu" element={<RoutePanduanJakartaSatu />} />

@@ -85,7 +85,7 @@
 
     .MuiToggleButtonGroup-grouped {
         border-radius: 20px;
-        color: white;
+        color: black;
         width: 40px;
         height: 40px;
     }
@@ -98,11 +98,10 @@
     }
 
     .navbar.colorChange {
-        backdrop-filter: blur(10px);
-        color: black;
+        margin-top: 20px;
         background: rgba(255, 255, 255, 0.5);
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
+        backdrop-filter: blur(10px);
 
         @media screen and (max-width: 500px) {
             margin-top: 10px;

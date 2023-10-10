@@ -5,6 +5,7 @@ import {
   Button,
   List,
   ListItemText,
+  Skeleton,
   Typography,
 } from "@mui/material";
 
@@ -29,6 +30,12 @@ function Dashboard(props) {
 
   const handleImageClick = (item) => {
     setSelectedItem(item);
+  };
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
   };
 
   const menu = [
@@ -83,24 +90,34 @@ function Dashboard(props) {
   return (
     <DashboardContainer>
       <DashboardContent>
-
         <Box
           sx={listContainer}>
           <Box
             sx={{
-              // marginRight: "90px",
               display: "grid",
               justifyItems: "center",
               "@media (max-width: 1043px)": {
                 marginRight: "1vw",
-
               },
             }}
           >
-            <DashboardTitle variant="h6">
+            <Skeleton
+              variant="text" width="28vw" height="92px" animation="wave"
+              style={{ display: imageLoaded ? "none" : "block", borderRadius: 20, marginBottom: "-20px" }}
+            />
+            <Skeleton
+              variant="text" width="100%" height="92px" animation="wave"
+              style={{ display: imageLoaded ? "none" : "block", borderRadius: 20, marginBottom: "-20px" }}
+            />
+            <Skeleton
+              variant="text" width="70%" height="92px" animation="wave"
+              style={{ display: imageLoaded ? "none" : "block", borderRadius: 20 }}
+            />
+            <DashboardTitle
+              variant="h6"
+              style={{ display: imageLoaded ? "block" : "none" }}>
               {t('beranda.dashboard.keterangan')}
             </DashboardTitle>
-
             <List sx={listStyle}>
               {menu.map((item, index) => (
                 <ListItemStyled
@@ -117,33 +134,45 @@ function Dashboard(props) {
                     paddingLeft: "30px",
                   }}
                 >
-                  <ListItemText>
-                    <Typography sx={listTextStyle}>
-
-                      {item.text}
-
-                    </Typography>
-                  </ListItemText>
+                  {imageLoaded ? (
+                    <ListItemText>
+                      <Typography
+                        sx={listTextStyle}
+                        style={{ display: imageLoaded ? "block" : " none" }}>
+                        {item.text}
+                      </Typography>
+                    </ListItemText>
+                  ) : (
+                    <div></div>
+                  )}
                 </ListItemStyled>
               ))}
             </List>
-
-            <Button
-              sx={StyleButton2}
-              variant="contained"
-              component={RouterLink}
-              to="/dashboard"
-            >
-              {t('beranda.dashboard.lihatSemua')}
-            </Button>
+            {imageLoaded ? (
+              <Button
+                sx={StyleButton2}
+                variant="contained"
+                component={RouterLink}
+                to="/dashboard"
+              >
+                {t('beranda.dashboard.lihatSemua')}
+              </Button>
+            ) : (
+              <div></div>
+            )}
           </Box>
-
+          <Skeleton
+            variant="rectangular"
+            width={550}
+            height={300}
+            style={{ display: imageLoaded ? "none" : "block", borderRadius: 30, marginLeft: "10vw" }}
+            animation="wave"
+          />
           <DashboardImage
-            src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/f4997bf8ccc540458abd41878683c9ee/data" />
-
+            src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/f4997bf8ccc540458abd41878683c9ee/data"
+            style={{ display: imageLoaded ? "block" : "none" }}
+            onLoad={handleImageLoad} />
         </Box>
-
-
       </DashboardContent>
     </DashboardContainer>
   );

@@ -151,11 +151,10 @@ function Navbar(props) {
 
   const [languageSelected, setLanguageSelected] = useState('id');
   const handleChange = (event, newLanguageSelected) => {
-    if (newLanguageSelected !== null) {
+    if (newLanguageSelected) {
       setLanguageSelected(newLanguageSelected);
+      localStorage.setItem('selectedLanguage', newLanguageSelected);
     }
-
-    localStorage.setItem('selectedLanguage', newLanguageSelected);
   };
 
   useEffect(() => {
@@ -192,10 +191,12 @@ function Navbar(props) {
   };
 
   useEffect(() => {
-    const storedLanguage = localStorage.getItem('languageSelected');
-    if (storedLanguage) {
-      setLanguageSelected(storedLanguage);
+    const storedLanguage = localStorage.getItem('selectedLanguage');
+    if (!storedLanguage) {
+      localStorage.setItem('selectedLanguage', 'id');
     }
+
+    setLanguageSelected(storedLanguage || 'id');
   }, []);
 
   return (
@@ -222,6 +223,7 @@ function Navbar(props) {
               if (menu.scrollTarget) {
                 return (
                   <Link
+                    type="button"
                     to={menu.scrollTarget}
                     spy={true}
                     smooth={true}

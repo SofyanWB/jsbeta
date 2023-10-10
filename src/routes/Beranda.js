@@ -29,7 +29,7 @@ const Beranda = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <AppBar className="navbar" elevation={0} >
         <Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
           <NavContainer>
@@ -40,7 +40,7 @@ const Beranda = () => {
       <Banner />
       <Box />
       <HalamanFooter />
-    </div >
+    </>
   );
 };
 

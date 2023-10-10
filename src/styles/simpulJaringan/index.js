@@ -17,9 +17,13 @@ export const BoxContent = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   width: "90%",
   padding: "20px",
-
 }));
 
+export const BoxPencarian = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  margin: "0 auto",
+}));
 
 // background image 
 
@@ -70,7 +74,7 @@ export const BoxDescription = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   paddingLeft: "179px",
   paddingRight: "179px",
-  marginTop: "5%",
+  marginTop: "3%",
 
   [theme.breakpoints.down(1440)]: {
     fontSize: "1.1vw",
@@ -234,7 +238,7 @@ export const StyleTextButton = {
 
 export const CarouselStyle = {
   height: "30vw",
-  marginBottom: "3%",
+  marginTop: "6%",
 
   "@media (max-width: 2160px)": {
     marginLeft: "-5%",

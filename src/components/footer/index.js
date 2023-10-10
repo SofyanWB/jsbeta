@@ -58,9 +58,15 @@ function Footer(props) {
                     alignItems: "center",
                     display: loading ? "flex" : "none"
                   }}>
-                  <img src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d150f441e939441a9c229bb7e95765f3/data"
-                    style={{ height: "18px" }} alt="" />
-                  <Link href="https://www.youtube.com/@JakartaSatuDKI/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
+                  <Link href="https://www.youtube.com/@JakartaSatuDKI/" target="_blank"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      textDecoration: "none",
+                      color: "black"
+                    }}>
+                    <img src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/d150f441e939441a9c229bb7e95765f3/data"
+                      style={{ height: "18px" }} alt="" />
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       Jakarta Satu DKI
                     </Typography>
@@ -81,9 +87,15 @@ function Footer(props) {
                     alignItems: "center",
                     display: loading ? "flex" : "none"
                   }}>
-                  <img onLoad={handleSetLoading} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/b24f7dd6b91c4be18df88a6616d368b3/data"
-                    style={{ height: "16px" }} alt="" />
-                  <Link href="https://www.twitter.com/jakartasatudki/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
+                  <Link href="https://www.twitter.com/jakartasatudki/" target="_blank"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      textDecoration: "none",
+                      color: "black"
+                    }}>
+                    <img onLoad={handleSetLoading} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/b24f7dd6b91c4be18df88a6616d368b3/data"
+                      style={{ height: "16px" }} alt="" />
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       Jakarta Satu
                     </Typography>
@@ -102,9 +114,15 @@ function Footer(props) {
                     alignItems: "center",
                     display: loading ? "flex" : "none"
                   }}>
-                  <img onLoad={handleSetLoading} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/510e8e1269dd4658ac3a518217356553/data"
-                    style={{ height: "18px" }} alt="" />
-                  <Link href="https://www.instagram.com/jakartasatudki/" target="_blank" style={{ textDecoration: "none", color: "black" }}>
+                  <Link href="https://www.instagram.com/jakartasatudki/" target="_blank"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      textDecoration: "none",
+                      color: "black"
+                    }}>
+                    <img onLoad={handleSetLoading} src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/510e8e1269dd4658ac3a518217356553/data"
+                      style={{ height: "18px" }} alt="" />
                     <Typography variant="caption2" style={{ marginLeft: "10px" }}>
                       jakartasatudki
                     </Typography>

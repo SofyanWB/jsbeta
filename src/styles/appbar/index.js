@@ -33,4 +33,5 @@ export const NavItem = styled.li`
 export const NavLinks = styled.div`
    font-size: 1em;
    height: 100%;
+   color: black;
 `;

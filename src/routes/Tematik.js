@@ -48,6 +48,7 @@ function Tematik(props) {
     const isiPadAir = useMediaQuery("(max-height: 820px)");
 
     const [tematikList, setTematikList] = useState([]);
+    const [data, setData] = useState([]);
 
     const firstIndex = 0;
     const pageSize = isMobile ? 8 : 16;
@@ -77,6 +78,7 @@ function Tematik(props) {
 
     const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
+        setPage(1);
     };
 
     useEffect(() => {
@@ -105,8 +107,6 @@ function Tematik(props) {
             ))
         ));
     };
-
-    const [data, setData] = useState([]);
 
     return (
         <>
