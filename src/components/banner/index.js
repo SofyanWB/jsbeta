@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
-// import { BannerStyle } from '../../styles/banner/BannerStyle';
 import Carousel from "react-material-ui-carousel";
 import axios from "axios";
 import { CardActionArea } from '@mui/material';
@@ -28,28 +27,50 @@ function Banner() {
 
   const handleResize = () => {
     const breakpoints = [
-      { maxWidth: 299, height: 180 },
-      { maxWidth: 349, height: 190 },
+      { maxWidth: 299, height: 140 },
+      { maxWidth: 349, height: 170 },
       { maxWidth: 399, height: 200 },
       { maxWidth: 449, height: 230 },
-      { maxWidth: 599, height: 265 },
-      { maxWidth: 699, height: 300 },
-      { maxWidth: 799, height: 360 },
-      { maxWidth: 899, height: 430 },
-      { maxWidth: 999, height: 480 },
-      { maxWidth: 1099, height: 530 },
-      { maxWidth: 1199, height: 580 },
-      { maxWidth: 1299, height: 630 },
-      { maxWidth: 1399, height: 680 },
-      { maxWidth: 1499, height: 730 },
-      { maxWidth: 1599, height: 780 },
-      { maxWidth: 1699, height: 830 },
-      { maxWidth: 1799, height: 880 },
-      { maxWidth: 1899, height: 930 },
+      { maxWidth: 599, height: 310 },
+      { maxWidth: 699, height: 370 },
+      { maxWidth: 799, height: 420 },
+      { maxWidth: 899, height: 480 },
+      { maxWidth: 999, height: 540 },
+      { maxWidth: 1099, height: 590 },
+      { maxWidth: 1199, height: 645 },
+      { maxWidth: 1299, height: 700 },
+      { maxWidth: 1399, height: 760 },
+      { maxWidth: 1499, height: 820 },
+      { maxWidth: 1599, height: 870 },
+      { maxWidth: 1699, height: 930 },
+      { maxWidth: 1799, height: 990 },
+      { maxWidth: 1899, height: 1040 },
+      { maxWidth: 1999, height: 1100 },
+      { maxWidth: 2099, height: 1160 },
+      { maxWidth: 2199, height: 1210 },
+      { maxWidth: 2299, height: 1270 },
+      { maxWidth: 2399, height: 1325 },
+      { maxWidth: 2499, height: 1380 },
     ];
 
-    const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 930;
+    const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 1415;
     setCarouselHeight(newHeight);
+  };
+
+  const [topHeight, setTopHeight] = useState("-8vh");
+
+  const handleResizeTop = () => {
+    const breakpoints = [
+      { maxWidth: 299, top: "-5vh" },
+      { maxWidth: 349, top: "-5vh" },
+      { maxWidth: 399, top: "-5vh" },
+      { maxWidth: 449, top: "-5vh" },
+      { maxWidth: 499, top: "-8vh" },
+      { maxWidth: 599, top: "-6vh" },
+    ];
+
+    const newTop = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.top || "-8vh";
+    setTopHeight(newTop);
   };
 
   useEffect(() => {
@@ -57,8 +78,12 @@ function Banner() {
     window.addEventListener('resize', handleResize);
     handleResize();
 
+    window.addEventListener('resize', handleResizeTop);
+    handleResizeTop();
+
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResizeTop);
     };
   }, []);
 
@@ -71,15 +96,15 @@ function Banner() {
         }} />
       <Box onLoad={handleSetLoading}
         sx={{
-          maxWidth: 2000,
+          maxWidth: "auto",
           flexGrow: 1,
-          borderBottom: "7px solid #D9D9D9",
-          marginBottom: "-7px",
+
           display: loading ? "block" : "none"
         }}>
         <Carousel
+          autoPlay={false}
           stopAutoPlayOnHover={false}
-          navButtonsAlwaysVisible={true}
+          navButtonsAlwaysVisible={false}
           swipe={true}
           height={carouselHeight}
           fullHeightHover={true}
@@ -94,11 +119,7 @@ function Banner() {
               color: isMobile ? "white" : "white",
               transform: isMobile ? "translateY(-50%)" : "translateY(-50%)",
               zIndex: "20",
-              top: "-8vh",
-
-              "@media (maxHeight: 520px)": {
-                top: "-18vh",
-              },
+              top: topHeight,
             }
           }}
           activeIndicatorIconButtonProps={{
@@ -110,7 +131,7 @@ function Banner() {
             style: {
               marginLeft: isMobile ? "5px" : "50px",
               marginRight: isMobile ? "5px" : "50px",
-              backgroundColor: isMobile ? "transparent" : "transparent",
+              backgroundColor: isMobile ? "transparent" : "rgba(237, 120, 62)",
               transform: isMobile ? "translateY(-50%)" : "translateY(-50%)"
             }
           }}>
@@ -121,9 +142,11 @@ function Banner() {
                 sx={{
                   objectFit: "cover",
                   width: "100%",
-                  maxWidth: 2000,
+                  maxWidth: "auto",
                   overflow: 'hidden',
-                  background: "#004581",
+                  // background: "#004581",
+                  borderBottom: "7px solid #D9D9D9",
+                  marginBottom: "-7px",
                 }}
                 src={banner.source_image}>
               </Box>

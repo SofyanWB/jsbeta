@@ -37,10 +37,7 @@ function SimpulJaringanAPI(props) {
 
     document.title = t('simpulJaringan.simpulJaringanTab');
 
-    const [loading, setLoading] = useState(false);
-    const handleSetLoading = () => {
-        setLoading(true);
-    };
+    const [loading, setLoading] = useState(true);
 
     const [simpulJaringanList, setSimpulJaringanList] = useState([]);
 
@@ -48,6 +45,7 @@ function SimpulJaringanAPI(props) {
         const getSimpulJaringanList = async () => {
             const response = await axios.get("https://jakartasatu.jakarta.go.id/apimobile/app/web/simpul-jaringan");
             setSimpulJaringanList(response.data.data);
+            setLoading(false);
         };
 
         getSimpulJaringanList();
@@ -111,76 +109,93 @@ function SimpulJaringanAPI(props) {
                     <BoxLittleTitle>
                         {t('simpulJaringan.keterangan')}
                     </BoxLittleTitle>
-                    <OutlinedInput
-                        placeholder={t('simpulJaringan.cariData')}
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                        sx={{
-                            width: isMobile ? "87%" : "50%",
-                            paddingLeft: "1%",
-                            borderRadius: "40px",
-                            background: "white",
-                            boxShadow: "0 1px 5px rgb(0 0 0 / 0.2)",
-                        }}
-                    />
-                </BoxAtas>
-                <BoxPagination>
-                    <Grid container
-                        sx={{
-                            marginTop: '20px',
-                            marginBottom: '20px',
-                        }}>
-                        {data.map((simpulJaringan, i) => (
-                            <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
-                                <Card key={simpulJaringan.id} elevation={0} square={true} sx={{ background: "none", height: "100%" }}>
-                                    <Skeleton variant='rounded' animation="wave"
-                                        sx={{
-                                            margin: "20px 20px 0 20px",
-                                            height: isMobile ? 100 : 180,
-                                            display: loading ? "none" : "block"
-                                        }} />
-                                    <Skeleton variant='text' animation="wave"
-                                        sx={{
-                                            margin: "0 20px 0 20px",
-                                            height: isMobile ? 30 : 50,
-                                            display: loading ? "none" : "block"
-                                        }} />
-                                    <CardActionArea href={simpulJaringan.link} target='_blank' disableRipple
-                                        sx={{
-                                            padding: loading ? 3 : 0,
-                                            borderRadius: "30px",
-                                            height: "100%"
-                                        }}>
-                                        <CardMedia onLoad={handleSetLoading}
-                                            component='div'
-                                            sx={{
-                                                justifyContent: "center",
-                                                display: loading ? "flex" : "none"
-                                            }}>
-                                            {simpulJaringan.icon && (
-                                                <Box style={{ height: "100px", alignItems: 'center', }}>
-                                                    <img
-                                                        style={{
-                                                            // width: "100%",
-                                                            height: isMobile ? "70%" : "100px",
-                                                            objectFit: 'cover'
-                                                        }}
-                                                        alt="" src={simpulJaringan.icon} />
-                                                </Box>
-                                            )}
-                                        </CardMedia>
-                                        <BoxTitlePagination onLoad={handleSetLoading}
-                                            sx={{
-                                                paddingTop: isMobile ? "0" : "10%",
-                                                display: loading ? "block" : "none"
-                                            }}>{simpulJaringan.judul}</BoxTitlePagination>
-                                    </CardActionArea>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
+
                     {loading ?
                         (
+                            <Skeleton
+                                variant="rounded" width={isMobile ? "87%" : "50%"} height="60px" animation="wave"
+                                style={{ borderRadius: 40, margin: "0 auto" }}
+                            />
+                        ) : (
+                            <OutlinedInput
+                                placeholder={t('simpulJaringan.cariData')}
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                                sx={{
+                                    width: isMobile ? "87%" : "50%",
+                                    paddingLeft: "1%",
+                                    borderRadius: "40px",
+                                    background: "white",
+                                    boxShadow: "0 1px 5px rgb(0 0 0 / 0.2)",
+                                }}
+                            />
+                        )
+                    }
+                </BoxAtas>
+                <BoxPagination>
+                    {loading ?
+                        (
+                            <Grid container spacing={isMobile ? 2 : 8}
+                                sx={{
+                                    marginTop: '20px',
+                                    marginBottom: '50px',
+                                    marginLeft: "auto",
+                                    marginRight: "auto",
+                                    maxWidth: "1700px"
+                                }}>
+                                {Array.from({ length: pageSize }).map((_, i) => (
+                                    <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
+                                        <Skeleton variant="rounded" animation="wave" height={isMobile ? 100 : 180} />
+                                        <Skeleton variant="text" animation="wave" height={50} />
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        ) : (
+                            <Grid container
+                                justifyContent="center"
+                                alignItems="center"
+                                sx={{
+                                    pt: 4,
+                                    margin: "20px auto",
+                                    maxWidth: "1700px"
+                                }}>
+                                {data.map((simpulJaringan, i) => (
+                                    <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
+                                        <Card key={simpulJaringan.id} elevation={0} square={true} sx={{ background: "none", height: "100%" }}>
+                                            <CardActionArea href={simpulJaringan.link} target='_blank' disableRipple
+                                                sx={{
+                                                    padding: loading ? 0 : 3,
+                                                    borderRadius: "30px",
+                                                    height: "100%"
+                                                }}>
+                                                <CardMedia component='div'>
+                                                    {simpulJaringan.icon && (
+                                                        <Box style={{ height: "100px", alignItems: 'center', }}>
+                                                            <img
+                                                                style={{
+                                                                    // width: "100%",
+                                                                    height: isMobile ? "70%" : "100px",
+                                                                    objectFit: 'cover'
+                                                                }}
+                                                                alt="" src={simpulJaringan.icon} />
+                                                        </Box>
+                                                    )}
+                                                </CardMedia>
+                                                <BoxTitlePagination
+                                                    sx={{
+                                                        paddingTop: isMobile ? "0" : "10%",
+                                                    }}>{simpulJaringan.judul}</BoxTitlePagination>
+                                            </CardActionArea>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        )
+                    }
+                    {loading ?
+                        (
+                            null
+                        ) : (
                             <Stack alignItems="center" spacing={2}>
                                 <Pagination
                                     shape="rounded"
@@ -191,7 +206,7 @@ function SimpulJaringanAPI(props) {
                                         margin: "80px 0 80px 0"
                                     }} />
                             </Stack>
-                        ) : null
+                        )
                     }
                 </BoxPagination>
             </BoxContainer>

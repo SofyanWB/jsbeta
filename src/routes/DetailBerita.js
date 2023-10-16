@@ -93,7 +93,8 @@ function DetailBerita(props) {
                     <Grid container
                         spacing={isMobile ? 5 : 1}
                         justifyContent="space-between"
-                        onLoad={handleSetLoading}>
+                        onLoad={handleSetLoading}
+                        sx={{ maxWidth: "1600px", margin: "0 auto", }}>
                         <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
                             <Box sx={{ textAlign: "left", marginTop: "-40px" }}>
                                 <Skeleton variant='text' animation="wave" sx={{ width: 200, height: 30, display: loading ? "none" : "block" }} />
@@ -145,13 +146,13 @@ function DetailBerita(props) {
                                 }}
                                 dangerouslySetInnerHTML={{ __html: newsLatest.content }}></Typography>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={1} lg={1} xl={3}>
+                        <Grid item xs={12} sm={12} md={1} lg={1} xl={1}>
                             <Divider orientation={isMobile ? "horizontal" : "vertical"} variant="middle"
                                 sx={{
                                     margin: "auto"
                                 }} />
                         </Grid>
-                        <Grid item xs={12} sm={12} md={2} lg={2} xl={3}>
+                        <Grid item xs={12} sm={12} md={2} lg={2} xl={2}>
                             <Box>
                                 {
                                     loading ? (

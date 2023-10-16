@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, Divider, Skeleton, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Skeleton,
+  Typography,
+  useMediaQuery
+} from "@mui/material";
 import {
   HandphoneContainer,
   HandphoneContent,
@@ -16,6 +22,8 @@ import { useState } from "react";
 
 function Handphone(props) {
   const { t } = props;
+
+  const isiPadAir = useMediaQuery("(max-height: 820px)");
 
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -42,7 +50,7 @@ function Handphone(props) {
       />
       <HandphoneImage
         src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/006f81226fa34e9e8baca114787846e6/data"
-        style={{ display: imageLoaded ? "block" : "none" }}
+        style={{ display: imageLoaded ? "block" : "none", maxWidth: isiPadAir ? "380px" : "490px" }}
         onLoad={handleImageLoad} />
       <HandphoneContent>
         <Skeleton

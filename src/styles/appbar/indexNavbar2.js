@@ -8,6 +8,7 @@ export const Nav = styled.nav`
    width: 95%;
    max-width: 1910px;
    margin-top: 20px;
+   border: 1px solid rgba(0,0,0,0.16);
 
    @media screen and (max-width: 500px) {
       margin-top: 10px;

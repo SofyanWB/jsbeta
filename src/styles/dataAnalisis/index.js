@@ -16,7 +16,7 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
 
 export const BoxImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
-  width: "550px",
+  maxWidth: "650px",
   [theme.breakpoints.down(1443)]: {
     width: "35vw",
     height: "auto",
@@ -49,6 +49,7 @@ export const BoxContent = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxContent2 = styled(Box)(({ theme }) => ({
+  maxWidth: "900px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -269,16 +270,24 @@ export const imageContent = {
 export const textContent = {
   textAlign: "center",
   paddingTop: "9%",
-  fontSize: "0.9vw",
-  "@media (max-width: 1440px)": {
-    fontSize: "12px"
-  },
-  "@media (max-width: 1042px)": {
-    fontSize: "1.5vw"
-  },
-  "@media (max-width: 600px)": {
+  fontSize: "18px",
+
+  "@media (max-width: 1043px)": {
     fontSize: "2vw",
   },
+  "@media (max-width: 500px)": {
+    fontSize: "12px",
+  },
+
+  // "@media (max-width: 1440px)": {
+  //   fontSize: "12px"
+  // },
+  // "@media (max-width: 1042px)": {
+  //   fontSize: "1.5vw"
+  // },
+  // "@media (max-width: 600px)": {
+  //   fontSize: "2vw",
+  // },
 }
 
 export const divider = {

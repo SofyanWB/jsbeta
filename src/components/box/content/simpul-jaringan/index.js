@@ -122,50 +122,68 @@ function SimpulJaringan(props) {
         )}
 
         <BoxPencarian style={{ width: isMobile ? "100%" : "50%" }}>
-          <OutlinedInput
-            placeholder={t('simpulJaringan.cariData')}
-            value={searchInput}
-            endAdornment={
-              <InputAdornment position="end">
-                {searchInput && (
-                  <IconButton
-                    aria-label="clear"
-                    edge="end"
-                    size="small"
-                    onClick={() => {
-                      setSearchInput('');
-                      setIsSearching(false);
-                    }}
-                  >
-                    <ClearRoundedIcon size="small" />
-                  </IconButton>
-                )}
-              </InputAdornment>
-            }
-            onChange={handleSearchChange}
-            sx={{
-              margin: '0 auto',
-              width: '100%',
-              height: '49px',
-              paddingLeft: '1%',
-              borderRadius: '40px',
-              background: 'white',
-              boxShadow: '0 1px 5px rgb(0 0 0 / 0.2)',
-            }}
-          />
-          <Button
-            component={RouterLink} to="/simpul-jaringan"
-            variant="text"
-            size="small"
-            sx={{
-              textTransform: "none",
-              maxWidth: "90px",
-              borderRadius: "20px",
-              marginLeft: "auto",
-              marginRight: "2%",
-            }}>
-            lihat semua
-          </Button>
+          {!isLoading ? (
+            <OutlinedInput
+              placeholder={t('simpulJaringan.cariData')}
+              value={searchInput}
+              endAdornment={
+                <InputAdornment position="end">
+                  {searchInput && (
+                    <IconButton
+                      aria-label="clear"
+                      edge="end"
+                      size="small"
+                      onClick={() => {
+                        setSearchInput('');
+                        setIsSearching(false);
+                      }}
+                    >
+                      <ClearRoundedIcon size="small" />
+                    </IconButton>
+                  )}
+                </InputAdornment>
+              }
+              onChange={handleSearchChange}
+              sx={{
+                margin: '0 auto',
+                width: '100%',
+                height: '49px',
+                paddingLeft: '1%',
+                borderRadius: '40px',
+                background: 'white',
+                boxShadow: '0 1px 5px rgb(0 0 0 / 0.2)',
+              }}
+            />
+          ) : (
+            <div>
+              <Skeleton
+                variant="rounded" width="100%" height="49px" animation="wave"
+                style={{ borderRadius: 40, margin: "0 auto", marginTop: "1%" }}
+              />
+            </div>
+          )}
+          {!isLoading ? (
+            <Button
+              component={RouterLink} to="/simpul-jaringan"
+              variant="text"
+              size="small"
+              sx={{
+                textTransform: "none",
+                maxWidth: "90px",
+                borderRadius: "20px",
+                marginLeft: "auto",
+                marginRight: "2%",
+              }}>
+              {t('beranda.simpulJaringan.lihatSemua')}
+            </Button>
+          ) : (
+            <div>
+              <Skeleton
+                variant="rounded" width="90px" animation="wave"
+                style={{ borderRadius: 40, marginLeft: "auto", marginTop: "1%" }}
+              />
+            </div>
+          )}
         </BoxPencarian>
 
         {!isLoading ? (
@@ -242,22 +260,6 @@ function SimpulJaringan(props) {
                 {t('beranda.simpulJaringan.dataTidakDitemukan')}
               </Typography>
             )
-
-            // <Grid container spacing={2} sx={{ mt: 7 }}>
-            //   {filteredSimpulJaringan.map((button, index) => (
-            //     <Grid item key={index}
-            //       xs={6}
-            //       sm={6}
-            //       md={isMobile ? 6 : 3}>
-            //       <Button sx={efekHover} href={button.link} target="_blank">
-            //         <BoxImage src={button.icon} alt={`Button ${index}`} />
-            //         <Typography variant="h6" sx={textButton}>
-            //           {button.judul}
-            //         </Typography>
-            //       </Button>
-            //     </Grid>
-            //   ))}
-            // </Grid>
           ) : (
             <Carousel
               autoPlay={!isSearching}

@@ -6,6 +6,7 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   width: "100%",
+  paddingTop: "50px",
   paddingBottom: "100px",
   //background: Colors.light_gray,
 
@@ -16,6 +17,7 @@ export const BoxContent = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   width: "90%",
+  maxWidth: "1400px",
   padding: "20px",
 }));
 
@@ -52,7 +54,7 @@ export const BoxTitle = styled(Typography)(({ theme }) => ({
 
   textAlign: "center",
   marginBottom: "2%",
-  
+
   [theme.breakpoints.down(1440)]: {
     fontSize: "3.2vw",
   },
@@ -237,9 +239,14 @@ export const StyleTextButton = {
 }
 
 export const CarouselStyle = {
-  height: "30vw",
+  // height: "30vw",
   marginTop: "6%",
 
+  "@media (max-width: 2560px)": {
+    marginLeft: "-5%",
+    marginRight: "-5%",
+    height: "20vw",
+  },
   "@media (max-width: 2160px)": {
     marginLeft: "-5%",
     marginRight: "-5%",

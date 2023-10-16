@@ -19,8 +19,8 @@ export const BoxAtas = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxPagination = styled(Box)(({ theme }) => ({
-    marginLeft: "10%",
-    marginRight: "10%",
+    marginLeft: "5%",
+    marginRight: "5%",
     justifyContent: "center",
     textAlign: "center",
 }));

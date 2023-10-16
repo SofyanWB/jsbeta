@@ -3,6 +3,8 @@ import { Typography, Divider } from "@mui/material";
 import { Box } from "@mui/system";
 
 export const FooterContainer = styled(Box)(() => ({
+  margin: "0 auto",
+  maxWidth: "1600px",
   color: "rgba(0, 0, 0, 0.7)",
   lineHeight: "2",
 }));

@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, Popover, Typography } from "@mui/material";
+import { Box, Button, Dialog, Popover, Skeleton, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import { withTranslation } from "react-i18next";
@@ -15,6 +15,8 @@ import {
   TypoHoverTitle2,
   ButtonDialog,
   ButtonHoverAction,
+  ImageButton,
+  SkelText,
 
 } from "../../../../styles/peta/index";
 
@@ -56,13 +58,41 @@ function Dialog1(props) {
     }
   }, [open, lastClickedButton]);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+
   return (
     <div>
       <ButtonDialog
         onMouseEnter={handleMouseEnter}
         sx={iconButtonStyles}>
-        <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/0ad00b7b1e0f4e2a8b8a69b02ab26985/data" />
-        {t('beranda.peta.dialog.interaktif')}
+
+        <Skeleton
+          variant="circular"
+          style={{ display: imageLoaded ? "none" : "block" }}
+          sx={ImageButton}
+          animation="wave"
+        />
+
+        <BoxImageButton
+          src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/0ad00b7b1e0f4e2a8b8a69b02ab26985/data"
+          style={{ display: imageLoaded ? "block" : "none" }}
+          onLoad={handleImageLoad} />
+
+        <Skeleton
+          variant="text"
+          style={{ display: imageLoaded ? "none" : "block" }}
+          sx={SkelText}
+        />
+
+        <div style={{ display: imageLoaded ? "block" : "none" }}>
+          {t('beranda.peta.dialog.interaktif')}
+        </div>
+
       </ButtonDialog>
       <Dialog
         open={Boolean(open)}
@@ -90,14 +120,55 @@ function Dialog1(props) {
               target="_blank"
               sx={iconButtonStyles2}
               ref={lastClickedButton}>
-              <Typography sx={TypoHoverTitle}>
-              {t('drawer.interaktif')}
+
+              <Skeleton
+                variant="text" width="40%" height="30px" animation="wave"
+                style={{ display: imageLoaded ? "none" : "block", borderRadius: 10 }}
+              />
+
+              <Typography
+                sx={TypoHoverTitle}
+                style={{ display: imageLoaded ? "block" : "none" }}>
+
+                {t("beranda.peta.dialog.interaktif")}
               </Typography>
+
               <ContentButtonHover>
-                <ImageButtonHover src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/0ad00b7b1e0f4e2a8b8a69b02ab26985/data" />
-                <Typography sx={hoverItem}>
-                  {t('beranda.peta.dialog.interaktifDetail')}
-                </Typography>
+
+                <Skeleton
+                  variant="circular"
+                  style={{ display: imageLoaded ? "none" : "block", padding: "15%", marginRight: "10%" }}
+                  animation="wave"
+                />
+
+                <ImageButtonHover
+                  src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/0ad00b7b1e0f4e2a8b8a69b02ab26985/data"
+                  style={{ display: imageLoaded ? "block" : "none" }}
+                  onLoad={handleImageLoad} />
+
+                <div>
+
+                  <Skeleton
+                    variant="text" width="200px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Skeleton
+                    variant="text" width="200px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Skeleton
+                    variant="text" width="130px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Typography sx={hoverItem}
+                    style={{ display: imageLoaded ? "block" : "none" }}>
+                    {t('beranda.peta.dialog.interaktifDetail')}
+                  </Typography>
+
+                </div>
               </ContentButtonHover>
             </Button>
           </BoxContainerHover1>
@@ -147,13 +218,38 @@ function Dialog2(props) {
     }
   }, [open, lastClickedButton]);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div>
       <ButtonDialog
         onMouseEnter={handleMouseEnter}
         sx={iconButtonStyles}>
-        <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/096d59b754b64b27953d8668e6474e43/data" />
-        {t('beranda.peta.dialog.tematik')}
+
+        <Skeleton
+          variant="circular"
+          style={{ display: imageLoaded ? "none" : "block" }}
+          sx={ImageButton}
+          animation="wave"
+        />
+
+        <BoxImageButton
+          src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/096d59b754b64b27953d8668e6474e43/data"
+          style={{ display: imageLoaded ? "block" : "none" }}
+          onLoad={handleImageLoad} />
+
+        <Skeleton
+          variant="text"
+          style={{ display: imageLoaded ? "none" : "block" }}
+          sx={SkelText}
+        />
+        <div style={{ display: imageLoaded ? "block" : "none" }}>
+          {t('beranda.peta.dialog.tematik')}
+        </div>
       </ButtonDialog>
       <Dialog
         open={Boolean(open)}
@@ -179,17 +275,54 @@ function Dialog2(props) {
             <Button
               component={RouterLink} to="/tematik"
               sx={iconButtonStyles2}>
+
+              <Skeleton
+                variant="text" width="40%" height="30px" animation="wave"
+                style={{ display: imageLoaded ? "none" : "block", borderRadius: 10 }}
+              />
+
               <Typography
-                sx={TypoHoverTitle}>
-                {t('drawer.tematik')}
+                sx={TypoHoverTitle}
+                style={{ display: imageLoaded ? "block" : "none" }}>
+                {t('beranda.peta.dialog.tematik')}
               </Typography>
-              <ContentButtonHover
-                paddingLeft="25px"
-                paddingRight="25px">
-                <ImageButtonHover src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/096d59b754b64b27953d8668e6474e43/data" />
-                <Typography sx={hoverItem}>
-                  {t('beranda.peta.dialog.tematikDetail')}
-                </Typography>
+
+              <ContentButtonHover>
+
+                <Skeleton
+                  variant="circular"
+                  style={{ display: imageLoaded ? "none" : "block", padding: "15%", marginRight: "10%" }}
+                  animation="wave"
+                />
+
+                <ImageButtonHover src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/096d59b754b64b27953d8668e6474e43/data"
+                  style={{ display: imageLoaded ? "block" : "none" }}
+                  onLoad={handleImageLoad} />
+
+                <div>
+
+                  <Skeleton
+                    variant="text" width="200px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Skeleton
+                    variant="text" width="200px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Skeleton
+                    variant="text" width="130px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Typography
+                    sx={hoverItem}
+                    style={{ display: imageLoaded ? "block" : "none" }}>
+                    {t('beranda.peta.dialog.tematikDetail')}
+                  </Typography>
+
+                </div>
               </ContentButtonHover>
             </Button>
           </BoxContainerHover1>
@@ -239,13 +372,39 @@ function Dialog3(props) {
     }
   }, [open, lastClickedButton]);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div>
       <ButtonDialog
         onMouseEnter={handleMouseEnter}
         sx={iconButtonStyles}>
-        <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/9b24667a76444110a813e8f813fcba74/data" />
-        {t('beranda.peta.dialog.peta3d')}
+
+        <Skeleton
+          variant="circular"
+          style={{ display: imageLoaded ? "none" : "block" }}
+          sx={ImageButton}
+          animation="wave"
+        />
+
+        <BoxImageButton src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/9b24667a76444110a813e8f813fcba74/data"
+          style={{ display: imageLoaded ? "block" : "none" }}
+          onLoad={handleImageLoad} />
+
+        <Skeleton
+          variant="text"
+          style={{ display: imageLoaded ? "none" : "block" }}
+          sx={SkelText}
+        />
+
+        <div style={{ display: imageLoaded ? "block" : "none" }}>
+          {t('beranda.peta.dialog.peta3d')}
+        </div>
+
       </ButtonDialog>
       <Dialog
         open={Boolean(open)}
@@ -273,23 +432,66 @@ function Dialog3(props) {
           }}>
 
           <BoxContainerHover2 onMouseLeave={handleClosePopover}>
-            <Typography sx={TypoHoverTitle2}>
-              Peta 3D
+
+            <Skeleton
+              variant="text" width="40%" height="30px" animation="wave"
+              style={{ display: imageLoaded ? "none" : "block", borderRadius: 10, marginRight: "75px" }}
+            />
+
+            <Typography
+              sx={TypoHoverTitle2}
+              style={{ display: imageLoaded ? "block" : "none" }}>
+              {t('beranda.peta.dialog.peta3d')}
             </Typography>
 
             <Box>
               <ContentButtonHover
                 paddingLeft="25px"
                 paddingRight="50px">
+
+                <Skeleton
+                  variant="circular"
+                  style={{ display: imageLoaded ? "none" : "block", padding: "9%", marginRight: "10%" }}
+                  animation="wave"
+                />
+
                 <ImageButtonHover
-                  src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/9b24667a76444110a813e8f813fcba74/data" />
-                <Typography sx={hoverItem}>
-                  {t('beranda.peta.dialog.peta3dDetail')}
-                </Typography>
+                  src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/9b24667a76444110a813e8f813fcba74/data"
+                  style={{ display: imageLoaded ? "block" : "none" }}
+                  onLoad={handleImageLoad} />
+
+                <div>
+
+                  <Skeleton
+                    variant="text" width="200px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Skeleton
+                    variant="text" width="200px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+                  <Skeleton
+                    variant="text" width="130px" height="20px" animation="wave"
+                    style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                  />
+
+
+                  <Typography
+                    sx={hoverItem}
+                    style={{ display: imageLoaded ? "block" : "none" }}>
+                    {t('beranda.peta.dialog.peta3dDetail')}
+                  </Typography>
+
+                </div>
+
               </ContentButtonHover>
             </Box>
 
             <ButtonHoverAction>
+
+
               <Button
                 component={RouterLink} to="/peta-3d-basemaps"
                 target="_blank"
@@ -297,9 +499,9 @@ function Dialog3(props) {
                   bgcolor: "#DFE6E9",
                   borderRadius: "15px",
                   color: "black",
-                  fontWeight: "bold",
+
                   width: "400px",
-                  fontSize: "11px",
+
                   padding: "10px",
                   marginRight: "20px",
                   "@media (max-width: 1440px)": {
@@ -313,7 +515,17 @@ function Dialog3(props) {
                     height: "6vw"
                   },
                 }}>
-                3D Basemaps
+
+                <Skeleton
+                  variant="text" width="200px" height="20px" animation="wave"
+                  style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                />
+
+                <Typography style={{ display: imageLoaded ? "block" : "none", fontSize: "11px", fontWeight: "bold" }}>
+                  3D Basemaps
+                </Typography>
+
+
               </Button>
 
               <Button
@@ -322,8 +534,6 @@ function Dialog3(props) {
                 sx={{
                   bgcolor: "rgba(242, 170, 134, 0.61)",
                   borderRadius: "15px",
-                  fontSize: "11px",
-                  fontWeight: "bold",
                   color: "black",
                   width: "400px",
                   padding: "10px",
@@ -337,7 +547,16 @@ function Dialog3(props) {
                     height: "6vw"
                   },
                 }}>
-                3D Transit Oriented
+
+                <Skeleton
+                  variant="text" width="200px" height="20px" animation="wave"
+                  style={{ display: imageLoaded ? "none" : "block", borderRadius: 5 }}
+                />
+
+                <Typography style={{ display: imageLoaded ? "block" : "none", fontSize: "11px", fontWeight: "bold", }}>
+                  3D Transit Oriented
+                </Typography>
+
               </Button>
             </ButtonHoverAction>
           </BoxContainerHover2>

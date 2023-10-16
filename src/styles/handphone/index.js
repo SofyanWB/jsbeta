@@ -22,8 +22,8 @@ export const HandphoneImage = styled("img")(({ src, theme }) => ({
   width: "47%",
   height: "47%",
   paddingTop: "50px",
-  paddingLeft: "100px",
-  paddingRight: "50px",
+  // paddingLeft: "100px",
+  paddingRight: "20px",
   zIndex: "1",
   [theme.breakpoints.down("md")]: {
     width: "250px",

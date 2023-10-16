@@ -10,6 +10,7 @@ import {
 } from "../../styles/box";
 
 function Box() {
+
   return (
     <BoxContainer>
       <BoxContent>

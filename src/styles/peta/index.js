@@ -62,6 +62,7 @@ export const BoxContent2 = styled(Box)(({ theme }) => ({
 export const BoxImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   width: "80%",
+  maxWidth: "400px",
   position: "relative",
   zIndex: "20",
 
@@ -327,3 +328,55 @@ export const ButtonHoverAction = styled(Box)(({ theme }) => ({
   paddingTop: "8%",
   paddingBottom: "3%"
 }));
+
+export const PetaTitle = {
+  borderRadius: 5, 
+  marginTop:"-3vw",
+  width:"30vw",
+  height: "94px",
+  "@media (max-width: 810px)": {
+    height: "10vw",
+    marginBottom:"2vw"
+  },
+}
+
+export const Deskripsi1 = {
+  width:"100%",
+  height:"34px",
+  borderRadius: 3,
+
+  "@media (max-width: 810px)": {
+    height: "5vw",
+  },
+}
+
+export const ImagePeta = {
+  width:"100%",
+  height:"15vw",
+  borderRadius: 7,
+
+  "@media (max-width: 1042px)": {
+    height: "30vw",
+    marginTop:"2vw",
+    marginBottom:"10vw"
+  },
+}
+
+//SKELETON BUTTON
+
+export const ImageButton = {
+  margin: "7%", 
+  padding: "9%",
+}
+
+export const SkelText = {
+  width:"40%", 
+  height:"60%", 
+  animation:"wave", 
+  borderRadius: 5,
+
+  "@media (max-width: 1042px)": {
+    // height: "30vw",
+    // marginBottom:"7vw"
+  },
+}

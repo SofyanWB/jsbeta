@@ -132,18 +132,28 @@ function Tematik(props) {
                     <BoxLittleTitle>
                         {t('tematik.keterangan')}
                     </BoxLittleTitle>
-                    <OutlinedInput
-                        placeholder={t('tematik.cariData')}
-                        value={searchTerm}
-                        onChange={handleInputChange}
-                        sx={{
-                            width: isMobile ? "87%" : "50%",
-                            paddingLeft: "1%",
-                            borderRadius: "40px",
-                            background: "white",
-                            boxShadow: "0 1px 5px rgb(0 0 0 / 0.2)",
-                        }}
-                    />
+
+                    {isLoading ?
+                        (
+                            <Skeleton
+                                variant="rounded" width={isMobile ? "87%" : "50%"} height="60px" animation="wave"
+                                style={{ borderRadius: 40, margin: "0 auto" }}
+                            />
+                        ) : (
+                            <OutlinedInput
+                                placeholder={t('tematik.cariData')}
+                                value={searchTerm}
+                                onChange={handleInputChange}
+                                sx={{
+                                    width: isMobile ? "87%" : "50%",
+                                    paddingLeft: "1%",
+                                    borderRadius: "40px",
+                                    background: "white",
+                                    boxShadow: "0 1px 5px rgb(0 0 0 / 0.2)",
+                                }}
+                            />
+                        )
+                    }
                 </BoxAtas>
                 <BoxPagination>
                     {isMobile || isiPadAir ?
@@ -151,7 +161,11 @@ function Tematik(props) {
                             <>
                                 {isLoading ?
                                     (
-                                        <Grid container spacing={isMobile ? 2 : 8} sx={{ marginTop: '20px', marginBottom: '50px' }}>
+                                        <Grid container spacing={isMobile ? 2 : 8}
+                                            sx={{
+                                                marginTop: '20px',
+                                                marginBottom: '50px',
+                                            }}>
                                             {Array.from({ length: pageSize }).map((_, i) => (
                                                 <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
                                                     <Skeleton variant="rounded" animation="wave" height={isMobile ? 100 : 180} />
@@ -161,23 +175,24 @@ function Tematik(props) {
                                         </Grid>
                                     ) : (
                                         <Grid container
-                                            spacing={isMobile ? 2 : 8}
                                             sx={{
                                                 marginTop: '20px',
-                                                marginBottom: '50px',
                                             }}>
                                             {data.map((tematik, i) => (
-                                                <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
+                                                <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}
+                                                    container
+                                                    justifyContent="center"
+                                                    alignItems="stretch">
                                                     <Card key={tematik.id} elevation={0} square={true}
                                                         sx={{
+                                                            margin: "10px",
                                                             background: "none",
-                                                            height: "100%",
+                                                            width: "100%",
                                                             borderRadius: "30px",
                                                             boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.10)",
                                                         }}>
                                                         <CardActionArea href={tematik.webview} target='_blank' disableRipple
                                                             sx={{
-                                                                p: 1,
                                                                 borderRadius: "30px",
                                                                 height: "100%"
                                                             }}>
@@ -219,7 +234,11 @@ function Tematik(props) {
                             <>
                                 {isLoading ?
                                     (
-                                        <Grid container spacing={isMobile ? 2 : 8} sx={{ marginTop: '20px', marginBottom: '50px' }}>
+                                        <Grid container spacing={isMobile ? 2 : 8}
+                                            sx={{
+                                                margin: "20px auto 50px auto",
+                                                maxWidth: "1600px"
+                                            }}>
                                             {Array.from({ length: pageSize }).map((_, i) => (
                                                 <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
                                                     <Skeleton variant="rounded" animation="wave" height={isMobile ? 100 : 180} />
@@ -229,17 +248,25 @@ function Tematik(props) {
                                         </Grid>
                                     ) : (
                                         <Grid container
-                                            spacing={isMobile ? 2 : 8}
+                                            justifyContent="center"
+                                            alignItems="stretch"
                                             sx={{
-                                                marginTop: '20px',
-                                                marginBottom: '50px',
+                                                pt: 5,
+                                                margin: "20px auto",
+                                                maxWidth: "1600px"
                                             }}>
                                             {data.map((data) => (
-                                                <Grid item xs={6} sm={3} md={3} lg={3} xl={3} key={data.id}>
+                                                <Grid item xs={6} sm={3} md={3} lg={3} xl={3} key={data.id}
+                                                    container
+                                                    spacing={2}
+                                                    justifyContent="center"
+                                                    alignItems="stretch">
                                                     <Card
                                                         sx={{
+                                                            // minHeight: "25vh",
+                                                            margin: "20px",
                                                             background: "none",
-                                                            height: "100%",
+                                                            width: "100%",
                                                             borderRadius: "30px",
                                                             boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.10)",
                                                         }}
@@ -317,7 +344,6 @@ function Tematik(props) {
                                                             </CardActions>
                                                         </CardActionArea>
                                                     </Card>
-
                                                 </Grid>
                                             ))}
                                         </Grid>

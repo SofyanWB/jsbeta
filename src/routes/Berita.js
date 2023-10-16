@@ -61,6 +61,34 @@ function Berita(props) {
         setLoading(true);
     };
 
+    const [carouselHeight, setCarouselHeight] = useState(500);
+
+    const handleResize = () => {
+        const breakpoints = [
+            { maxWidth: 299, height: 350 },
+            { maxWidth: 349, height: 380 },
+            { maxWidth: 399, height: 400 },
+            { maxWidth: 449, height: 430 },
+            { maxWidth: 599, height: 450 },
+            { maxWidth: 699, height: 150 },
+            { maxWidth: 799, height: 180 },
+            { maxWidth: 899, height: 200 },
+            { maxWidth: 999, height: 230 },
+            { maxWidth: 1099, height: 250 },
+            { maxWidth: 1199, height: 280 },
+            { maxWidth: 1299, height: 300 },
+            { maxWidth: 1399, height: 330 },
+            { maxWidth: 1499, height: 350 },
+            { maxWidth: 1599, height: 380 },
+            { maxWidth: 1699, height: 400 },
+            { maxWidth: 1799, height: 430 },
+            { maxWidth: 1899, height: 500 },
+        ];
+
+        const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 500;
+        setCarouselHeight(newHeight);
+    };
+
     const [newsLatest, setnewsLatest] = useState([]);
 
     const [newsList, setNewsList] = useState([]);
@@ -81,6 +109,12 @@ function Berita(props) {
     };
     useEffect(() => {
         getNewsList();
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const firstIndex = 0;
@@ -184,7 +218,7 @@ function Berita(props) {
                                     navButtonsAlwaysVisible={true}
                                     swipe={true}
                                     animation={"slide"}
-                                    height={400}
+                                    height={carouselHeight}
                                     fullHeightHover={true}
                                     IndicatorIcon={false}
                                     indicatorProps={{
@@ -229,7 +263,6 @@ function Berita(props) {
                                                         component="img"
                                                         sx={{
                                                             // borderRadius: "18px",
-                                                            maxWidth: 650,
                                                             width: '100%',
                                                             backgroundColor: "grey",
                                                             boxShadow: "2px 2px 20px 0px rgba(0, 0, 0, 0.15)"
@@ -237,7 +270,7 @@ function Berita(props) {
                                                         src={step.source_image} />
                                                 </CardMedia>
                                             </Grid>
-                                            <Grid item xs={12} sm={6} md={6} lg={6} xl={12}>
+                                            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                                 <CardActionArea component={RouterLink} to={`/detail-berita/${step.id}`}
                                                     sx={{
                                                         padding: "20px",

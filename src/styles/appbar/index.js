@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
    width: 94%;
-   max-width: 1810px;
+   max-width: 2560px;
    margin-left: auto;
    height: 65px;
    // margin-top: 10px;
