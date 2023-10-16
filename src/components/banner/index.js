@@ -102,7 +102,7 @@ function Banner() {
           display: loading ? "block" : "none"
         }}>
         <Carousel
-          autoPlay={false}
+          // autoPlay={false}
           stopAutoPlayOnHover={false}
           navButtonsAlwaysVisible={false}
           swipe={true}
