@@ -20,8 +20,13 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxCarousel = styled(Box)(({ theme }) => ({
-    marginLeft: "2.4%",
-    marginRight: "2.4%",
+    maxWidth: "1460px",
+    marginLeft: "auto",
+    marginRight: "auto",
+
+    // marginLeft: "2.4%",
+    // marginRight: "2.4%",
+
     marginTop: "5%",
     // marginBottom: "3%",
 
@@ -44,8 +49,13 @@ export const BoxBeritaTerbaru = styled(Box)(({ theme }) => ({
 }));
 
 export const BoxSemuaBerita = styled(Box)(({ theme }) => ({
-    marginLeft: "8%",
-    marginRight: "8%",
+    maxWidth: "1300px",
+    marginLeft: "auto",
+    marginRight: "auto",
+
+    // marginLeft: "8%",
+    // marginRight: "8%",
+
     marginBottom: "1%",
     justifyContent: "center",
     textAlign: "center",
@@ -131,11 +141,17 @@ export const CardContentSectionAtas = {
     zIndex: "10",
     color: "white",
 
+    [theme.breakpoints.down(3841)]: {
+        top: "40%",
+        marginLeft: "30%",
+        width: "60%",
+    },
     [theme.breakpoints.down(2560)]: {
         marginLeft: "8%",
         width: "60%",
     },
     [theme.breakpoints.down(1920)]: {
+        top: "20%",
         marginLeft: "8%",
         width: "60%",
     },
@@ -144,51 +160,53 @@ export const CardContentSectionAtas = {
         width: "60%",
     },
     [theme.breakpoints.down(1043)]: {
+        top: "30%",
         marginLeft: "8%",
         width: "60%",
     },
     [theme.breakpoints.down(900)]: {
+        top: "20%",
         marginLeft: "8%",
         width: "80%",
     },
     [theme.breakpoints.down(800)]: {
         marginLeft: "8%",
         width: "80%",
-        top: "15%",
+        top: "30%",
     },
     [theme.breakpoints.down(700)]: {
         marginLeft: "8%",
         width: "80%",
-        top: "15%",
+        top: "25%",
     },
     [theme.breakpoints.down(600)]: {
         marginLeft: "8%",
         width: "80%",
-        top: "15%",
+        top: "25%",
     },
     [theme.breakpoints.down(500)]: {
         marginLeft: "8%",
         width: "90%",
-        top: "10%",
+        top: "20%",
     },
     [theme.breakpoints.down(401)]: {
         marginLeft: "8%",
         width: "90%",
-        top: "10%",
+        top: "15%",
     },
     [theme.breakpoints.down(400)]: {
         marginLeft: "0",
-        width: "98%",
-        top: "10%",
+        width: "100%",
+        top: "15%",
     },
     [theme.breakpoints.down(350)]: {
         marginLeft: "0",
-        width: "90%",
+        width: "100%",
         top: "10%",
     },
     [theme.breakpoints.down(260)]: {
         marginLeft: "0",
         width: "98%",
-        top: "10%",
+        top: "5%",
     },
 }

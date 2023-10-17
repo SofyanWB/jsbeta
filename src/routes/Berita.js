@@ -6,36 +6,37 @@ import {
 import {
     Nav,
     NavContainer
-} from '../styles/appbar/index';
-import '../styles/appbar/NavbarCSS.css';
+} from '../styles/appbar/indexBerita';
+import '../styles/appbar/NavbarBerita.css';
 import { HalamanFooter } from "../../src/components/footer/index";
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Paper from '@mui/material/Paper';
-import Skeleton from '@mui/material/Skeleton';
-
+import {
+    CardActionArea,
+    Divider,
+    ThemeProvider,
+    Grid,
+    Box,
+    Card,
+    CardContent,
+    CardMedia,
+    Typography,
+    Pagination,
+    Stack,
+    useMediaQuery,
+    Paper,
+    Skeleton
+} from "@mui/material";
 import { Link as RouterLink } from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
 import axios from "axios";
 import { withTranslation } from 'react-i18next';
-
 import {
     BoxContainer,
     BoxSemuaBerita,
     BoxTitle,
     BoxCarousel,
-
     CardContentSectionAtas
 } from "../routes/routeStyle/BeritaStyle";
 
-import { CardActionArea, Divider, ThemeProvider } from "@mui/material";
 import theme from '../styles/theme';
 
 function Berita(props) {
@@ -76,17 +77,65 @@ function Berita(props) {
             { maxWidth: 999, height: 230 },
             { maxWidth: 1099, height: 250 },
             { maxWidth: 1199, height: 280 },
-            { maxWidth: 1299, height: 300 },
-            { maxWidth: 1399, height: 330 },
+            { maxWidth: 1299, height: 350 },
+            { maxWidth: 1399, height: 350 },
             { maxWidth: 1499, height: 350 },
-            { maxWidth: 1599, height: 380 },
-            { maxWidth: 1699, height: 400 },
-            { maxWidth: 1799, height: 430 },
-            { maxWidth: 1899, height: 500 },
+            { maxWidth: 1599, height: 350 },
+            { maxWidth: 1699, height: 350 },
+            { maxWidth: 1799, height: 350 },
+            { maxWidth: 1899, height: 350 },
         ];
 
-        const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 500;
+        const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 350;
         setCarouselHeight(newHeight);
+    };
+
+    const [gambarHeight, setGambarHeight] = useState(1300);
+
+    const handleResizeGambar = () => {
+        const breakpoints = [
+            { maxWidth: 299, height: 540 },
+            { maxWidth: 349, height: 540 },
+            { maxWidth: 399, height: 540 },
+            { maxWidth: 449, height: 540 },
+            { maxWidth: 599, height: 540 },
+            { maxWidth: 699, height: 540 },
+            { maxWidth: 799, height: 540 },
+            { maxWidth: 899, height: 540 },
+            { maxWidth: 999, height: 540 },
+            { maxWidth: 1099, height: 800 },
+            { maxWidth: 1199, height: 800 },
+            { maxWidth: 1299, height: 800 },
+            { maxWidth: 1399, height: 800 },
+            { maxWidth: 1499, height: 800 },
+            { maxWidth: 1599, height: 800 },
+            { maxWidth: 1699, height: 800 },
+            { maxWidth: 1799, height: 800 },
+            { maxWidth: 1899, height: 800 },
+            { maxWidth: 1999, height: 800 },
+            { maxWidth: 2099, height: 1200 },
+            { maxWidth: 2199, height: 1200 },
+            { maxWidth: 2299, height: 1200 },
+            { maxWidth: 2399, height: 1200 },
+            { maxWidth: 2499, height: 1200 },
+            { maxWidth: 2599, height: 1200 },
+            { maxWidth: 2699, height: 1200 },
+            { maxWidth: 2799, height: 1200 },
+            { maxWidth: 2899, height: 1200 },
+            { maxWidth: 2999, height: 1200 },
+            { maxWidth: 3099, height: 1300 },
+            { maxWidth: 3199, height: 1300 },
+            { maxWidth: 3299, height: 1300 },
+            { maxWidth: 3399, height: 1300 },
+            { maxWidth: 3499, height: 1300 },
+            { maxWidth: 3599, height: 1300 },
+            { maxWidth: 3699, height: 1300 },
+            { maxWidth: 3799, height: 1300 },
+            { maxWidth: 3899, height: 1300 },
+        ];
+
+        const newGambarHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 1300;
+        setGambarHeight(newGambarHeight);
     };
 
     const [newsLatest, setnewsLatest] = useState([]);
@@ -111,9 +160,12 @@ function Berita(props) {
         getNewsList();
         window.addEventListener('resize', handleResize);
         handleResize();
+        window.addEventListener('resize', handleResizeGambar);
+        handleResizeGambar();
 
         return () => {
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResizeGambar);
         };
     }, []);
 
@@ -190,7 +242,7 @@ function Berita(props) {
                     </CardContent>
                     <img style={{
                         width: "100%",
-                        height: "650px",
+                        height: gambarHeight,
                         objectFit: "cover",
                         filter: "brightness(0.4)",
                         backgroundColor: "grey",

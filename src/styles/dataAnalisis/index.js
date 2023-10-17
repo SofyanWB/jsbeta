@@ -239,7 +239,7 @@ export const button600px = {
 
 export const kotakGambar = {
   height: "30%",
-  width: "70%",
+  width: "75%",
   // backgroundColor: "rgb(101, 158, 188, 0.1)",
   borderRadius: 4,
   margin: "20px",

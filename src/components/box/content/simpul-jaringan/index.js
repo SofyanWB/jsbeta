@@ -221,6 +221,7 @@ function SimpulJaringan(props) {
                   <Grid
                     container
                     spacing={2}
+                    justifyContent="center"
                     key={pageIndex}
                     sx={{
                       flexGrow: 1,

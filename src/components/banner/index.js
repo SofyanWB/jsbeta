@@ -51,9 +51,23 @@ function Banner() {
       { maxWidth: 2299, height: 1270 },
       { maxWidth: 2399, height: 1325 },
       { maxWidth: 2499, height: 1380 },
+      { maxWidth: 2599, height: 1435 },
+      { maxWidth: 2699, height: 1490 },
+      { maxWidth: 2799, height: 1550 },
+      { maxWidth: 2899, height: 1605 },
+      { maxWidth: 2999, height: 1660 },
+      { maxWidth: 3099, height: 1720 },
+      { maxWidth: 3199, height: 1775 },
+      { maxWidth: 3299, height: 1830 },
+      { maxWidth: 3399, height: 1885 },
+      { maxWidth: 3499, height: 1940 },
+      { maxWidth: 3599, height: 2000 },
+      { maxWidth: 3699, height: 2055 },
+      { maxWidth: 3799, height: 2110 },
+      { maxWidth: 3899, height: 2130 },
     ];
 
-    const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 1415;
+    const newHeight = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.height || 2130;
     setCarouselHeight(newHeight);
   };
 
@@ -102,7 +116,7 @@ function Banner() {
           display: loading ? "block" : "none"
         }}>
         <Carousel
-          // autoPlay={false}
+          autoPlay={false}
           stopAutoPlayOnHover={false}
           navButtonsAlwaysVisible={false}
           swipe={true}
