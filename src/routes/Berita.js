@@ -6,8 +6,8 @@ import {
 import {
     Nav,
     NavContainer
-} from '../styles/appbar/indexBerita';
-import '../styles/appbar/NavbarBerita.css';
+} from '../styles/appbar/index';
+import '../styles/appbar/NavbarCSS.css';
 import { HalamanFooter } from "../../src/components/footer/index";
 import {
     CardActionArea,
@@ -187,8 +187,8 @@ function Berita(props) {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <AppBar className="navbar" elevation={0} color='transparent' >
-                    <Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
+                <AppBar className="navbarBerita" elevation={0} >
+                    <Nav className={colorChange ? 'navbarBerita colorChange' : 'navbarBerita'}>
                         <NavContainer>
                             <HalamanNavbar />
                         </NavContainer>

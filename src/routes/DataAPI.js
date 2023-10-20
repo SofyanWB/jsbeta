@@ -4,13 +4,14 @@ import {
     AppBar,
 } from "@material-ui/core";
 import {
-    Nav,
-    NavContainer
-} from '../styles/appbar/indexNavbar2';
+    NavFix,
+    NavContainerFix
+} from '../styles/appbar/index';
 import { HalamanFooter } from "../../src/components/footer/index";
 import { withTranslation } from 'react-i18next';
 import { Divider } from '@mui/material';
 import {
+    BoxAll,
     CustomizedTables,
     CustomizedTables2,
     BoxAtas,
@@ -27,38 +28,40 @@ function DataAPI(props) {
     return (
         <>
             <AppBar elevation={0} color='transparent'>
-                <Nav>
-                    <NavContainer>
+                <NavFix>
+                    <NavContainerFix>
                         <HalamanNavbar />
-                    </NavContainer>
-                </Nav>
+                    </NavContainerFix>
+                </NavFix>
             </AppBar>
             {/* <BoxImage1 src="/images/menuPeta/Rectangle_1.png" /> */}
             {/* <BoxImage2 src="/images/menuPeta/bentuk.png" /> */}
             <BoxContainer>
-                <BoxAtas>
-                    <BoxTitle>{t('dataAPI.judul')}</BoxTitle>
-                    <Divider
-                        sx={{
-                            margin: "0 auto",
-                            bgcolor: "#004581",
-                            height: 4,
-                            width: "75px",
-                            borderRadius: "10px",
-                            marginBottom: "20px"
-                        }} />
-                    <BoxLittleTitle>
-                        {t('dataAPI.keterangan')}
-                    </BoxLittleTitle>
-                    <BoxTitle>
-                        {t('dataAPI.table1')}
-                    </BoxTitle>
-                    <CustomizedTables />
-                    <BoxTitle>
-                        {t('dataAPI.table2')}
-                    </BoxTitle>
-                    <CustomizedTables2 />
-                </BoxAtas>
+                <BoxAll>
+                    <BoxAtas>
+                        <BoxTitle>{t('dataAPI.judul')}</BoxTitle>
+                        <Divider
+                            sx={{
+                                margin: "0 auto",
+                                bgcolor: "#004581",
+                                height: 4,
+                                width: "75px",
+                                borderRadius: "10px",
+                                marginBottom: "20px"
+                            }} />
+                        <BoxLittleTitle>
+                            {t('dataAPI.keterangan')}
+                        </BoxLittleTitle>
+                        <BoxTitle>
+                            {t('dataAPI.table1')}
+                        </BoxTitle>
+                        <CustomizedTables />
+                        <BoxTitle>
+                            {t('dataAPI.table2')}
+                        </BoxTitle>
+                        <CustomizedTables2 />
+                    </BoxAtas>
+                </BoxAll>
             </BoxContainer>
             <HalamanFooter />
         </>

@@ -4,9 +4,9 @@ import {
     AppBar,
 } from "@material-ui/core";
 import {
-    Nav,
-    NavContainer
-} from '../styles/appbar/indexNavbar2';
+    NavFix,
+    NavContainerFix
+} from '../styles/appbar/index';
 import { withTranslation } from 'react-i18next';
 
 function Unduh(props) {
@@ -17,11 +17,11 @@ function Unduh(props) {
     return (
         <>
             <AppBar elevation={0} color='transparent'>
-                <Nav>
-                    <NavContainer>
+                <NavFix>
+                    <NavContainerFix>
                         <HalamanNavbar />
-                    </NavContainer>
-                </Nav>
+                    </NavContainerFix>
+                </NavFix>
             </AppBar>
             <embed height="100%" width="100%"
                 style={{

@@ -4,9 +4,9 @@ import {
   AppBar,
 } from "@material-ui/core";
 import {
-  Nav,
-  NavContainer
-} from '../styles/appbar/indexNavbar2';
+  NavFix,
+  NavContainerFix
+} from '../styles/appbar/index';
 import {
   BoxImage1,
   BoxTitle,
@@ -27,11 +27,11 @@ const LandasanHukum = () => {
   return (
     <div className='container'>
       <AppBar elevation={0} color='transparent'>
-        <Nav>
-          <NavContainer>
+        <NavFix>
+          <NavContainerFix>
             <HalamanNavbar />
-          </NavContainer>
-        </Nav>
+          </NavContainerFix>
+        </NavFix>
       </AppBar>
 
       <BoxContainer>

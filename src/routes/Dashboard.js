@@ -4,9 +4,9 @@ import {
     AppBar,
 } from "@material-ui/core";
 import {
-    Nav,
-    NavContainer
-} from '../styles/appbar/indexNavbar2';
+    NavFix,
+    NavContainerFix
+} from '../styles/appbar/index';
 import {
     Divider,
     Stack,
@@ -125,11 +125,11 @@ function Dashboard(props) {
     return (
         <>
             <AppBar elevation={0} color='transparent'>
-                <Nav>
-                    <NavContainer>
+                <NavFix>
+                    <NavContainerFix>
                         <HalamanNavbar />
-                    </NavContainer>
-                </Nav>
+                    </NavContainerFix>
+                </NavFix>
             </AppBar>
             <BoxContainer>
                 <BoxAtas>
@@ -146,12 +146,24 @@ function Dashboard(props) {
                     <BoxLittleTitle>
                         {t('dashboard.keterangan')}
                     </BoxLittleTitle>
+
+                    <Skeleton
+                        variant="rounded" width={isMobile ? "87%" : "50%"} height="60px" animation="wave"
+                        style={{
+                            display: loading ? "none" : "block",
+                            maxWidth: isMobile ? "87%" : "1000px",
+                            borderRadius: 40, margin: "0 auto"
+                        }}
+                    />
                     <OutlinedInput
                         placeholder={t('dashboard.cariData')}
                         value={searchValue}
                         onChange={handleSearchChange}
                         sx={{
+                            display: loading ? "block" : "none",
+                            margin: "0 auto",
                             width: isMobile ? "87%" : "50%",
+                            maxWidth: isMobile ? "87%" : "1000px",
                             paddingLeft: "1%",
                             borderRadius: "40px",
                             background: "white",
@@ -161,14 +173,15 @@ function Dashboard(props) {
                 </BoxAtas>
                 <BoxPagination>
                     <Grid container
-                        spacing={4}
+                        justifyContent="center"
+                        alignItems="stretch"
                         sx={{
-                            marginTop: '70px',
-                            marginBottom: '70px',
+                            maxWidth: "1500px",
+                            margin: '70px auto',
                         }}>
                         {data.map((d, i) => (
                             <Grid key={i} item xs={6} md={4}>
-                                <Card key={d.id} elevation={0} square={true} sx={{ background: "none" }}>
+                                <Card key={d.id} elevation={0} square={true} sx={{ background: "none", margin: "10px" }}>
                                     <CardActionArea href={d.link} target='_blank' disableRipple>
                                         <CardMedia
                                             sx={{
@@ -182,7 +195,7 @@ function Dashboard(props) {
                                                 alt={d.title}
                                                 style={{
                                                     width: '100%',
-                                                    height: '200px',
+                                                    height: '250px',
                                                     objectFit: 'cover',
                                                     display: loading ? "flex" : "none"
                                                 }}

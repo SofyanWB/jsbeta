@@ -39,7 +39,7 @@ function Peta(props) {
         <BoxContent>
 
           {imageLoaded ? (
-            <BoxImageLatar src="C:\Jakarta Satu WEB\jsbeta\src\assets\gambar\molekul.png"
+            <BoxImageLatar src="https://jakartasatu.jakarta.go.id/portal/sharing/rest/content/items/979388b0f1944b23aed602beab869092/data"
               onLoad={handleImageLoad} />
           ) : (
             <></>

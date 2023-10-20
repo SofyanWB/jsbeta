@@ -18,7 +18,7 @@ import { Route, Routes, HashRouter } from 'react-router-dom';
 // import Interaktif from '../src/routes/Interaktif';
 import { RoutePetaInteraktif } from '../src/routes/Interaktif/PetaInteraktif';
 import { RouteTematik } from '../src/routes/Tematik';
-import { RouteSimpulJaringanAPI } from '../src/routes/SimpulJaringanAPI';
+import { RouteSimpulJaringan } from '../src/routes/SimpulJaringan';
 import IRK from '../src/routes/IRK';
 import { RouteUnduh } from '../src/routes/Unduh';
 import Beranda from '../src/routes/Beranda';
@@ -193,7 +193,7 @@ function App() {
             <Route path="/tematik" element={<RouteTematik />} />
             <Route path="/irk" element={<IRK />} />
             <Route path="/unduh" element={<RouteUnduh />} />
-            <Route path="/simpul-jaringan" element={<RouteSimpulJaringanAPI />} />
+            <Route path="/simpul-jaringan" element={<RouteSimpulJaringan />} />
             <Route path="/berita" element={<RouteBerita />} />
             <Route path="/detail-berita/:id" element={<RouteDetailBerita />} />
             <Route path="/panduan-jakarta-satu" element={<RoutePanduanJakartaSatu />} />

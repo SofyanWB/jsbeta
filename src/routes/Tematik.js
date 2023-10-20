@@ -5,9 +5,9 @@ import {
     AppBar,
 } from "@material-ui/core";
 import {
-    Nav,
-    NavContainer
-} from '../styles/appbar/indexNavbar2';
+    NavFix,
+    NavContainerFix
+} from '../styles/appbar/index';
 import { HalamanFooter } from "../../src/components/footer/index";
 import { withTranslation } from 'react-i18next';
 import {
@@ -111,11 +111,11 @@ function Tematik(props) {
     return (
         <>
             <AppBar elevation={0} color='transparent'>
-                <Nav>
-                    <NavContainer>
+                <NavFix>
+                    <NavContainerFix>
                         <HalamanNavbar />
-                    </NavContainer>
-                </Nav>
+                    </NavContainerFix>
+                </NavFix>
             </AppBar>
             <BoxContainer>
                 <BoxAtas>
@@ -137,7 +137,11 @@ function Tematik(props) {
                         (
                             <Skeleton
                                 variant="rounded" width={isMobile ? "87%" : "50%"} height="60px" animation="wave"
-                                style={{ borderRadius: 40, margin: "0 auto" }}
+                                style={{
+                                    maxWidth: isMobile ? "87%" : "1000px",
+                                    borderRadius: 40,
+                                    margin: "0 auto",
+                                }}
                             />
                         ) : (
                             <OutlinedInput
@@ -146,6 +150,7 @@ function Tematik(props) {
                                 onChange={handleInputChange}
                                 sx={{
                                     width: isMobile ? "87%" : "50%",
+                                    maxWidth: isMobile ? "87%" : "1000px",
                                     paddingLeft: "1%",
                                     borderRadius: "40px",
                                     background: "white",
@@ -234,15 +239,23 @@ function Tematik(props) {
                             <>
                                 {isLoading ?
                                     (
-                                        <Grid container spacing={isMobile ? 2 : 8}
+                                        <Grid container
+                                            justifyContent="center"
+                                            alignItems="stretch"
                                             sx={{
                                                 margin: "20px auto 50px auto",
-                                                maxWidth: "1600px"
+                                                maxWidth: "1400px"
                                             }}>
                                             {Array.from({ length: pageSize }).map((_, i) => (
                                                 <Grid key={i} item xs={6} sm={3} md={3} lg={3} xl={3}>
-                                                    <Skeleton variant="rounded" animation="wave" height={isMobile ? 100 : 180} />
-                                                    <Skeleton variant="text" animation="wave" height={50} />
+                                                    <Skeleton variant="rounded" animation="wave" height={isMobile ? 100 : 180}
+                                                        sx={{
+                                                            margin: "10px 10px 0 10px"
+                                                        }} />
+                                                    <Skeleton variant="text" animation="wave" height={50}
+                                                        sx={{
+                                                            margin: "0 10px 0 10px"
+                                                        }} />
                                                 </Grid>
                                             ))}
                                         </Grid>
@@ -253,7 +266,7 @@ function Tematik(props) {
                                             sx={{
                                                 pt: 5,
                                                 margin: "20px auto",
-                                                maxWidth: "1600px"
+                                                maxWidth: "1400px"
                                             }}>
                                             {data.map((data) => (
                                                 <Grid item xs={6} sm={3} md={3} lg={3} xl={3} key={data.id}

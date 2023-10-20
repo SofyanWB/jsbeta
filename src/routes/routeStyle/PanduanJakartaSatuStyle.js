@@ -7,12 +7,20 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
     backgroundImage: "linear-gradient(rgba(186, 223, 255, 0.2), rgba(0, 0, 0, 0))",
 }));
 
+export const BoxAllContainer = styled(Box)(({ theme }) => ({
+    margin: "0 auto",
+    maxWidth: "1400px"
+}));
+
 export const BoxBukuPanduan = styled(Box)(({ theme }) => ({
     position: "relative",
-    height: "100%",
-    paddingTop: "12%",
-    marginLeft: "9%",
-    marginRight: "9%",
+    paddingTop: "20%",
+    paddingBottom: "10%",
+    margin: "0 5%",
+
+    // marginLeft: "9%",
+    // marginRight: "9%",
+    
     justifyContent: "center",
     textAlign: "center",
 
@@ -38,53 +46,61 @@ export const BoxBukuPanduan = styled(Box)(({ theme }) => ({
 
 export const BoxTutorialdanPanduanGIS = styled(Box)(({ theme }) => ({
     position: "relative",
-    height: "100%",
-    marginTop: "9%",
-    marginLeft: "9%",
-    marginRight: "9%",
+    paddingTop: "10%",
+    paddingBottom: "10%",
+    margin: "0 5%",
+    
+    // marginTop: "9%",
+    // marginLeft: "9%",
+    // marginRight: "9%",
+
     justifyContent: "center",
     textAlign: "center",
 }));
 
 export const BoxTutorialdanPanduanIRK = styled(Box)(({ theme }) => ({
     position: "relative",
-    height: "100%",
-    marginTop: "25%",
-    marginLeft: "9%",
-    marginRight: "9%",
-    marginBottom: "9%",
+    paddingTop: "20%",
+    paddingBottom: "20%",
+    margin: "0 5%",
+
+    // marginTop: "25%",
+    // marginLeft: "9%",
+    // marginRight: "9%",
+    // marginBottom: "9%",
+
     justifyContent: "center",
     textAlign: "center",
 
     [theme.breakpoints.down(1440)]: {
-        marginTop: "25%",
+        marginTop: "0",
     },
     [theme.breakpoints.down(1043)]: {
-        marginTop: "10%",
-    },
-    [theme.breakpoints.down(960)]: {
         marginTop: "-10%",
     },
+    [theme.breakpoints.down(960)]: {
+        marginTop: "-30%",
+    },
     [theme.breakpoints.down(700)]: {
-        marginTop: "-8%",
+        marginTop: "-20%",
     },
     [theme.breakpoints.down(600)]: {
-        marginTop: "-5%",
+        marginTop: "-20%",
     },
     [theme.breakpoints.down(500)]: {
-        marginTop: "5%",
+        marginTop: "-20%",
     },
     [theme.breakpoints.down(450)]: {
-        marginTop: "10%",
+        marginTop: "-15%",
     },
     [theme.breakpoints.down(400)]: {
-        marginTop: "20%",
+        marginTop: "-13%",
     },
     [theme.breakpoints.down(350)]: {
-        marginTop: "25%",
+        marginTop: "0",
     },
     [theme.breakpoints.down(300)]: {
-        marginTop: "40%",
+        marginTop: "10%",
     },
 }));
 

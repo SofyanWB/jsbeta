@@ -68,7 +68,7 @@ function Dialog1(props) {
   return (
     <div>
       <ButtonDialog
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={imageLoaded ? handleMouseEnter : null}
         sx={iconButtonStyles}>
 
         <Skeleton
@@ -227,7 +227,7 @@ function Dialog2(props) {
   return (
     <div>
       <ButtonDialog
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={imageLoaded ? handleMouseEnter : null}
         sx={iconButtonStyles}>
 
         <Skeleton
@@ -381,7 +381,7 @@ function Dialog3(props) {
   return (
     <div>
       <ButtonDialog
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={imageLoaded ? handleMouseEnter : null}
         sx={iconButtonStyles}>
 
         <Skeleton

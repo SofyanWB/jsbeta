@@ -12,6 +12,11 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
     textAlign: "center",
 }));
 
+export const BoxAll = styled(Box)(({ theme }) => ({
+    maxWidth: "1500px",
+    margin: "0 auto",
+}));
+
 export const BoxAtas = styled(Box)(({ theme }) => ({
     justifyContent: "center",
     textAlign: "center",

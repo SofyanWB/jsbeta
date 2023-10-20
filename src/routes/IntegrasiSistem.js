@@ -4,9 +4,9 @@ import {
     AppBar,
 } from "@material-ui/core";
 import {
-    Nav,
-    NavContainer
-} from '../styles/appbar/indexNavbar2';
+    NavFix,
+    NavContainerFix
+} from '../styles/appbar/index';
 import { HalamanFooter } from "../../src/components/footer/index";
 import { withTranslation } from 'react-i18next';
 import {
@@ -15,6 +15,7 @@ import {
     ThemeProvider,
 } from '@mui/material';
 import {
+    BoxAll,
     BoxImage1,
     BoxImage2,
     BoxAtas,
@@ -101,69 +102,71 @@ function IntegrasiSistem(props) {
         <>
             <ThemeProvider theme={theme}>
                 <AppBar elevation={0} color='transparent'>
-                    <Nav>
-                        <NavContainer>
+                    <NavFix>
+                        <NavContainerFix>
                             <HalamanNavbar />
-                        </NavContainer>
-                    </Nav>
+                        </NavContainerFix>
+                    </NavFix>
                 </AppBar>
                 <BoxImage1 src="/images/menuPeta/Rectangle_1.png" />
                 <BoxImage2 src="/images/menuPeta/bentuk.png" />
                 <BoxContainer>
-                    <BoxAtas>
-                        <BoxTitle>{t('integrasiSistem.judul')}</BoxTitle>
-                        <Divider
-                            sx={{
-                                margin: "0 auto",
-                                bgcolor: "#004581",
-                                height: 4,
-                                width: "75px",
-                                borderRadius: "10px",
-                                marginBottom: "20px"
-                            }} />
-                        <BoxLittleTitle>
-                            {t('integrasiSistem.keterangan')}
-                        </BoxLittleTitle>
-                    </BoxAtas>
-                    <BoxContent>
-                        <Button
-                            onClick={() => scrollToSection('section1')}
-                            variant="contained"
-                            color="primary"
-                            style={{
-                                marginRight: "15px",
-                                marginBottom: "100px",
-                                width: "25%",
-                                backgroundColor: "#1455A3",
-                            }}>
-                            {t('integrasiSistem.button1')}
-                        </Button>
-                        <Button
-                            onClick={() => scrollToSection('section2')}
-                            variant="contained"
-                            color="primary"
-                            style={{
-                                marginBottom: "100px",
-                                width: "25%",
-                                backgroundColor: "#1455A3",
-                            }}>
-                            {t('integrasiSistem.button2')}
-                        </Button>
+                    <BoxAll>
+                        <BoxAtas>
+                            <BoxTitle>{t('integrasiSistem.judul')}</BoxTitle>
+                            <Divider
+                                sx={{
+                                    margin: "0 auto",
+                                    bgcolor: "#004581",
+                                    height: 4,
+                                    width: "75px",
+                                    borderRadius: "10px",
+                                    marginBottom: "20px"
+                                }} />
+                            <BoxLittleTitle>
+                                {t('integrasiSistem.keterangan')}
+                            </BoxLittleTitle>
+                        </BoxAtas>
+                        <BoxContent>
+                            <Button
+                                onClick={() => scrollToSection('section1')}
+                                variant="contained"
+                                color="primary"
+                                style={{
+                                    marginRight: "15px",
+                                    marginBottom: "100px",
+                                    width: "25%",
+                                    backgroundColor: "#1455A3",
+                                }}>
+                                {t('integrasiSistem.button1')}
+                            </Button>
+                            <Button
+                                onClick={() => scrollToSection('section2')}
+                                variant="contained"
+                                color="primary"
+                                style={{
+                                    marginBottom: "100px",
+                                    width: "25%",
+                                    backgroundColor: "#1455A3",
+                                }}>
+                                {t('integrasiSistem.button2')}
+                            </Button>
 
-                        <BoxTitle id="section1">{t('integrasiSistem.judul1')}</BoxTitle>
-                        <BoxLittleTitle>
-                            {t('integrasiSistem.lihatTampilanPenuh')} <a href="https://drive.google.com/file/d/1AU04yFobQdspwEL7Ordx62cxxr173GLj/preview" target="_blank" rel="noreferrer">{t('integrasiSistem.klikDisini')}</a>
-                        </BoxLittleTitle>
+                            <BoxTitle id="section1">{t('integrasiSistem.judul1')}</BoxTitle>
+                            <BoxLittleTitle>
+                                {t('integrasiSistem.lihatTampilanPenuh')} <a href="https://drive.google.com/file/d/1AU04yFobQdspwEL7Ordx62cxxr173GLj/preview" target="_blank" rel="noreferrer">{t('integrasiSistem.klikDisini')}</a>
+                            </BoxLittleTitle>
 
-                        <MyPDFViewer />
+                            <MyPDFViewer />
 
-                        <BoxTitle id="section2">{t('integrasiSistem.judul2')}</BoxTitle>
-                        <BoxLittleTitle>
-                            {t('integrasiSistem.lihatTampilanPenuh')} <a href="https://drive.google.com/file/d/1mlzkmFjZj6we0L8hX2HOxc1-f-EglcmX/view" target="_blank" rel="noreferrer">{t('integrasiSistem.klikDisini')}</a>
-                        </BoxLittleTitle>
+                            <BoxTitle id="section2">{t('integrasiSistem.judul2')}</BoxTitle>
+                            <BoxLittleTitle>
+                                {t('integrasiSistem.lihatTampilanPenuh')} <a href="https://drive.google.com/file/d/1mlzkmFjZj6we0L8hX2HOxc1-f-EglcmX/view" target="_blank" rel="noreferrer">{t('integrasiSistem.klikDisini')}</a>
+                            </BoxLittleTitle>
 
-                        <MyPDFViewer2 />
-                    </BoxContent>
+                            <MyPDFViewer2 />
+                        </BoxContent>
+                    </BoxAll>
                 </BoxContainer>
                 <HalamanFooter />
             </ThemeProvider>

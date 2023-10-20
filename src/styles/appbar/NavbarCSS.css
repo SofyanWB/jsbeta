@@ -82,11 +82,10 @@
 
 .navbar.MuiAppBar-root {
     background: transparent;
-    color: white;
+    color: black;
 
     .MuiToggleButtonGroup-grouped {
         border-radius: 20px;
-        /* border: 1px solid rgba(0, 0, 0, 0.16); */
         color: black;
         width: 40px;
         height: 40px;
@@ -101,6 +100,49 @@
 }
 
 .navbar.colorChange {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    /* border: 1px solid rgba(0, 0, 0, 0.16); */
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+
+    @media screen and (max-width: 500px) {
+        margin-top: 10px;
+    }
+
+    .MuiToggleButtonGroup-grouped {
+        color: black;
+    }
+
+    .Mui-selected,
+    .Mui-selected:hover {
+        background-color: "#F7941D";
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.navbarBerita.MuiAppBar-root {
+    background: transparent;
+    color: white;
+
+    .MuiToggleButtonGroup-grouped {
+        border-radius: 20px;
+        color: white;
+        width: 40px;
+        height: 40px;
+    }
+
+    .Mui-selected,
+    .Mui-selected:hover {
+        background-color: #F7941D;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.navbarBerita.colorChange {
+    color: black;
     margin-top: 20px;
     background: rgba(255, 255, 255, 0.5);
     /* border: 1px solid rgba(0, 0, 0, 0.16); */

@@ -92,17 +92,17 @@ function SimpulJaringan(props) {
             style={{ borderRadius: 20, margin: "0 auto", marginBottom: "10px", marginTop: "5vw" }}
           />
         )}
-
-        <Divider
-          sx={{
-            margin: '0 auto',
-            bgcolor: '#004581',
-            height: 4,
-            width: '75px',
-            borderRadius: '10px',
-          }}
-        />
-
+        {!isLoading ? (
+          <Divider
+            sx={{
+              margin: '0 auto',
+              bgcolor: '#004581',
+              height: 4,
+              width: '75px',
+              borderRadius: '10px',
+            }}
+          />
+        ) : null}
         {!isLoading ? (
           <BoxDescription
             variant="subtitle">
@@ -340,7 +340,7 @@ function SimpulJaringan(props) {
                   justifyContent: 'center',
                 }}
               >
-                <Skeleton variant="rectangular" style={{ borderRadius: 20, width: 180, height: 200, marginTop: 40 }} />
+                <Skeleton variant="rectangular" animation="wave" style={{ borderRadius: 20, width: 180, height: 200, marginTop: 40 }} />
               </Grid>
             ))}
           </Grid>

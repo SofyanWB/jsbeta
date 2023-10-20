@@ -4,9 +4,9 @@ import {
     AppBar,
 } from "@material-ui/core";
 import {
-    Nav,
-    NavContainer
-} from '../styles/appbar/indexNavbar2';
+    NavFix,
+    NavContainerFix
+} from '../styles/appbar/index';
 import { HalamanFooter } from "../../src/components/footer/index";
 import { useParams } from 'react-router-dom';
 import {
@@ -83,18 +83,18 @@ function DetailBerita(props) {
         <>
             <ThemeProvider theme={theme}>
                 <AppBar elevation={0} color='transparent'>
-                    <Nav>
-                        <NavContainer>
+                    <NavFix>
+                        <NavContainerFix>
                             <HalamanNavbar />
-                        </NavContainer>
-                    </Nav>
+                        </NavContainerFix>
+                    </NavFix>
                 </AppBar>
                 <BoxContainer>
                     <Grid container
                         spacing={isMobile ? 5 : 1}
                         justifyContent="space-between"
                         onLoad={handleSetLoading}
-                        sx={{ maxWidth: "1600px", margin: "0 auto", }}>
+                        sx={{ maxWidth: "1500px", margin: "0 auto", }}>
                         <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
                             <Box sx={{ textAlign: "left", marginTop: "-40px" }}>
                                 <Skeleton variant='text' animation="wave" sx={{ width: 200, height: 30, display: loading ? "none" : "block" }} />

@@ -13,6 +13,11 @@ export const BoxContainer = styled(Box)(({ theme }) => ({
     backgroundImage: "linear-gradient(rgba(186, 223, 255, 0.2), rgba(0, 0, 0, 0))",
 }));
 
+export const BoxAll = styled(Box)(({ theme }) => ({
+    maxWidth: "1500px",
+    margin: "0 auto",
+}));
+
 export const BoxAtas = styled(Box)(({ theme }) => ({
     justifyContent: "center",
     paddingTop: "10%",

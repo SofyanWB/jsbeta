@@ -4,9 +4,9 @@ import {
 	AppBar,
 } from "@material-ui/core";
 import {
-	Nav,
-	NavContainer
-} from '../../styles/appbar/indexNavbar2';
+	NavFix,
+	NavContainerFix
+} from '../../styles/appbar/index';
 import Map from "@arcgis/core/Map";
 import MapView from "@arcgis/core/views/MapView";
 import BasemapGallery from "@arcgis/core/widgets/BasemapGallery";
@@ -351,12 +351,12 @@ function PetaInteraktif(props) {
 	return (
 		<Box>
 			<AppBar elevation={0} color='transparent'>
-				<Nav>
-					<NavContainer>
-						<HalamanNavbar />
-					</NavContainer>
-				</Nav>
-			</AppBar>
+                <NavFix>
+                    <NavContainerFix>
+                        <HalamanNavbar />
+                    </NavContainerFix>
+                </NavFix>
+            </AppBar>
 			<Box ref={mapRef} sx={{ height: "100vh", width: "100vw", p: 0, m: 0 }}>
 				<Box
 					ref={searchWidgetRef}
