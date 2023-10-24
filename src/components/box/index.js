@@ -1,11 +1,11 @@
 import React from "react";
-import { BoxContainer } from "../../styles/box";
 import { HalamanPeta } from "./content/peta";
 import { HalamanAnalisis } from "./content/analisis";
 import { HalamanSimpulJaringan } from "./content/simpul-jaringan";
 import { HalamanDashboard } from "./content/dashboard";
 import { HalamanHandphone } from "./content/handphone";
 import {
+  BoxContainer,
   BoxContent
 } from "../../styles/box";
 
