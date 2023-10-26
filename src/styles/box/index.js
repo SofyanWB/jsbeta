@@ -2,7 +2,7 @@ import { Box, styled } from "@mui/material";
 import theme from "../theme";
 
 export const BoxContainer = styled(Box)(() => ({
-  top: "-8vh",
+  bottom: "6vw",
   position: "relative",
   zIndex: "1",
   display: "flex",
@@ -22,61 +22,9 @@ export const BoxContainer = styled(Box)(() => ({
     flexDirection: "column",
   },
 
-  "@media (max-width: 599px)": {
-    top: "-6vh",
+  "@media (max-width: 500px)": {
+    bottom: "10vw",
   },
-  "@media (max-width: 499px)": {
-    top: "-8vh",
-  },
-  "@media (max-width: 449px)": {
-    top: "-5vh",
-  },
-
-  // "@media (max-width: 2299px)": {
-  //   top: "-10vh",
-  // },
-  // "@media (max-width: 2199px)": {
-  //   top: "-10vh",
-  // },
-  // "@media (max-width: 2099px)": {
-  //   top: "-10vh",
-  // },
-  // "@media (max-width: 1999px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1899px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1799px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1699px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1599px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1499px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1399px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1299px)": {
-  //   top: "-8vh",
-  // },
-  // "@media (max-width: 1199px)": {
-  //   top: "-7vh",
-  // },
-  // "@media (max-width: 1099px)": {
-  //   top: "-12vh",
-  // },
-  // "@media (max-width: 499px)": {
-  //   top: "-15vh",
-  // },
-  // "@media (max-width: 449px)": {
-  //   top: "-10vh",
-  // },
 }));
 
 export const BoxContent = styled(Box)(() => ({

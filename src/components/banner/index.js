@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import Box from '@mui/material/Box';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Carousel from "react-material-ui-carousel";
 import axios from "axios";
+import {
+  Skeleton,
+  Box,
+  useMediaQuery
+} from '@mui/material';
+import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { CardActionArea } from '@mui/material';
-import Skeleton from '@mui/material/Skeleton';
 
 function Banner() {
   const isMobile = useMediaQuery("(max-width: 500px)");
 
-  const [loading, setLoading] = useState(false);
-  const handleSetLoading = () => {
-    setLoading(true);
-  };
+  const [loading, setLoading] = useState(true);
 
   const [bannerList, setBannerList] = useState([]);
   const getBannerList = async () => {
@@ -20,6 +23,7 @@ function Banner() {
       "https://jakartasatu.jakarta.go.id/apimobile/app/v3/banners"
     );
     setBannerList(response.data.data);
+    setLoading(false);
     // console.log(response.data);
   };
 
@@ -71,104 +75,124 @@ function Banner() {
     setCarouselHeight(newHeight);
   };
 
-  const [topHeight, setTopHeight] = useState("-8vh");
-
-  const handleResizeTop = () => {
-    const breakpoints = [
-      { maxWidth: 299, top: "-5vh" },
-      { maxWidth: 349, top: "-5vh" },
-      { maxWidth: 399, top: "-5vh" },
-      { maxWidth: 449, top: "-5vh" },
-      { maxWidth: 499, top: "-8vh" },
-      { maxWidth: 599, top: "-6vh" },
-    ];
-
-    const newTop = breakpoints.find(bp => window.innerWidth < bp.maxWidth)?.top || "-8vh";
-    setTopHeight(newTop);
-  };
-
   useEffect(() => {
     getBannerList();
     window.addEventListener('resize', handleResize);
     handleResize();
 
-    window.addEventListener('resize', handleResizeTop);
-    handleResizeTop();
-
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('resize', handleResizeTop);
     };
   }, []);
 
-  return (
-    <>
-      <Skeleton variant='rectangular' animation="wave"
-        sx={{
-          height: carouselHeight,
-          display: loading ? "none" : "block"
-        }} />
-      <Box onLoad={handleSetLoading}
-        sx={{
-          maxWidth: "auto",
-          flexGrow: 1,
+  const arrowStyles = {
+    position: 'absolute',
+    background: 'transparent',
+    color: 'black',
+    border: 'none',
+    zIndex: 2,
+    top: 'calc(50% - 15px)',
+    width: 30,
+    height: 30,
+    cursor: 'pointer',
+  };
 
-          display: loading ? "block" : "none"
-        }}>
-        <Carousel
-          // autoPlay={false}
-          stopAutoPlayOnHover={false}
-          navButtonsAlwaysVisible={false}
-          swipe={true}
-          height={carouselHeight}
-          fullHeightHover={true}
-          animation={"slide"}
-          Indicators={true}
-          indicatorIconButtonProps={{
-            style: {
-              width: "20px",
-              height: "20px",
-              marginLeft: "2px",
-              marginRight: "2px",
-              color: isMobile ? "white" : "white",
-              transform: isMobile ? "translateY(-50%)" : "translateY(-50%)",
-              zIndex: "20",
-              top: topHeight,
+  const indicatorStyles = {
+    background: '#D3D3D3',
+    borderRadius: 30,
+    width: 10,
+    height: 10,
+    display: 'inline-block',
+    margin: isMobile ? '9vw 8px' : '6vw 8px',
+    cursor: 'pointer',
+  };
+
+  return (
+    <Box
+      sx={{
+        borderBottom: loading ? "none" : "7px solid #D9D9D9",
+        marginBottom: loading ? "none" : "-7px",
+      }}>
+      {loading ?
+        (
+          <Skeleton
+            animation="wave"
+            variant="rect"
+            width="100%"
+            height={carouselHeight}
+          />
+        ) : (
+          <Carousel
+            autoPlay={true}
+            interval={5000}
+            infiniteLoop
+            preventMovementUntilSwipeScrollTolerance={true}
+            swipeScrollTolerance={50}
+            stopOnHover={false}
+            showStatus={false}
+            showThumbs={false}
+            renderArrowPrev={(onClickHandler, hasPrev, label) =>
+              hasPrev && (
+                <KeyboardArrowLeftRoundedIcon
+                  type="button"
+                  onClick={onClickHandler}
+                  title={label}
+                  style={{ ...arrowStyles, left: "2%" }}
+                />
+              )
             }
-          }}
-          activeIndicatorIconButtonProps={{
-            style: {
-              color: "#ED783E",
+            renderArrowNext={(onClickHandler, hasNext, label) =>
+              hasNext && (
+                <KeyboardArrowRightRoundedIcon
+                  type="button"
+                  onClick={onClickHandler}
+                  title={label}
+                  style={{ ...arrowStyles, right: "2%" }}
+                />
+              )
             }
-          }}
-          navButtonsProps={{
-            style: {
-              marginLeft: isMobile ? "5px" : "50px",
-              marginRight: isMobile ? "5px" : "50px",
-              backgroundColor: isMobile ? "transparent" : "rgba(237, 120, 62)",
-              transform: isMobile ? "translateY(-50%)" : "translateY(-50%)"
-            }
-          }}>
-          {bannerList.map((banner, index) => (
-            <CardActionArea key={index} href={banner.source_url} target='_blank' disableRipple>
-              <Box
-                component="img"
-                sx={{
-                  objectFit: "cover",
-                  width: "100%",
-                  maxWidth: "auto",
-                  overflow: 'hidden',
-                  // background: "#004581",
-                  borderBottom: "7px solid #D9D9D9",
-                  marginBottom: "-7px",
-                }}
-                src={banner.source_image}>
-              </Box>
-            </CardActionArea>
-          ))}
-        </Carousel>
-      </Box>
-    </>
+            renderIndicator={(onClickHandler, isSelected, index, label) => {
+              if (isSelected) {
+                return (
+                  <li
+                    style={{ ...indicatorStyles, background: '#ED783E' }}
+                    aria-label={`Selected: ${label} ${index + 1}`}
+                    title={`Selected: ${label} ${index + 1}`}
+                  />
+                );
+              }
+              return (
+                <li
+                  style={indicatorStyles}
+                  onClick={onClickHandler}
+                  onKeyDown={onClickHandler}
+                  value={index}
+                  key={index}
+                  role="button"
+                  tabIndex={0}
+                  title={`${label} ${index + 1}`}
+                  aria-label={`${label} ${index + 1}`}
+                />
+              );
+            }}
+          >
+            {bannerList.map((banner, i) => (
+              <CardActionArea href={banner.source_url} target='_blank' disableRipple>
+                <Box key={i}
+                  component="img"
+                  sx={{
+                    width: "100%",
+                    maxWidth: "auto",
+                    overflow: 'hidden',
+                  }}
+                  alt=""
+                  src={banner.source_image}>
+                </Box>
+              </CardActionArea>
+            ))}
+          </Carousel>
+        )}
+    </Box>
   );
 }
 
